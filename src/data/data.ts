@@ -113,3 +113,58 @@ export const juventudeData: MenuItem[] = [
     ]
   }
 ];
+
+export const pessoaIdosaData: MenuItem[] = [
+  {
+    id: 'todos',
+    category: 'todos',
+    title: 'Todos os serviços',
+    items: []
+  },
+  {
+    id: 'Infraestrutura-trânsito-transporte',
+    category: 'Infraestrutura-transito-transporte',
+    title: 'Infraestrutura, Trânsito e Transportes',
+    items: [
+      {
+        id: 'aposentadoria-1',
+        category: 'infra',
+        title: 'Solicitar aposentadoria'
+      },
+      {
+        id: 'aposentadoria-2',
+        category: 'infra',
+        title: 'Consultar benefício'
+      }
+    ]
+  },
+  {
+    id: 'cultura-turismo',
+    category: 'cultura-turismo',
+    title: 'Cultura e Turismo',
+    items: [
+      {
+        id: 'cultura-1',
+        category: 'SEDEPE',
+        title: 'Agenda cultural'
+      },
+      {
+        id: 'turismo-1',
+        category: 'SEDEPE',
+        title: 'Pontos turísticos'
+      }
+    ]
+  },
+  {
+    id: 'deveres-tributarios',
+    category: 'deveres-tributarios',
+    title: 'Deveres Tributários',
+    items: [
+      {
+        id: 'tributario-1',
+        category: 'SEDEPE',
+        title: 'Emitir guia de pagamento'
+      }
+    ]
+  }
+];

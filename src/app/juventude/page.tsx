@@ -3,6 +3,8 @@
 import { HeaderInternal} from "@/components";
 import { juventudeData } from "@/data/data";
 import { useState } from "react";
+import styles from "./index.module.scss";
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination } from "swiper/modules";
 import { Grid, Navigation, Pagination } from 'swiper/modules';
@@ -35,18 +37,29 @@ export default function JuventudePage() {
       <section>
         {/* Barra superior com ações (Voltar / Início) - visual apenas por enquanto */}
         <section className="flex gap-5">
-          <nav className="text-black bg-gray-300 p-5 flex gap-4 flex-col">
+          <nav className={`${styles.navegation} text-black  p-5 flex gap-4 flex-col`}>
             {juventudeData.map(menu => (
-              <button
-                key={menu.id}
-                onClick={() => setcategoryAtiva(menu.category)}
-              >
-                {menu.title}
-              </button>
+         
+                <a
+                  key={menu.id}
+                  onClick={() => setcategoryAtiva(menu.category)}
+                >
+                  <span><img src="/icon-back.svg" alt="" /></span>
+                  {menu.title}
+                </a>
+             
             ))}
           </nav>
 
-          <section className="overflow-hidden w-full text-black bg-gray-300 p-8 pr-0">
+          <section className={styles.ilustracao}>
+              <figure>
+                  <img src="/juventude-big.svg" />
+              </figure>
+          </section>
+         
+
+          <section className={`${styles.conteinerCard} overflow-hidden w-full text-black  p-8 pr-0`}>
+          
             <Swiper
               slidesPerView={1.5}
               grid={{
@@ -62,23 +75,18 @@ export default function JuventudePage() {
             >
               {items.map((item, index) => (
                 <SwiperSlide className="py-1" key={index}>
-                  <div className="rounded-2xl flex flex-col bg-white p-4">
-                    <span>{item.category}</span>
-                    <span>{item.title}</span>
+                  <div className={`${styles.card} rounded-2xl p-6`}>
+                    <div>
+                      <span className={styles.tag}>{item.category}</span>
+                    </div>
+
+                    <span className={styles.title}>{item.title}</span>
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
                 
-            
-            {/* {items.map(item => (
-              <div key={item.id}>
-                <div className="rounded-2xl flex flex-col bg-white p-4">
-                  <span>{item.category}</span>
-                  <span>{item.title}</span>
-                </div>
-              </div>
-            ))} */}
+          
           </section>
         </section>
       </section>

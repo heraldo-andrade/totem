@@ -28,11 +28,13 @@ export default function Home() {
                 </figure>
               </div>
           </li>
+  
           <li>
+                    <a href="/juventude">
               <div className={styles.header}>
               <div className={`${styles.icon} `}><p>+</p></div>
 
-                  <p className={`${styles.headerTitle} text-text-primary `}>Juventude</p>
+                  <p className={`${styles.headerTitle} text-text-primary`}>Juventude</p>
                   <p className={`${styles.description} text--text-secondary`}>
                   Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
                   </p>
@@ -42,6 +44,8 @@ export default function Home() {
                   <img src="/juventude.png" alt="" />
                 </figure>
               </div>
+          </a>
+
           </li>
           <li>
               <div className={styles.header}>

@@ -32,6 +32,9 @@
 }
 
 .conteinerCard{
+        border: 1px solid red;
+    overflow: auto;
+    height: calc(100vh - 130px);
     .card{
         margin-bottom: 2rem;
         flex-direction: column;

@@ -150,7 +150,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   .swiper-wrapper{
-    height: auto;
+    /* height: auto; */
   }
 }
 

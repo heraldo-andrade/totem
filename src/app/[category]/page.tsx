@@ -92,7 +92,7 @@ export default function CategoryPage() {
           </section>
          
 
-          <section className={`${styles.conteinerCard} overflow-hidden w-full text-black  p-8 pr-0`}>
+          <section className={`${styles.conteinerCard}  w-full text-black  p-8 pr-0`}>
           
             <Swiper
               slidesPerView={1.5}

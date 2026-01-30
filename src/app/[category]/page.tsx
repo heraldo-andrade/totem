@@ -1,29 +1,63 @@
 "use client"
 
 import { HeaderInternal} from "@/components";
-import { juventudeData } from "@/data/data";
-import { useState } from "react";
+import { categoryData } from "@/data/data";
+import { useState, useMemo } from "react";
+import { useRouter, useParams } from "next/navigation";
 import styles from "./index.module.scss";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation, Pagination } from "swiper/modules";
-import { Grid, Navigation, Pagination } from 'swiper/modules';
+import { Grid, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
-export default function JuventudePage() {
+const categoryConfig = {
+  juventude: {
+    title: 'Juventude',
+    subtitle: 'Jornada do Cidadão',
+    image: '/juventude-big.svg'
+  },
+  infancia: {
+    title: 'Infância',
+    subtitle: 'Jornada do Cidadão',
+    image: '/juventude-big.svg'
+  },
+  adulta: {
+    title: 'Fase Adulta',
+    subtitle: 'Jornada do Cidadão',
+    image: '/juventude-big.svg'
+  },
+  'terceira-idade': {
+    title: 'Terceira Idade',
+    subtitle: 'Jornada do Cidadão',
+    image: '/juventude-big.svg'
+  }
+};
 
-  const [categoryAtiva, setcategoryAtiva] = useState('todos');
+export default function CategoryPage() {
+  const router = useRouter();
+  const params = useParams();
+  const categorySlug = params?.category as string;
+  
+  const [categoryAtiva, setCategoryAtiva] = useState('todos');
 
-  const menuAtivo = juventudeData.find(
+  const categoryData_ = useMemo(() => {
+    return categoryData[categorySlug as keyof typeof categoryData] || [];
+  }, [categorySlug]);
+
+  const config = useMemo(() => {
+    return categoryConfig[categorySlug as keyof typeof categoryConfig] || categoryConfig.juventude;
+  }, [categorySlug]);
+
+  const menuAtivo = categoryData_.find(
     menu => menu.category === categoryAtiva
   );
 
   const items =
     categoryAtiva === 'todos'
-      ? juventudeData
+      ? categoryData_
           .filter(menu => menu.category !== 'todos')
           .flatMap(menu => menu.items)
       : menuAtivo?.items ?? [];
@@ -31,18 +65,18 @@ export default function JuventudePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#F8FAFC] to-[#C7DBFF]">
       {/* Header interno */}
-      <HeaderInternal subtitle="Jornada do Cidadão" title="Juventude" />
+      <HeaderInternal subtitle={config.subtitle} title={config.title} />
 
       {/* Conteúdo principal */}
       <section>
         {/* Barra superior com ações (Voltar / Início) - visual apenas por enquanto */}
         <section className="flex gap-5">
           <nav className={`${styles.navegation} text-black  p-5 flex gap-4 flex-col`}>
-            {juventudeData.map(menu => (
+            {categoryData_.map(menu => (
          
                 <a
                   key={menu.id}
-                  onClick={() => setcategoryAtiva(menu.category)}
+                  onClick={() => setCategoryAtiva(menu.category)}
                 >
                   <span><img src="/icon-back.svg" alt="" /></span>
                   {menu.title}
@@ -53,7 +87,7 @@ export default function JuventudePage() {
 
           <section className={styles.ilustracao}>
               <figure>
-                  <img src="/juventude-big.svg" />
+                  <img src={config.image} />
               </figure>
           </section>
          
@@ -75,7 +109,10 @@ export default function JuventudePage() {
             >
               {items.map((item, index) => (
                 <SwiperSlide className="py-1" key={index}>
-                  <div className={`${styles.card} rounded-2xl p-6`}>
+                  <div 
+                    className={`${styles.card} rounded-2xl p-6`}
+                    onClick={() => router.push(`/${categorySlug}/${item.slug}`)}
+                  >
                     <div>
                       <span className={styles.tag}>{item.category}</span>
                     </div>

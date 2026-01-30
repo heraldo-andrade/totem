@@ -1,15 +1,87 @@
 @import "tailwindcss";
 
+/* PRimitivos */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-light-blue-softest: #e6f3ff;
+  --color-light-blue-softer: #99c6ff;
+  --color-light-blue-soft: #337fff;
+  --color-light-blue-default: #0034b7;
+  --color-light-blue-strong: #001a7a;
+  --color-dark-blue-softest: #1357ac;
+  --color-dark-blue-softer: #1249a5;
+  --color-dark-blue-soft: #082947;
+  --color-dark-blue-default: #0b2463;
+  --color-dark-blue-strong: #071442;
+  --color-light-red-softest: #ffe4e4;
+  --color-light-red-softer: #ffc7c7;
+  --color-light-red-soft: #e45f5f;
+  --color-light-red-default: #ac1010;
+  --color-light-red-strong: #841d1d;
+  --color-dark-red-softest: #e57373;
+  --color-dark-red-softer: #550909;
+  --color-dark-red-soft: #4d0909;
+  --color-dark-red-default: #5e1313;
+  --color-dark-red-strong: #491818;
+  --color-light-green-softest: #eafbd7;
+  --color-light-green-softer: #d1f8b0;
+  --color-light-green-soft: #86d562;
+  --color-light-green-default: #2b6418;
+  --color-light-green-strong: #12400d;
+  --color-dark-green-softest: #6dbc49;
+  --color-dark-green-softer: #49821a;
+  --color-dark-green-soft: #4b7819;
+  --color-dark-green-default: #1c3713;
+  --color-dark-green-strong: #0d230b;
+  --color-light-yellow-softest: #fff6ce;
+  --color-light-yellow-softer: #ffea9d;
+  --color-light-yellow-soft: #ffcd48;
+  --color-light-yellow-default: #ffb60c;
+  --color-light-yellow-strong: #b77706;
+  --color-dark-yellow-softest: #e0a919;
+  --color-dark-yellow-softer: #a48512;
+  --color-dark-yellow-soft: #927a10;
+  --color-dark-yellow-default: #906a10;
+  --color-dark-yellow-strong: #63440e;
+  --color-light-gray-softest: #f8fafc;
+  --color-light-gray-softer: #e7e9eb;
+  --color-light-gray-soft: #ced2d7;
+  --color-light-gray-default: #494c57;
+  --color-light-gray-strong: #28272c;
+  --color-dark-gray-softest: #4a5057;
+  --color-dark-gray-softer: #43484d;
+  --color-dark-gray-soft: #2d2e33;
+  --color-dark-gray-default: #18181a;
+  --color-dark-gray-strong: #0a0f14;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+@theme {
+
+    /* tokens background */
+    --color-background-dark: var(--color-light-blue-strong);
+    --color-background-default: var(--color-light-gray-softest);
+    --color-background-secondary: var(--color-light-blue-softer);
+    --color-background-darker: var(--color-light-gray-softer);
+    --color-background-dark: var(--color-light-blue-strong);
+    --color-background-feedback-success: var(--color-light-green-softest);
+    --color-background-feedback-danger: var(--color-light-red-softest);
+    --color-background-feedback-warning: var(--color-light-yellow-softest);
+    --color-background-feedback-info: var(--color-light-blue-softest);
+
+    /* tokens text */
+    --color-text-default: var(--color-light-gray-strong);
+    --color-text-primary: var(--color-light-blue-default);
+    --color-text-secondary: var(--color-light-gray-default);
+    --color-text-disabled: var(--color-light-gray-soft);
+    --color-text-bright: var(--color-light-gray-softest);
+    --color-text-link: var(--color-light-blue-default);
+    --color-text-placeholder: var(--color-light-gray-default);
+    --color-text-danger: var(--color-light-red-default);
+    --color-text-success: var(--color-light-green-strong);
+
+
+  
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +92,63 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background: #011A70 url('/bgConexao.png') no-repeat;
+  background-position: right;
+
 }
+
+
+.headerInterna{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0  0 4rem;
+  padding: 1.5rem 4rem;
+  background-color: #011a70;
+
+}
+
+.conteinerButton{
+  display: flex;
+  width: 45%;
+  max-width: 430px;
+  justify-content: space-between;
+}
+
+.btn{
+  display: flex;
+  padding: 0 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 0 0;
+
+  border-radius: 2rem;
+  background: #FFF;
+  justify-content: center;
+
+
+  color: #001A7A;
+
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: normal;
+
+  max-width: 146px;
+  figure{
+    img{
+      width: 100%;
+    }
+  }
+}
+
+
+

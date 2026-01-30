@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
 import "./globals.css";
 //import '@uigovpe/styles';
 

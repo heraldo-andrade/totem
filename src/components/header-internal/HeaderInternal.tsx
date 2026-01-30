@@ -35,7 +35,7 @@ export function HeaderInternal({
   return (
   
 
-    <main className="w-full h-screen">
+    <main className="w-full">
 
         <header className="headerInterna text-text-primary bg-darker pr-16 pl-16">
             <div>

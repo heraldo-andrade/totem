@@ -12,6 +12,8 @@ export type HeaderInternalProps = {
   subtitle?: string;
   title: string;
   height?: "default" | "small" | "large";
+  backHref?: string;
+  homeHref?: string;
 };
 
 /**

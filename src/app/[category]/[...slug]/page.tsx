@@ -28,6 +28,8 @@ export default function ServiceDetailPage() {
       categoryConfig[category] ?? {
         title: category,
         subtitle: "Jornada do Cidadão",
+        
+        
       },
     [category]
   );
@@ -57,15 +59,6 @@ export default function ServiceDetailPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-8 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-{/* 
-           <p className="text-[#0B274E]">Categoria pai: {params.category}</p>
-        <br />
-        <p className="text-[#0B274E]">Categoria filho: {params?.slug && params?.slug[0]}</p>
-        <br />
-        <h1 className="text-[#0B274E]">{service.title}</h1>
-        <p className="text-[#0B274E]">Categoria: {service.category}</p>
-        <p className="text-[#0B274E]">ID: {service.id}</p>
-        <p className="text-[#0B274E]">Slug: {service.slug} <br />{service.description}</p> */}
 
 
 

@@ -63,14 +63,13 @@ export default function CategoryPage() {
       : menuAtivo?.items ?? [];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#F8FAFC] to-[#C7DBFF]">
+    <main className="h-[100%] bg-gradient-to-b from-[#F8FAFC] to-[#C7DBFF]">
       {/* Header interno */}
       <HeaderInternal subtitle={config.subtitle} title={config.title} />
 
       {/* Conteúdo principal */}
-      <section>
         {/* Barra superior com ações (Voltar / Início) - visual apenas por enquanto */}
-        <section className="flex gap-5">
+        <section className="flex gap-5 h-[calc(100%-120px)]">
           <nav className={`${styles.navegation} text-black  p-5 flex gap-4 flex-col`}>
             {categoryData_.map(menu => (
          
@@ -126,7 +125,6 @@ export default function CategoryPage() {
           
           </section>
         </section>
-      </section>
 
     </main>
   );

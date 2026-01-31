@@ -1,6 +1,7 @@
 .navegation{
     width: 100%;
-    max-width: 290;
+    max-width: 290px;
+    overflow: auto;
     a{
         border: .1rem solid #93ADE8;
         border-radius: 1rem;
@@ -32,11 +33,9 @@
 }
 
 .conteinerCard{
-        border: 1px solid red;
     overflow: auto;
-    height: calc(100vh - 130px);
     .card{
-        margin-bottom: 2rem;
+        // margin-bottom: 2rem;
         flex-direction: column;
         min-height: 150px;
         border: 1px solid #337FFF;

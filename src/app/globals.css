@@ -143,14 +143,13 @@ body {
 
 .btn{
   display: flex;
-
   border-radius: 2rem;
-  background: #FFF;
   justify-content: center;
   color: #001A7A;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: normal;
+  align-items: center;
   /* max-width: 146px; */
   figure{
     img{

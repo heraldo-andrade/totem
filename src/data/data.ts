@@ -47,17 +47,127 @@ export const juventudeData: MenuItem[] = [
     category: 'todos',
     title: 'Todos os serviços',
     slug: 'todos-os-servicos',
-    iconeWhite: '/icone-menu-branco/Icon=book_5.svg',
-    iconeAzul: '/icone-menu-azul/Icon=book_5.svg',
+    iconeWhite: '/icone-menu-branco/Icon=cards_stack.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cards_stack.svg',
     items: []
   },
-  {
+
+{
+  id: 'assistencia-social-cidadania',
+  category: 'assistencia-social-cidadania',
+  title: 'Assistência Social e Cidadania',
+  iconeWhite: '/icone-menu-branco/Icon=volunteer_activism.svg',
+  iconeAzul: '/icone-menu-azul/Icon=volunteer_activism.svg',
+  slug: 'assistencia-social-cidadania',
+  items: [
+    {
+      id: 'assistencia-social-cidadania-1',
+      category: 'POLÍCIA CIENTÍFICA',
+      title: 'Obter 1ª via da Carteira de Identidade Nacional - CIN',
+      slug: 'assistencia-social-cidadania/obter-primeira-via-da-Carteira-identidade-nacional',
+      description: 'Emitir gratuitamente a 1ª via da Carteira de Identidade Nacional para pessoas que nunca solicitaram a Carteira de Identidade Nacional.',
+      impact: 'Identidade civil como porta de entrada de direitos como escola, saúde, programas sociais e bancarização.\n\n976.000 Carteiras de Identidade Nacional já emitidas no estado até 23 de julho de 2025.'
+    },
+    {
+      id: 'assistencia-social-cidadania-2',
+      category: 'POLÍCIA CIENTÍFICA',
+      title: 'Obter 2ª via da Carteira de Identidade Nacional - CIN',
+      slug: 'assistencia-social-cidadania/obter-segunda-via-da-carteira-identidade-nacional',
+      description: 'Solicitar a 2ª via da Carteira de Identidade Nacional em caso de perda, roubo ou dano do documento. Serviço destinado a quem já possui a CIN.',
+      impact: 'Garante continuidade do acesso a direitos básicos como escola, saúde, programas sociais e bancarização.\n\n976.000 Carteiras de Identidade Nacional já emitidas no estado até 23 de julho de 2025.'
+    },
+    {
+      id: 'assistencia-social-cidadania-3',
+      category: 'SJDH',
+      title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com Transtorno do Espectro Autista',
+      slug: 'assistencia-social-cidadania/solicitar-segunda-via-da-carteira-de-identificacao-pessoa-transtorno-espectro-autista',
+      description: 'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista para garantir prioridade no atendimento e acesso a serviços públicos.',
+      impact: 'Evita perda da proteção em filas e transportes e reduz a ansiedade dos responsáveis.\n\nMais de 5 mil carteiras entregues todos os anos.'
+    },
+    {
+      id: 'assistencia-social-cidadania-4',
+      category: 'SJDH',
+      title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com Transtorno do Espectro Autista',
+      slug: 'assistencia-social-cidadania/solicitar-primeira-via-da-carteira-de-identificacao-pessoa-transtorno-espectro-autista',
+      description: 'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista para garantir prioridade no atendimento e acesso a serviços públicos.',
+      impact: 'Facilita identificação e acesso a direitos com menos desgaste para famílias.\n\nPernambuco possui aproximadamente 105.852 pessoas diagnosticadas com TEA.'
+    },
+    {
+      id: 'assistencia-social-cidadania-5',
+      category: 'SJDH',
+      title: 'Solicitar intérprete de Libras virtual',
+      slug: 'assistencia-social-cidadania/solicitar-interprete-libras-virtual',
+      description: 'Serviço de inclusão para pessoas surdas ou com baixa audição, facilitando o acesso aos serviços públicos essenciais por meio de intérpretes de Libras.',
+      impact: 'Serviço de apoio à comunicação que possibilita a mediação, em tempo real, por profissional de Libras, entre o cidadão e os atendimentos presenciais do Governo de Pernambuco, promovendo acessibilidade comunicacional e inclusão nos serviços públicos.Quase 4 mil atendimentos já realizados, garantindo acessibilidade imediata; reduzindo barreiras de comunicação em serviços públicos.'
+    },
+   
+]
+},
+{
+  id: 'cultura-artes-historia-esportes',
+  category: 'cultura-artes-historia-esportes',
+  title: 'Cultura, Artes, História e Esportes',
+  slug: 'cultura-artes-historia-esportes',
+  iconeWhite: '/icone-menu-branco/Icon=theater_comedy.svg',
+  iconeAzul: '/icone-menu-azul/Icon=theater_comedy.svg',
+  items: [
+    {
+      id: 'cultura-artes-historia-esportes-1',
+      category: 'SEMAS',
+      title: 'Solicitar Visita Guiada - Parque de Dois Irmãos',
+      slug: 'cultura-artes-historia-esportes/solicitar-visita-guiada-parque-de-dois-irmaos',
+      description: 'Visita ao zoológico, com monitoria sobre a fauna, flora e conservação.',
+      impact: 'Serviço de visita guiada em uma das maiores áreas de Mata Atlântica urbana preservada do país, com foco em educação ambiental, conscientização ecológica e lazer orientado. O agendamento garante acesso organizado, previsível e adequado à capacidade do parque, especialmente para grupos escolares e projetos educativos.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-2',
+      category: 'Fundarpe',
+      title: 'Visitar Casa da Cultura Luiz Gonzaga',
+      slug: 'cultura-artes-historia-esportes/visitar-casa-da-cultura-luiz-gonzaga',
+      description: 'Permite visitar a Casa da Cultura Luiz Gonzaga, que oferece lojas de artesanato cultural, sede de grupos culturais e apresentações artísticas.',
+      impact: 'Equipamento cultural estratégico que reúne mais de 100 iniciativas de economia criativa e artesanato, promovendo a valorização da cultura popular pernambucana, o turismo cultural e a geração de renda no centro histórico do Recife.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-3',
+      category: 'Fundarpe',
+      title: 'Visitar Cinema São Luiz',
+      slug: 'cultura-artes-historia-esportes/visitar-cinema-sao-luiz',
+      description: 'Permite assistir a filmes no Cinema São Luiz, que conta com 992 poltronas, incluindo assentos acessíveis para cadeirantes e poltronas especiais.',
+      impact: 'Equipamento cultural histórico com capacidade para mais de mil pessoas, dedicado à difusão do cinema brasileiro, à formação de público e ao acesso democrático à cultura, por meio de programação pública contínua e eventos culturais.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-4',
+      category: 'Fundarpe',
+      title: 'Visitar Museu do Estado de Pernambuco',
+      slug: 'cultura-artes-historia-esportes/visitar-museu-do-estado-de-pernambuco',
+      description: 'Permite conhecer o Museu do Estado de Pernambuco, com acervo histórico e artístico que preserva a memória e a cultura do estado.',
+      impact: 'Museu de referência nacional, com acervo histórico e artístico de grande porte, que cumpre papel central na preservação da memória, na educação patrimonial e no fortalecimento do turismo cultural em Pernambuco.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-5',
+      category: 'Fundarpe',
+      title: 'Visitar Museu do Barro de Caruaru - Espaço Zé Caboclo',
+      slug: 'cultura-artes-historia-esportes/visitar-museu-do-barro-de-caruaru',
+      description: 'Permite conhecer o Museu do Barro, que preserva e promove a cerâmica popular da região com um acervo de 2.300 peças e exposições sobre a cultura de Caruaru.',
+      impact: 'Equipamento cultural dedicado à preservação e difusão da arte figurativa em barro, expressão reconhecida da cultura popular pernambucana, com impacto direto na identidade regional, na economia criativa e no turismo cultural do Agreste.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-6',
+      category: 'Gabinete da Governadora',
+      title: 'Visitar o Palácio do Campo das Princesas',
+      slug: 'cultura-artes-historia-esportes/visitar-palacio-do-campo-das-princesas',
+      description: 'Permite realizar visita guiada ao Palácio do Campo das Princesas, conduzida por estagiários de História, para grupos e instituições.',
+      impact: 'Visita institucional à sede histórica do Poder Executivo Estadual, promovendo educação cívica, transparência simbólica e aproximação do cidadão com a história política e administrativa de Pernambuco.'
+    }
+  ]
+},
+{
   id: 'educacao-pesquisa',
   category: 'educacao-pesquisa',
   title: 'Educação e pesquisa',
   slug: 'educacao-pesquisa',
-      iconeWhite: '/icone-menu-branco/Icon=book_5.svg',
-    iconeAzul: '/icone-menu-azul/Icon=book_5.svg',
+  iconeWhite: '/icone-menu-branco/Icon=book_5.svg',
+  iconeAzul: '/icone-menu-azul/Icon=book_5.svg',
   items: [
     {
       id: 'educacao-pesquisa-1',
@@ -114,6 +224,8 @@ export const juventudeData: MenuItem[] = [
   category: 'infraestrutura-transito-transportes',
   title: 'Infraestrutura, Trânsito e Transportes',
   slug: 'infraestrutura-transito-transportes',
+  iconeWhite: '/icone-menu-branco/Icon=traffic_jam.svg',
+  iconeAzul: '/icone-menu-azul/Icon=traffic_jam.svg',
   items: [
     {
       id: 'infraestrutura-transito-transportes-1',
@@ -158,26 +270,12 @@ export const juventudeData: MenuItem[] = [
   ]
 },
 {
-  id: 'saude-vigilancia-sanitaria',
-  category: 'saude-vigilancia-sanitaria',
-  title: 'Saúde e Vigilância Sanitária',
-  slug: 'saude-vigilancia-sanitaria',
-  items: [
-    {
-      id: 'saude-vigilancia-sanitaria-1',
-      category: 'UPE',
-      title: 'Obter Atendimento em Pré-natal para Adolescentes',
-      slug: 'saude-vigilancia-sanitaria/obter-atendimento-em-pre-natal-para-adolescentes',
-      description: 'Consulta para diagnóstico de gravidez e acompanhamento pré-natal para adolescentes.',
-      impact: 'Cuidado oportuno e prevenção de riscos; atendimento direcionado a um público sensível (impacto direto em saúde materna e neonatal).\n\nCerca de 17% a 20% dos nascidos vivos em Pernambuco são de mães entre 10 e 19 anos.'
-    }
-  ]
-},
-{
   id: 'justica-seguranca',
   category: 'justica-seguranca',
   title: 'Justiça e Segurança',
   slug: 'justica-seguranca',
+    iconeWhite: '/icone-menu-branco/Icon=local_police.svg',
+  iconeAzul: '/icone-menu-azul/Icon=local_police.svg',
   items: [
     {
       id: 'justica-seguranca-1',
@@ -253,111 +351,28 @@ export const juventudeData: MenuItem[] = [
     },
     ]
   },
-  {
-  id: 'assistencia-social-cidadania',
-  category: 'assistencia-social-cidadania',
-  title: 'Assistência Social e Cidadania',
-  slug: 'assistencia-social-cidadania',
-  items: [
-    {
-      id: 'assistencia-social-cidadania-1',
-      category: 'POLÍCIA CIENTÍFICA',
-      title: 'Obter 1ª via da Carteira de Identidade Nacional - CIN',
-      slug: '',
-      description: 'Emitir gratuitamente a 1ª via da Carteira de Identidade Nacional para pessoas que nunca solicitaram a Carteira de Identidade Nacional.',
-      impact: 'Identidade civil como porta de entrada de direitos como escola, saúde, programas sociais e bancarização.\n\n976.000 Carteiras de Identidade Nacional já emitidas no estado até 23 de julho de 2025.'
-    },
-    {
-      id: 'assistencia-social-cidadania-2',
-      category: 'POLÍCIA CIENTÍFICA',
-      title: 'Obter 2ª via da Carteira de Identidade Nacional - CIN',
-      slug: '',
-      description: 'Solicitar a 2ª via da Carteira de Identidade Nacional em caso de perda, roubo ou dano do documento. Serviço destinado a quem já possui a CIN.',
-      impact: 'Garante continuidade do acesso a direitos básicos como escola, saúde, programas sociais e bancarização.\n\n976.000 Carteiras de Identidade Nacional já emitidas no estado até 23 de julho de 2025.'
-    },
-    {
-      id: 'assistencia-social-cidadania-3',
-      category: 'SJDH',
-      title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com Transtorno do Espectro Autista',
-      slug: '',
-      description: 'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista para garantir prioridade no atendimento e acesso a serviços públicos.',
-      impact: 'Evita perda da proteção em filas e transportes e reduz a ansiedade dos responsáveis.\n\nMais de 5 mil carteiras entregues todos os anos.'
-    },
-    {
-      id: 'assistencia-social-cidadania-4',
-      category: 'SJDH',
-      title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com Transtorno do Espectro Autista',
-      slug: '',
-      description: 'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista para garantir prioridade no atendimento e acesso a serviços públicos.',
-      impact: 'Facilita identificação e acesso a direitos com menos desgaste para famílias.\n\nPernambuco possui aproximadamente 105.852 pessoas diagnosticadas com TEA.'
-    },
-    {
-      id: 'assistencia-social-cidadania-5',
-      category: 'SJDH',
-      title: 'Solicitar intérprete de Libras virtual',
-      slug: '',
-      description: 'Serviço de inclusão para pessoas surdas ou com baixa audição, facilitando o acesso aos serviços públicos essenciais por meio de intérpretes de Libras.',
-      impact: 'Serviço de apoio à comunicação que possibilita a mediação, em tempo real, por profissional de Libras, entre o cidadão e os atendimentos presenciais do Governo de Pernambuco, promovendo acessibilidade comunicacional e inclusão nos serviços públicos.Quase 4 mil atendimentos já realizados, garantindo acessibilidade imediata; reduzindo barreiras de comunicação em serviços públicos.'
-    },
-   
-]
-},
 {
-  id: 'cultura-artes-historia-esportes',
-  category: 'cultura-artes-historia-esportes',
-  title: 'Cultura, Artes, História e Esportes',
-  slug: 'cultura-artes-historia-esportes',
+  id: 'saude-vigilancia-sanitaria',
+  category: 'saude-vigilancia-sanitaria',
+  title: 'Saúde e Vigilância Sanitária',
+  slug: 'saude-vigilancia-sanitaria',
+  iconeWhite: '/icone-menu-branco/Icon=cardiology.svg',
+  iconeAzul: '/icone-menu-azul/Icon=cardiology.svg',
   items: [
     {
-      id: 'cultura-artes-historia-esportes-1',
-      category: 'SEMAS',
-      title: 'Solicitar Visita Guiada - Parque de Dois Irmãos',
-      slug: 'cultura-artes-historia-esportes/solicitar-visita-guiada-parque-de-dois-irmaos',
-      description: 'Visita ao zoológico, com monitoria sobre a fauna, flora e conservação.',
-      impact: 'Serviço de visita guiada em uma das maiores áreas de Mata Atlântica urbana preservada do país, com foco em educação ambiental, conscientização ecológica e lazer orientado. O agendamento garante acesso organizado, previsível e adequado à capacidade do parque, especialmente para grupos escolares e projetos educativos.'
-    },
-    {
-      id: 'cultura-artes-historia-esportes-2',
-      category: 'Fundarpe',
-      title: 'Visitar Casa da Cultura Luiz Gonzaga',
-      slug: 'cultura-artes-historia-esportes/visitar-casa-da-cultura-luiz-gonzaga',
-      description: 'Permite visitar a Casa da Cultura Luiz Gonzaga, que oferece lojas de artesanato cultural, sede de grupos culturais e apresentações artísticas.',
-      impact: 'Equipamento cultural estratégico que reúne mais de 100 iniciativas de economia criativa e artesanato, promovendo a valorização da cultura popular pernambucana, o turismo cultural e a geração de renda no centro histórico do Recife.'
-    },
-    {
-      id: 'cultura-artes-historia-esportes-3',
-      category: 'Fundarpe',
-      title: 'Visitar Cinema São Luiz',
-      slug: 'cultura-artes-historia-esportes/visitar-cinema-sao-luiz',
-      description: 'Permite assistir a filmes no Cinema São Luiz, que conta com 992 poltronas, incluindo assentos acessíveis para cadeirantes e poltronas especiais.',
-      impact: 'Equipamento cultural histórico com capacidade para mais de mil pessoas, dedicado à difusão do cinema brasileiro, à formação de público e ao acesso democrático à cultura, por meio de programação pública contínua e eventos culturais.'
-    },
-    {
-      id: 'cultura-artes-historia-esportes-4',
-      category: 'Fundarpe',
-      title: 'Visitar Museu do Estado de Pernambuco',
-      slug: 'cultura-artes-historia-esportes/visitar-museu-do-estado-de-pernambuco',
-      description: 'Permite conhecer o Museu do Estado de Pernambuco, com acervo histórico e artístico que preserva a memória e a cultura do estado.',
-      impact: 'Museu de referência nacional, com acervo histórico e artístico de grande porte, que cumpre papel central na preservação da memória, na educação patrimonial e no fortalecimento do turismo cultural em Pernambuco.'
-    },
-    {
-      id: 'cultura-artes-historia-esportes-5',
-      category: 'Fundarpe',
-      title: 'Visitar Museu do Barro de Caruaru - Espaço Zé Caboclo',
-      slug: 'cultura-artes-historia-esportes/visitar-museu-do-barro-de-caruaru',
-      description: 'Permite conhecer o Museu do Barro, que preserva e promove a cerâmica popular da região com um acervo de 2.300 peças e exposições sobre a cultura de Caruaru.',
-      impact: 'Equipamento cultural dedicado à preservação e difusão da arte figurativa em barro, expressão reconhecida da cultura popular pernambucana, com impacto direto na identidade regional, na economia criativa e no turismo cultural do Agreste.'
-    },
-    {
-      id: 'cultura-artes-historia-esportes-6',
-      category: 'Gabinete da Governadora',
-      title: 'Visitar o Palácio do Campo das Princesas',
-      slug: 'cultura-artes-historia-esportes/visitar-palacio-do-campo-das-princesas',
-      description: 'Permite realizar visita guiada ao Palácio do Campo das Princesas, conduzida por estagiários de História, para grupos e instituições.',
-      impact: 'Visita institucional à sede histórica do Poder Executivo Estadual, promovendo educação cívica, transparência simbólica e aproximação do cidadão com a história política e administrativa de Pernambuco.'
+      id: 'saude-vigilancia-sanitaria-1',
+      category: 'UPE',
+      title: 'Obter Atendimento em Pré-natal para Adolescentes',
+      slug: 'saude-vigilancia-sanitaria/obter-atendimento-em-pre-natal-para-adolescentes',
+      description: 'Consulta para diagnóstico de gravidez e acompanhamento pré-natal para adolescentes.',
+      impact: 'Cuidado oportuno e prevenção de riscos; atendimento direcionado a um público sensível (impacto direto em saúde materna e neonatal).\n\nCerca de 17% a 20% dos nascidos vivos em Pernambuco são de mães entre 10 e 19 anos.'
     }
   ]
-}
+},
+
+
+
+
 
 ];
 
@@ -367,13 +382,87 @@ export const infanciaData: MenuItem[] = [
     category: 'todos',
     title: 'Todos os serviços',
     slug: 'todos-os-servicos',
+    iconeWhite: '/icone-menu-branco/Icon=book_5.svg',
+    iconeAzul: '/icone-menu-azul/Icon=book_5.svg',
     items: []
+  },
+   {
+    id: 'assistencia-social-cidadania',
+    category: 'assistencia-social-cidadania',
+    title: 'Assistência Social e Cidadania',
+    slug: 'assistencia-social-cidadania',
+      iconeWhite: '/icone-menu-branco/Icon=volunteer_activism.svg',
+    iconeAzul: '/icone-menu-azul/Icon=volunteer_activism.svg',
+    items: [
+      {
+        id: 'assistencia-social-cidadania-1',
+        category: 'SJDH',
+        title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista (SJDH) - Digital',
+        slug: 'assistencia-social-cidadania/solicitar-1-via-carteira-identificacao',
+        description:'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista (Ciptea) para garantir prioridade no atendimento e acesso a serviços públicos.',
+        impact:'Facilita identificação e acesso a direitos e atendimento prioritário, com menos desgaste para famílias.Pernambuco possui aproximadamente 105.852 pessoas diagnosticadas com TEA.'
+      },
+      {
+        id: 'assistencia-social-cidadania-2',
+        category: 'SJDH',
+        title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista (SJDH)',
+        slug: 'assistencia-social-cidadania/solicitar-2-via-carteira-identificacao',
+        description:'Emitir 2ª via da carteira que garante prioridade a pessoas com Transtorno do Espectro Autista (TEA). A carteira é chamada de CIPTEA (Carteira de Identificação da Pessoa com Transtorno do Espectro Autista). O documento garante prioridade no atendimento e facilita o acesso a serviços.',
+        impact:'A perda de um documento de identificação de um autista gera uma ansiedade enorme nos responsáveis, pois a "barreira de proteção" contra o preconceito em filas e transportes desaparece.Mais de 5 mil carteiras entregues todos os anos.'
+      },
+      {
+        id: 'assistencia-social-cidadania-3',
+        category: 'SAS',
+        title: 'Obter Benefício do Programa Mães de Pernambuco (SAS)',
+        slug: 'assistencia-social-cidadania/obter-beneficio-programa-maes-Pernambuco',
+        description:'Transferência de renda mensal de R$ 300,00 para mulheres em situação de extrema vulnerabilidade social, com filhos de até 6 anos, oferecido pelo Governo de Pernambuco.',
+        impact:'Renda que fortalece o cuidado na primeira infância e segurança alimentar das famílias mais vulneráveis.Desde o lançamento (mar/2024) o programa já beneficiou mais de 139 mil mulheres e destinou R$ 597,6 milhões em benefícios'
+      },
+      
+     
+    ]
+  },
+  {
+    id: 'justica-seguranca',
+    category: 'Justica-seguranca',
+    title: 'Justiça e Segurança',
+    slug: 'Justica-seguranca',
+      iconeWhite: '/icone-menu-branco/Icon=local_police.svg',
+    iconeAzul: '/icone-menu-azul/Icon=local_police.svg',
+    items: [
+      {
+        id: 'justica-seguranca-1',
+        category: 'UPE-CISAM',
+        title: 'Registrar Boletim de Ocorrência contra Criança ou Adolescente',
+        slug: 'justica-seguranca/registrar-boletim-de-ocorrencia-contra-crianca-ou-adolescente',
+        description:'Permite registrar ocorrências de crimes cometidos contra crianças e adolescentes, iniciando investigação da conduta do acusado.',
+        impact:'Facilita o início da proteção, investigação e acionamento da rede (Conselho Tutelar, MP, Judiciário e rede de saúde/assistência). Serviço DIGITAL com orientações e requisitos — reforça padronização e acesso.'
+      },
+      {
+        id: 'justica-seguranca-2',
+        category: 'UPE-CISAM',
+        title: 'Registrar e Divulgar Desaparecimento de Crianças e Adolescentes',
+        slug: 'justica-seguranca/registrar-e-divulgar-desaparecimento-de-criancas-e-adolescentes',
+        description:'Permite registrar e divulgar o desaparecimento de crianças e adolescentes para facilitar sua localização.',
+        impact:'Acelera a comunicação do desaparecimento e amplia chances de localização ao mobilizar rede e divulgação. Em 2025, houve 695 desaparecimentos de pessoas de 0 a 17 anos em Pernambuco; 271 foram localizadas no ano, segundo levantamento divulgado.'
+      },
+      {
+        id: 'justica-seguranca-3',
+        category: 'SJDH',
+        title: 'Solicitar proteção para criança ou adolescente ameaçado de morte',
+        slug: 'justica-seguranca/solicitar-protecao-para-crianca-ou-adolescente-ameacado-de-morte',
+        description:'Garantir proteção integral a criança ou adolescente com risco de morte. A inclusão no programa deve ser solicitada por órgãos que compõem o Sistema de Garantia de Direitos, como o Ministério Público, Poder Judiciário, Conselhos Tutelares ou Defensoria Pública. O caso precisa ser analisado pela equipe técnica do PPCAAM.',
+        impact:'Proteção especializada para casos de grave ameaça, com foco em preservar vidas e reinserção social. O serviço não protege apenas o menor; ele se estende aos familiares. Historicamente, para cada criança protegida, o programa acolhe cerca de 1,6 familiares, preservando o vínculo afetivo e a segurança do núcleo em risco.'
+      },
+    ]
   },
   {
     id: 'saude-vigilancia-sanitaria',
     category: 'Saúde-Vigilância-Sanitária',
     title: 'Saúde e Vigilância Sanitária',
     slug: 'saude-vigilancia-sanitaria',
+    iconeWhite: '/icone-menu-branco/Icon=cardiology.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cardiology.svg',
     items: [
       {
         id: 'saude-vigilancia-sanitaria',
@@ -433,72 +522,8 @@ export const infanciaData: MenuItem[] = [
       },
     ]
   },
-  {
-    id: 'justica-seguranca',
-    category: 'Justica-seguranca',
-    title: 'Justiça e Segurança',
-    slug: 'Justica-seguranca',
-    items: [
-      {
-        id: 'justica-seguranca-1',
-        category: 'UPE-CISAM',
-        title: 'Registrar Boletim de Ocorrência contra Criança ou Adolescente',
-        slug: 'justica-seguranca/registrar-boletim-de-ocorrencia-contra-crianca-ou-adolescente',
-        description:'Permite registrar ocorrências de crimes cometidos contra crianças e adolescentes, iniciando investigação da conduta do acusado.',
-        impact:'Facilita o início da proteção, investigação e acionamento da rede (Conselho Tutelar, MP, Judiciário e rede de saúde/assistência). Serviço DIGITAL com orientações e requisitos — reforça padronização e acesso.'
-      },
-      {
-        id: 'justica-seguranca-2',
-        category: 'UPE-CISAM',
-        title: 'Registrar e Divulgar Desaparecimento de Crianças e Adolescentes',
-        slug: 'justica-seguranca/registrar-e-divulgar-desaparecimento-de-criancas-e-adolescentes',
-        description:'Permite registrar e divulgar o desaparecimento de crianças e adolescentes para facilitar sua localização.',
-        impact:'Acelera a comunicação do desaparecimento e amplia chances de localização ao mobilizar rede e divulgação. Em 2025, houve 695 desaparecimentos de pessoas de 0 a 17 anos em Pernambuco; 271 foram localizadas no ano, segundo levantamento divulgado.'
-      },
-      {
-        id: 'justica-seguranca-3',
-        category: 'SJDH',
-        title: 'Solicitar proteção para criança ou adolescente ameaçado de morte',
-        slug: 'justica-seguranca/solicitar-protecao-para-crianca-ou-adolescente-ameacado-de-morte',
-        description:'Garantir proteção integral a criança ou adolescente com risco de morte. A inclusão no programa deve ser solicitada por órgãos que compõem o Sistema de Garantia de Direitos, como o Ministério Público, Poder Judiciário, Conselhos Tutelares ou Defensoria Pública. O caso precisa ser analisado pela equipe técnica do PPCAAM.',
-        impact:'Proteção especializada para casos de grave ameaça, com foco em preservar vidas e reinserção social. O serviço não protege apenas o menor; ele se estende aos familiares. Historicamente, para cada criança protegida, o programa acolhe cerca de 1,6 familiares, preservando o vínculo afetivo e a segurança do núcleo em risco.'
-      },
-    ]
-  },
-  {
-    id: 'assistencia-social-cidadania',
-    category: 'assistencia-social-cidadania',
-    title: 'Assistência Social e Cidadania',
-    slug: 'assistencia-social-cidadania',
-    items: [
-      {
-        id: 'assistencia-social-cidadania-1',
-        category: 'SJDH',
-        title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista (SJDH) - Digital',
-        slug: 'assistencia-social-cidadania/solicitar-1-via-carteira-identificacao',
-        description:'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista (Ciptea) para garantir prioridade no atendimento e acesso a serviços públicos.',
-        impact:'Facilita identificação e acesso a direitos e atendimento prioritário, com menos desgaste para famílias.Pernambuco possui aproximadamente 105.852 pessoas diagnosticadas com TEA.'
-      },
-      {
-        id: 'assistencia-social-cidadania-2',
-        category: 'SJDH',
-        title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista (SJDH)',
-        slug: 'assistencia-social-cidadania/solicitar-2-via-carteira-identificacao',
-        description:'Emitir 2ª via da carteira que garante prioridade a pessoas com Transtorno do Espectro Autista (TEA). A carteira é chamada de CIPTEA (Carteira de Identificação da Pessoa com Transtorno do Espectro Autista). O documento garante prioridade no atendimento e facilita o acesso a serviços.',
-        impact:'A perda de um documento de identificação de um autista gera uma ansiedade enorme nos responsáveis, pois a "barreira de proteção" contra o preconceito em filas e transportes desaparece.Mais de 5 mil carteiras entregues todos os anos.'
-      },
-      {
-        id: 'assistencia-social-cidadania-3',
-        category: 'SAS',
-        title: 'Obter Benefício do Programa Mães de Pernambuco (SAS)',
-        slug: 'assistencia-social-cidadania/obter-beneficio-programa-maes-Pernambuco',
-        description:'Transferência de renda mensal de R$ 300,00 para mulheres em situação de extrema vulnerabilidade social, com filhos de até 6 anos, oferecido pelo Governo de Pernambuco.',
-        impact:'Renda que fortalece o cuidado na primeira infância e segurança alimentar das famílias mais vulneráveis.Desde o lançamento (mar/2024) o programa já beneficiou mais de 139 mil mulheres e destinou R$ 597,6 milhões em benefícios'
-      },
-      
-     
-    ]
-  }
+ 
+ 
 ];
 
 export const adultaData: MenuItem[] = [
@@ -507,37 +532,35 @@ export const adultaData: MenuItem[] = [
     category: 'todos',
     title: 'Todos os serviços',
     slug: 'todos-os-servicos',
+    iconeWhite: '/icone-menu-branco/Icon=cards_stack.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cards_stack.svg',
     items: []
   },
-  {
-    id: 'trabalho-renda',
-    category: 'trabalho-renda',
-    title: 'Trabalho e Renda',
-    slug: 'trabalho-e-renda',
+   {
+    id: 'habitacao',
+    category: 'habitacao',
+    title: 'Habitação',
+    slug: 'habitacao',
+     iconeWhite: '/icone-menu-branco/Icon=cottage.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cottage.svg',
     items: [
       {
-        id: 'trabalho-1',
+        id: 'habitacao-1',
         category: 'SEDEPE',
-        title: 'Consultar vagas de emprego',
-        slug: 'trabalho-renda/consultar-vagas-de-emprego',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      },
-      {
-        id: 'trabalho-2',
-        category: 'SEDEPE',
-        title: 'Solicitar seguro desemprego',
-        slug: 'trabalho-renda/solicitar-seguro-desemprego',
+        title: 'Solicitar moradia',
+        slug: 'habitacao/solicitar-moradia',
         description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
         impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
       }
     ]
   },
-  {
+    {
     id: 'saude-adulta',
     category: 'saude-adulta',
     title: 'Saúde',
     slug: 'saude',
+    iconeWhite: '/icone-menu-branco/Icon=cardiology.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cardiology.svg',
     items: [
       {
         id: 'saude-adulta-1',
@@ -558,21 +581,33 @@ export const adultaData: MenuItem[] = [
     ]
   },
   {
-    id: 'habitacao',
-    category: 'habitacao',
-    title: 'Habitação',
-    slug: 'habitacao',
+    id: 'trabalho-renda',
+    category: 'trabalho-renda',
+    title: 'Trabalho e Renda',
+    slug: 'trabalho-e-renda',
+     iconeWhite: '/icone-menu-branco/Icon=business_center.svg',
+    iconeAzul: '/icone-menu-azul/Icon=business_center.svg',
     items: [
       {
-        id: 'habitacao-1',
+        id: 'trabalho-1',
         category: 'SEDEPE',
-        title: 'Solicitar moradia',
-        slug: 'habitacao/solicitar-moradia',
+        title: 'Consultar vagas de emprego',
+        slug: 'trabalho-renda/consultar-vagas-de-emprego',
+        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
+        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
+      },
+      {
+        id: 'trabalho-2',
+        category: 'SEDEPE',
+        title: 'Solicitar seguro desemprego',
+        slug: 'trabalho-renda/solicitar-seguro-desemprego',
         description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
         impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
       }
     ]
-  }
+  },
+
+ 
 ];
 
 export const terceiraidadeData: MenuItem[] = [
@@ -581,13 +616,35 @@ export const terceiraidadeData: MenuItem[] = [
     category: 'todos',
     title: 'Todos os serviços',
     slug: 'todos-os-servicos',
+    iconeWhite: '/icone-menu-branco/Icon=cards_stack.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cards_stack.svg',
     items: []
   },
+  {
+  id: 'assistencia-social-cidadania',
+  category: 'assistencia-social-cidadania',
+  title: 'Assistência Social e Cidadania',
+  slug: 'assistencia-social-cidadania',
+  iconeWhite: '/icone-menu-branco/Icon=volunteer_activism.svg',
+  iconeAzul: '/icone-menu-azul/Icon=volunteer_activism.svg',
+  items: [
+    {
+      id: 'assistencia-social-cidadania-1',
+      category: 'SJDH',
+      title: 'Solicitar formação ou palestra de prevenção contra a violência à pessoa idosa',
+      slug: 'assistencia-social-cidadania/solicitar-formacao-ou-palestra-de-prevencao-contra-violencia-a-pessoa-idosa',
+      description: 'Oferecer palestras e formações para prevenir a violência contra pessoas idosas. A ação educativa busca conscientizar sobre os direitos da pessoa idosa e formas de prevenir e enfrentar violências, seguindo as políticas públicas de direitos humanos do Estado de Pernambuco.',
+      impact: 'Atuação preventiva e educativa, voltada a reduzir violência física, psicológica, patrimonial e negligência contra a pessoa idosa, fortalecendo redes de proteção comunitária e institucional.Segundo dados públicos do IBGE e da Secretaria de Justiça/Direitos Humanos, Pernambuco possui mais de 1,6 milhão de pessoas com 60 anos ou mais, grupo que cresce de forma acelerada e é reconhecido como população de maior risco para violências silenciosas (domésticas e patrimoniais).'
+    },
+]
+},
   {
   id: 'infraestrutura-transito-transportes',
   category: 'infraestrutura-transito-transportes',
   title: 'Infraestrutura, Trânsito e Transportes',
   slug: 'infraestrutura-transito-transportes',
+  iconeWhite: '/icone-menu-branco/Icon=traffic_jam.svg',
+  iconeAzul: '/icone-menu-azul/Icon=traffic_jam.svg',
   items: [
     {
       id: 'infraestrutura-transito-transportes-1',
@@ -614,6 +671,8 @@ export const terceiraidadeData: MenuItem[] = [
   category: 'saude-vigilancia-sanitaria',
   title: 'Saúde e Vigilância Sanitária',
   slug: 'saude-vigilancia-sanitaria',
+   iconeWhite: '/icone-menu-branco/Icon=cardiology.svg',
+  iconeAzul: '/icone-menu-azul/Icon=cardiology.svg',
   items: [
     {
       id: 'saude-vigilancia-sanitaria-1',
@@ -641,27 +700,14 @@ export const terceiraidadeData: MenuItem[] = [
     },
   ]
 },
-{
-  id: 'assistencia-social-cidadania',
-  category: 'assistencia-social-cidadania',
-  title: 'Assistência Social e Cidadania',
-  slug: 'assistencia-social-cidadania',
-  items: [
-    {
-      id: 'assistencia-social-cidadania-1',
-      category: 'SJDH',
-      title: 'Solicitar formação ou palestra de prevenção contra a violência à pessoa idosa',
-      slug: 'assistencia-social-cidadania/solicitar-formacao-ou-palestra-de-prevencao-contra-violencia-a-pessoa-idosa',
-      description: 'Oferecer palestras e formações para prevenir a violência contra pessoas idosas. A ação educativa busca conscientizar sobre os direitos da pessoa idosa e formas de prevenir e enfrentar violências, seguindo as políticas públicas de direitos humanos do Estado de Pernambuco.',
-      impact: 'Atuação preventiva e educativa, voltada a reduzir violência física, psicológica, patrimonial e negligência contra a pessoa idosa, fortalecendo redes de proteção comunitária e institucional.Segundo dados públicos do IBGE e da Secretaria de Justiça/Direitos Humanos, Pernambuco possui mais de 1,6 milhão de pessoas com 60 anos ou mais, grupo que cresce de forma acelerada e é reconhecido como população de maior risco para violências silenciosas (domésticas e patrimoniais).'
-    },
-]
-},
+
 {
   id: 'trabalho-emprego-previdencia',
   category: 'trabalho-emprego-previdencia',
   title: 'Trabalho, Emprego e Previdência',
   slug: 'trabalho-emprego-previdencia',
+  iconeWhite: '/icone-menu-branco/Icon=business_center.svg',
+  iconeAzul: '/icone-menu-azul/Icon=business_center.svg',
   items: [
     {
       id: 'trabalho-emprego-previdencia-1',

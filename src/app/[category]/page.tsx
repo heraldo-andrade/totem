@@ -22,17 +22,17 @@ const categoryConfig = {
   infancia: {
     title: 'Infância',
     subtitle: 'Jornada do Cidadão',
-    image: '/juventude-big.svg'
+    image: '/infancia-big.svg'
   },
   adulta: {
     title: 'Fase Adulta',
     subtitle: 'Jornada do Cidadão',
-    image: '/juventude-big.svg'
+    image: '/adulta-big.svg'
   },
   'terceira-idade': {
     title: 'Terceira Idade',
     subtitle: 'Jornada do Cidadão',
-    image: '/juventude-big.svg'
+    image: '/idosa-big.svg'
   }
 };
 

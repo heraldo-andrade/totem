@@ -63,7 +63,7 @@ export default function CategoryPage() {
       : menuAtivo?.items ?? [];
 
   return (
-    <main className="h-[100%] bg-gradient-to-b from-[#F8FAFC] to-[#C7DBFF]">
+    <main className="h-[100%] bg-[linear-gradient(to_bottom,_#F3F7FF_40%,_#e8f0ff_100%)]">
       {/* Header interno */}
       <HeaderInternal subtitle={config.subtitle} title={config.title} />
 
@@ -74,10 +74,18 @@ export default function CategoryPage() {
             {categoryData_.map(menu => (
          
                 <a
+                  className={menu.category == categoryAtiva ? styles.active : "" }
                   key={menu.id}
                   onClick={() => setCategoryAtiva(menu.category)}
                 >
-                  <span><img src="/icon-back.svg" alt="" /></span>
+                  <span>
+                    {menu.category == categoryAtiva ? (
+                     <img  src={menu.iconeWhite} alt="icone branco" /> 
+                    ) : (
+                     <img  src={menu.iconeAzul} alt="icone colorido" /> 
+                    ) }
+                  </span>
+
                   {menu.title}
                 </a>
              

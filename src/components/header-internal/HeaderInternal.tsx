@@ -39,7 +39,7 @@ export function HeaderInternal({
 
     <main className="w-full">
 
-        <header className="headerInterna text-text-primary bg-darker pr-16 pl-16">
+        <header className="headerInterna text-text-primary bg-darker pr-0 pl-16">
             <div>
               {subtitle && (
                   <p className="text-xs font-medium text-white md:text-base lg:text-lg">
@@ -50,12 +50,13 @@ export function HeaderInternal({
                   {title}
                 </h1>
               </div>
-              <div className="conteinerButton">
+              <div className="conteinerButton pr-16">
+              
                   <a className="btn" href="">
                     <figure>
                         <img src="/icon-back.svg" alt="" />
                     </figure>
-                    Voltar
+                    Voltar.
                   </a>
 
                   <a className="btn" href="">
@@ -64,7 +65,8 @@ export function HeaderInternal({
                     </figure>
                     Inicio
                   </a>
-              </div>
+                  </div>
+           
         </header>
 
 

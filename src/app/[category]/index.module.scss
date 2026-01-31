@@ -11,24 +11,33 @@
         display: flex;
         align-items: center;
         font-size: 1rem;
-        // background-color: red;
         font-weight: 600;
         img{
             width: 32px;
             height: 32px;
             margin-right: .4rem;
         }
+
+        &.active{
+            border: 1px solid pink;
+            background-color: #0B274E;
+        }
     }
 }
 
 .ilustracao{
     position: relative;
-    width: 315px;
+    // width: 315px;
+    width: 65%;
+    max-width: 450px;
     figure{
         position: absolute;
         bottom: 0;
-        width: 260px;
+        width: 100%;
         z-index: 999;
+        img{
+            width: 100%;
+        }
     }
 }
 
@@ -38,6 +47,7 @@
         // margin-bottom: 2rem;
         flex-direction: column;
         min-height: 150px;
+        height: 100%;
         border: 1px solid #337FFF;
         background-color: #fff;
         box-shadow: 0 45.923px 12.689px 0 rgba(0, 0, 0, 0.00), 

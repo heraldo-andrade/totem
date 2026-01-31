@@ -114,10 +114,21 @@ body {
   display: flex;
   justify-content: space-between;
   border-radius: 0 0  0 4rem;
-  padding: 1.5rem 4rem;
-  background: url('/bg-header.svg') no-repeat;
-  background-size: cover;
-
+  background-color: #011A70 ;
+  padding: 20px 0;
+  overflow: hidden;
+  position: relative;
+  
+  padding-left: 38px;
+  .conteinerButton{
+    background: #011A70 url('/bg-menu.svg') no-repeat;
+    background-size: cover;
+    padding-top: 20px;
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 80%;
+  }
 }
 
 .conteinerButton{
@@ -125,14 +136,14 @@ body {
   width: 45%;
   max-width: 430px;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+
 }
 
 .btn{
   display: flex;
-  padding: 0 0.5rem;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 1 0 0;
+
   border-radius: 2rem;
   background: #FFF;
   justify-content: center;
@@ -140,7 +151,7 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: normal;
-  max-width: 146px;
+  /* max-width: 146px; */
   figure{
     img{
       width: 100%;
@@ -165,7 +176,15 @@ body {
   padding: 0!important;
   margin: 0!important;
   min-height: fit-content;
+  height: auto !important;
+
+
+  
 }
+
+  .swiper-pagination{
+    display: none !important;
+  }
 
 /* .swiper-slide{
   height: 100%!important;

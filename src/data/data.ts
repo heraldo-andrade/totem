@@ -5,7 +5,6 @@ export interface ServiceItem {
   description: string;
   impact: string;
   slug: string;
-  
 
 }
 
@@ -15,6 +14,9 @@ export interface MenuItem {
   title: string;
   slug: string;
   items: ServiceItem[];
+  iconeWhite?:string;
+  iconeAzul?: string;
+
 }
 
 export function getServiceBySlug(slug: string | string[], category?: string): ServiceItem | null {
@@ -45,6 +47,8 @@ export const juventudeData: MenuItem[] = [
     category: 'todos',
     title: 'Todos os serviços',
     slug: 'todos-os-servicos',
+    iconeWhite: '/icone-menu-branco/Icon=book_5.svg',
+    iconeAzul: '/icone-menu-azul/Icon=book_5.svg',
     items: []
   },
   {
@@ -52,6 +56,8 @@ export const juventudeData: MenuItem[] = [
   category: 'educacao-pesquisa',
   title: 'Educação e pesquisa',
   slug: 'educacao-pesquisa',
+      iconeWhite: '/icone-menu-branco/Icon=book_5.svg',
+    iconeAzul: '/icone-menu-azul/Icon=book_5.svg',
   items: [
     {
       id: 'educacao-pesquisa-1',

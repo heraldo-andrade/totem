@@ -5,6 +5,8 @@ export interface ServiceItem {
   description: string;
   impact: string;
   slug: string;
+  
+
 }
 
 export interface MenuItem {
@@ -46,142 +48,311 @@ export const juventudeData: MenuItem[] = [
     items: []
   },
   {
-    id: 'educacao-pesquisa',
-    category: 'educacao-pesquisa',
-    title: 'Educação e pesquisa',
-    slug: 'educacao-pesquisa',
-    items: [
-      {
-        id: 'educacao-pesquisa-1',
-        category: 'SEE',
-        title: 'Prestar contas do Pix Tênis',
-        slug: 'educacao-pesquisa/prestar-contas-pix-tenis',
-        description:'Informar como foi usado o valor recebido pelo Programa Meu Tênis. O valor deve ser usado para compra de tênis. É preciso guardar a nota fiscal da compra, em nome da pessoa beneficiária ou do responsável legal',
-        impact:'Transparência e agilidade na execução do benefício; evita retrabalho, fila e inconsistência cadastral (controle e auditoria do repasse).Já foi distribuído quase 75 milhões de reais para os mais de 500 mil alunos da rede estadual, os novos alunos da rede de 2026 também serão beneficiados.'
-      },
-      {
-        id: 'educacao-pesquisa-2',
-        category: 'SEE',
-        title: 'Emitir Histórico Escolar e Certificado de Conclusão de estudantes da Rede Estadual de Ensino',
-        slug: 'educacao-pesquisa/emitir-historico-escolar-certificado-conclusao-estudantes-rede-estadual-ensino',
-        description:'O Histórico Escolar é o documento que sintetiza a trajetória escolar do(a) estudante. Neste documento devem constar a carga horária total de cada ano/série/ciclo/fase/módulo/eixo e a carga horária total vivenciada na etapa de ensino.',
-        impact:'Documento escolar com acesso imediato e redução de burocracia (evita ida à escola/secretaria, acelera matrícula, emprego, universidade).Benefício direto para os mais de 500 mil alunos e seus familiares todos os anos, e os mais de 2mil gestores das escolas estaduais. Além de uma economia financeira de quase 4 milhões de reais em custos logísticos e operacionais todos os anos.'
-      },
-      {
-        id: 'educacao-pesquisa-3',
-        category: 'SEE',
-        title: 'Consultar Notas e Frequências dos Alunos',
-        slug: 'educacao-pesquisa/consultar-notas-frequencias-alunos',
-        description:'O SIEPE é um Sistema Informatizado da Secretaria de Educação e Esportes,  onde é possível encontrar informações da Rede Estadual de Ensino. A consulta pode ser realizada pelos Alunos e pela Família, onde terão acesso aos dados, como notas e  frequência escolar;  assim como informações da sua respectiva escola, como o horário de aulas.',
-        impact:'Acompanhamento contínuo do desempenho e frequência; fortalece vínculo família-escola e prevenção de evasão.Alunos cujos pais acessam o app ao menos 2x por mês apresentam, em média, 12% menos faltas do que alunos sem acompanhamento digital.'
-      },
-      
+  id: 'educacao-pesquisa',
+  category: 'educacao-pesquisa',
+  title: 'Educação e pesquisa',
+  slug: 'educacao-pesquisa',
+  items: [
+    {
+      id: 'educacao-pesquisa-1',
+      category: 'SEE',
+      title: 'Prestar contas do Pix Tênis',
+      slug: 'educacao-pesquisa/prestar-contas-pix-tenis',
+      description: 'Informar como foi usado o valor recebido pelo Programa Meu Tênis. O valor deve ser usado para compra de tênis. É preciso guardar a nota fiscal da compra, em nome da pessoa beneficiária ou do responsável legal.',
+      impact: 'Transparência e agilidade na execução do benefício; evita retrabalho, fila e inconsistência cadastral (controle e auditoria do repasse).\n\nJá foi distribuído quase 75 milhões de reais para os mais de 500 mil alunos da rede estadual, os novos alunos da rede de 2026 também serão beneficiados.'
+    },
+    {
+      id: 'educacao-pesquisa-2',
+      category: 'SEE',
+      title: 'Emitir Histórico Escolar e Certificado de Conclusão de estudantes da Rede Estadual de Ensino',
+      slug: 'educacao-pesquisa/emitir-historico-escolar-e-certificado-de-conclusao',
+      description: 'O Histórico Escolar é o documento que sintetiza a trajetória escolar do(a) estudante. Neste documento devem constar a carga horária total de cada ano/série/ciclo/fase/módulo/eixo e a carga horária total vivenciada na etapa de ensino.',
+      impact: 'Documento escolar com acesso imediato e redução de burocracia (evita ida à escola/secretaria, acelera matrícula, emprego, universidade).\n\nBenefício direto para os mais de 500 mil alunos e seus familiares todos os anos, e os mais de 2 mil gestores das escolas estaduais. Além de uma economia financeira de quase 4 milhões de reais em custos logísticos e operacionais todos os anos.'
+    },
+    {
+      id: 'educacao-pesquisa-3',
+      category: 'SEE',
+      title: 'Consultar Notas e Frequências dos Alunos',
+      slug: 'educacao-pesquisa/consultar-notas-e-frequencias-dos-alunos',
+      description: 'O SIEPE é um Sistema Informatizado da Secretaria de Educação e Esportes, onde é possível encontrar informações da Rede Estadual de Ensino. A consulta pode ser realizada pelos alunos e pela família, com acesso a dados como notas e frequência escolar, assim como informações da respectiva escola, como o horário de aulas.',
+      impact: 'Acompanhamento contínuo do desempenho e frequência; fortalece vínculo família-escola e prevenção de evasão.\n\nAlunos cujos pais acessam o app ao menos 2 vezes por mês apresentam, em média, 12% menos faltas do que alunos sem acompanhamento digital.'
+    },
+    {
+      id: 'educacao-pesquisa-4',
+      category: 'SEE',
+      title: 'Realizar matrícula de estudantes novatos na Rede Estadual de Ensino',
+      slug: 'educacao-pesquisa/realizar-matricula-de-estudantes-novatos',
+      description: 'Permitir que pessoas novatas se cadastrem em escolas da Rede Estadual de Ensino. A matrícula só é confirmada após a entrega da documentação na escola escolhida. O cadastro é feito online. Só é possível escolher uma escola.',
+      impact: 'Amplia acesso e organiza fluxo de entrada com previsibilidade para famílias e gestão.\n\n174.675 vagas ofertadas para estudantes novatos; rede com 1.081 escolas e mais de 500 mil estudantes atendidos.'
+    },
+    {
+      id: 'educacao-pesquisa-5',
+      category: 'SEE',
+      title: 'Realizar Matrícula no Núcleo de Estudos de Línguas - NEL',
+      slug: 'educacao-pesquisa/realizar-matricula-no-nucleo-de-estudos-de-linguas',
+      description: 'Realizar matrícula para cursos gratuitos de idiomas em escolas da rede pública, distribuídas nos cursos de Inglês, Espanhol, Francês e Alemão.',
+      impact: 'Qualificação e oportunidade para juventude; idiomas como alavanca para estudo e empregabilidade.\n\nMais de 10 mil vagas ofertadas em cursos gratuitos de idiomas, só em 2016, com inscrição online.'
+    },
+    {
+      id: 'educacao-pesquisa-6',
+      category: 'UPE',
+      title: 'Consultar acervo físico da biblioteca da Universidade Estadual de Pernambuco',
+      slug: 'educacao-pesquisa/consultar-acervo-fisico-da-biblioteca-da-upe',
+      description: 'Verificar livros e outros materiais disponíveis nas bibliotecas da Universidade Estadual de Pernambuco.',
+      impact: 'Acesso facilitado ao conhecimento; reduz barreiras para estudo e pesquisa.\n\nUm campus da UPE informa acervo físico com aproximadamente 5.892 títulos e 13.870 exemplares cadastrados no Pergamum.'
+    }
+  ]
+},
+{
+  id: 'infraestrutura-transito-transportes',
+  category: 'infraestrutura-transito-transportes',
+  title: 'Infraestrutura, Trânsito e Transportes',
+  slug: 'infraestrutura-transito-transportes',
+  items: [
+    {
+      id: 'infraestrutura-transito-transportes-1',
+      category: 'CTM',
+      title: 'Grande Recife - Desbloqueios dos Cartões VEM Livre Acesso',
+      slug: 'infraestrutura-transito-transportes/desbloqueio-dos-cartoes-vem-livre-acesso',
+      description: 'Agendamento de atendimento para solicitação de Desbloqueio dos Cartões VEM Livre Acesso, Idoso e Infantil.',
+      impact: ''
+    },
+    {
+      id: 'infraestrutura-transito-transportes-2',
+      category: 'CTM',
+      title: 'Obter VEM estudante',
+      slug: 'infraestrutura-transito-transportes/obter-vem-estudante',
+      description: '',
+      impact: 'Mobilidade para estudar; reduz deslocamento e burocracia para emissão, solicitação e compra de crédito.\n\nGarante a economia de 50% no valor da tarifa para milhares de alunos da rede estadual.'
+    },
+    {
+      id: 'infraestrutura-transito-transportes-3',
+      category: 'CTM',
+      title: 'Recarregar créditos do VEM estudante',
+      slug: 'infraestrutura-transito-transportes/recarregar-creditos-do-vem-estudante',
+      description: '',
+      impact: 'Recarga e compra de créditos via serviço digital do Cartão VEM, reduz fricção do dia a dia, sem fila.\n\nElimina o tempo de espera em filas físicas, que pode chegar a 40 minutos em horários de pico nos terminais, além do tempo de deslocamento até estes, através da compensação de créditos via canais digitais.'
+    },
+    {
+      id: 'infraestrutura-transito-transportes-4',
+      category: 'CTM',
+      title: 'Solicitar aumento de créditos do VEM Estudante',
+      slug: 'infraestrutura-transito-transportes/solicitar-aumento-de-creditos-do-vem-estudante',
+      description: 'Permitir que estudantes solicitem mais créditos no VEM Estudante com base nas atividades do curso. A solicitação deve ser feita no site do Grande Recife, preenchendo o formulário e anexando os documentos exigidos. A renovação é feita a cada semestre, de janeiro a junho e de julho a dezembro.',
+      impact: 'Garante permanência e acesso à escola, com benefício e limite adequados ao deslocamento do estudante.\n\nGarante a eficácia logística do sistema de transporte ao processar demandas de estudantes que percorrem trajetos integrados, assegurando que o limite de viagens acompanhe a malha viária do estado.'
+    },
+    {
+      id: 'infraestrutura-transito-transportes-5',
+      category: 'CTM',
+      title: 'Consultar itinerários, paradas e localidades de Ônibus',
+      slug: 'infraestrutura-transito-transportes/consultar-itinerarios-paradas-e-localidades-de-onibus',
+      description: '',
+      impact: 'Previsibilidade do deslocamento e economia de tempo; reduz faltas por atraso e insegurança no trajeto.\n\nOtimiza a operação do sistema de transporte ao reduzir a ociosidade nas paradas e aumentar a eficiência do uso das mais de 400 linhas gerenciadas pelo CTM através da informação em tempo real.'
+    }
+  ]
+},
+{
+  id: 'saude-vigilancia-sanitaria',
+  category: 'saude-vigilancia-sanitaria',
+  title: 'Saúde e Vigilância Sanitária',
+  slug: 'saude-vigilancia-sanitaria',
+  items: [
+    {
+      id: 'saude-vigilancia-sanitaria-1',
+      category: 'UPE',
+      title: 'Obter Atendimento em Pré-natal para Adolescentes',
+      slug: 'saude-vigilancia-sanitaria/obter-atendimento-em-pre-natal-para-adolescentes',
+      description: 'Consulta para diagnóstico de gravidez e acompanhamento pré-natal para adolescentes.',
+      impact: 'Cuidado oportuno e prevenção de riscos; atendimento direcionado a um público sensível (impacto direto em saúde materna e neonatal).\n\nCerca de 17% a 20% dos nascidos vivos em Pernambuco são de mães entre 10 e 19 anos.'
+    }
+  ]
+},
+{
+  id: 'justica-seguranca',
+  category: 'justica-seguranca',
+  title: 'Justiça e Segurança',
+  slug: 'justica-seguranca',
+  items: [
+    {
+      id: 'justica-seguranca-1',
+      category: 'POLÍCIA CIVIL',
+      title: 'Registrar boletim de ocorrência online',
+      slug: 'justica-seguranca/registrar-boletim-de-ocorrencia-online',
+      description: '',
+      impact: 'Acesso rápido ao Estado em situação de vulnerabilidade; reduz deslocamento e acelera formalização do registro.\n\nA meta é que os registros via delegacia eletrônica alcancem entre 25% e 40% dos boletins para crimes sem flagrante imediato.'
+    },
+    {
+      id: 'justica-seguranca-2',
+      category: 'SECMULHER',
+      title: '197 - Relatar Caso de Violência - Protege Mulher',
+      slug: 'justica-seguranca/197-relatar-caso-de-violencia-protege-mulher',
+      description: '',
+      impact: 'Canal direto de relato e acionamento; reduz subnotificação e melhora resposta do Estado.\n\nPernambuco registrou 34.679 vítimas de violência doméstica segundo dados divulgados pela Secretaria de Defesa Social.'
+    },
+    {
+      id: 'justica-seguranca-3',
+      category: 'SECMULHER',
+      title: 'Localizar rede de apoio mais próxima - Protege Mulher',
+      slug: 'justica-seguranca/localizar-rede-de-apoio-mais-proxima-protege-mulher',
+      description: 'Localizar unidade de apoio para mulheres que tenham sofrido violência de gênero.',
+      impact: 'Orientação imediata e direcionamento para a rede; reduz tempo até ajuda.\n\n31.030 atendimentos em 2025 para pedir serviços de apoio.'
+    },
+    {
+      id: 'justica-seguranca-4',
+      category: 'SECMULHER',
+      title: 'Receber orientação e apoio em situação de Violência - Protege Mulher',
+      slug: 'justica-seguranca/receber-orientacao-e-apoio-em-situacao-de-violencia',
+      description: 'Orientar e apoiar mulheres em situação de violência, oferecendo informações sobre direitos, tipos de violência e caminhos para buscar ajuda, de forma simples, segura e acessível.',
+      impact: 'Ambiente de acolhimento e orientação do Protege Mulher.\n\nAmbiente com potencial de acolher e orientar todas as 882 mil mulheres pernambucanas.'
+    },
+    {
+      id: 'justica-seguranca-5',
+      category: 'POLÍCIA CIVIL',
+      title: 'Solicitar Medida Protetiva de Urgência',
+      slug: 'justica-seguranca/solicitar-medida-protetiva-de-urgencia',
+      description: 'Solicitar proteção imediata após registrar boletim de ocorrência por violência doméstica. É o pedido feito na delegacia para garantir a segurança de quem sofre violência doméstica. A medida pode afastar o agressor do lar, impedir que ele se aproxime da vítima ou de familiares, entre outras ações previstas no artigo 22 da Lei Maria da Penha. Caso não haja delegacia especializada de atendimento à mulher, a delegacia mais próxima prestará o atendimento.',
+      impact: 'Proteção com rapidez; acelera a medida de urgência e reduz exposição ao risco.\n\nEm 2025, nas 15 Delegacias Especializadas de Atendimento à Mulher do estado, 7.609 inquéritos policiais foram enviados, 16.538 pedidos de Medidas Protetivas de Urgência foram formulados e 187 mandados de prisão foram cumpridos.'
+    },
+    {
+      id: 'justica-seguranca-6',
+      category: 'POLÍCIA CIVIL',
+      title: 'Realizar cadastro no Alerta Celular',
+      slug: 'justica-seguranca/realizar-cadastro-no-alerta-celular',
+      description: 'O sistema Alerta Celular ajuda a prevenir furtos, roubos e receptação de celulares em Pernambuco. Com o cadastro do número de série IMEI no sistema, as Polícias Civil e Militar podem localizar o aparelho em casos de extravio e roubo.',
+      impact: 'Aumenta chance de recuperação e desestimula roubo e furto; melhora eficiência da abordagem policial.\n\nMais de 9 mil celulares recuperados em 2025, mais de 87 mil desde o início do programa e 990 mil aparelhos cadastrados na base.'
+    },
+    {
+      id: 'justica-seguranca-7',
+      category: 'POLÍCIA CIVIL',
+      title: 'Registrar Boletim de Ocorrência contra Criança ou Adolescente',
+      slug: 'justica-seguranca/registrar-boletim-de-ocorrencia-contra-crianca-ou-adolescente',
+      description: 'Permite registrar ocorrências de crimes cometidos contra crianças e adolescentes, iniciando investigação da conduta do acusado.',
+      impact: 'Facilita o início da proteção, investigação e acionamento da rede como Conselho Tutelar, Ministério Público, Judiciário e rede de saúde e assistência. Serviço digital com orientações e requisitos, reforçando padronização e acesso.'
+    },
+    {
+      id: 'justica-seguranca-8',
+      category: 'POLÍCIA CIVIL',
+      title: 'Registrar e Divulgar Desaparecimento de Crianças e Adolescentes',
+      slug: 'justica-seguranca/registrar-e-divulgar-desaparecimento-de-criancas-e-adolescentes',
+      description: 'Permite registrar e divulgar o desaparecimento de crianças e adolescentes para facilitar sua localização.',
+      impact: 'Acelera a comunicação do desaparecimento e amplia chances de localização ao mobilizar rede e divulgação.\n\nEm 2025, houve 695 desaparecimentos de pessoas de 0 a 17 anos em Pernambuco, sendo 271 localizadas no ano.'
+    },
+    {
+      id: 'justica-seguranca-9',
+      category: 'SJDH',
+      title: 'Solicitar proteção para criança ou adolescente ameaçado de morte',
+      slug: 'justica-seguranca/solicitar-protecao-para-crianca-ou-adolescente-ameacado-de-morte',
+      description: 'Garantir proteção integral a criança ou adolescente com risco de morte. A inclusão no programa deve ser solicitada por órgãos do Sistema de Garantia de Direitos, como Ministério Público, Poder Judiciário, Conselhos Tutelares ou Defensoria Pública. O caso é analisado pela equipe técnica do PPCAAM.',
+      impact: 'Proteção especializada para casos de grave ameaça, com foco em preservar vidas e reinserção social.\n\nO monitoramento do IHA em Pernambuco é base para reverter o recorde de 99 adolescentes mortos no Grande Recife, direcionando o programa Juntos pela Segurança para proteger a população jovem mais vulnerável.'
+    },
     ]
   },
   {
-    id: 'cultura-turismo',
-    category: 'cultura-turismo',
-    title: 'Cultura e Turismo',
-    slug: 'cultura-e-turismo',
-    items: [
-      {
-        id: 'cultura-1',
-        category: 'SEDEPE',
-        title: 'Agenda cultural',
-        slug: 'cultura-e-turismo/agenda-cultural',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      },
-      {
-        id: 'turismo-1',
-        category: 'SEDEPE',
-        title: 'Pontos turísticos',
-        slug: 'cultura-e-turismo/pontos-turisticos',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'deveres-tributarios',
-    category: 'deveres-tributarios',
-    title: 'Deveres Tributários',
-    slug: 'deveres-tributarios',
-    items: [
-      {
-        id: 'tributario-1',
-        category: 'SEDEPE',
-        title: 'Emitir guia de pagamento',
-        slug: 'deveres-tributarios/emitir-guia-de-pagamento',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'empreendedorismo',
-    category: 'empreendedorismo',
-    title: 'Empreendedorismo',
-    slug: 'empreendedorismo',
-    items: [
-      {
-        id: 'empreendedor-1',
-        category: 'SEDEPE',
-        title: 'Abrir empresa',
-        slug: 'empreendedorismo/abrir-empresa',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'emprego-assistencia',
-    category: 'emprego-assistencia',
-    title: 'Emprego e Assistência',
-    slug: 'emprego-e-assistencia',
-    items: [
-      {
-        id: 'emprego-1',
-        category: 'SEDEPE',
-        title: 'Consultar vagas de emprego',
-        slug: 'emprego-e-assistencia/consultar-vagas-de-emprego',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'ensino-superior',
-    category: 'ensino-superior',
-    title: 'Ensino Superior',
-    slug: 'ensino-superior',
-    items: [
-      {
-        id: 'ensino-1',
-        category: 'SEDEPE',
-        title: 'Inscrição em universidade',
-        slug: 'ensino-superior/inscricao-em-universidade',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'mobilidade',
-    category: 'mobilidade',
-    title: 'Mobilidade',
-    slug: 'mobilidade',
-    items: [
-      {
-        id: 'mobilidade-1',
-        category: 'SEDEPE',
-        title: 'Consultar multas de trânsito',
-        slug: 'mobilidade/consultar-multas-de-transito',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  }
+  id: 'assistencia-social-cidadania',
+  category: 'assistencia-social-cidadania',
+  title: 'Assistência Social e Cidadania',
+  slug: 'assistencia-social-cidadania',
+  items: [
+    {
+      id: 'assistencia-social-cidadania-1',
+      category: 'POLÍCIA CIENTÍFICA',
+      title: 'Obter 1ª via da Carteira de Identidade Nacional - CIN',
+      slug: '',
+      description: 'Emitir gratuitamente a 1ª via da Carteira de Identidade Nacional para pessoas que nunca solicitaram a Carteira de Identidade Nacional.',
+      impact: 'Identidade civil como porta de entrada de direitos como escola, saúde, programas sociais e bancarização.\n\n976.000 Carteiras de Identidade Nacional já emitidas no estado até 23 de julho de 2025.'
+    },
+    {
+      id: 'assistencia-social-cidadania-2',
+      category: 'POLÍCIA CIENTÍFICA',
+      title: 'Obter 2ª via da Carteira de Identidade Nacional - CIN',
+      slug: '',
+      description: 'Solicitar a 2ª via da Carteira de Identidade Nacional em caso de perda, roubo ou dano do documento. Serviço destinado a quem já possui a CIN.',
+      impact: 'Garante continuidade do acesso a direitos básicos como escola, saúde, programas sociais e bancarização.\n\n976.000 Carteiras de Identidade Nacional já emitidas no estado até 23 de julho de 2025.'
+    },
+    {
+      id: 'assistencia-social-cidadania-3',
+      category: 'SJDH',
+      title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com Transtorno do Espectro Autista',
+      slug: '',
+      description: 'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista para garantir prioridade no atendimento e acesso a serviços públicos.',
+      impact: 'Evita perda da proteção em filas e transportes e reduz a ansiedade dos responsáveis.\n\nMais de 5 mil carteiras entregues todos os anos.'
+    },
+    {
+      id: 'assistencia-social-cidadania-4',
+      category: 'SJDH',
+      title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com Transtorno do Espectro Autista',
+      slug: '',
+      description: 'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista para garantir prioridade no atendimento e acesso a serviços públicos.',
+      impact: 'Facilita identificação e acesso a direitos com menos desgaste para famílias.\n\nPernambuco possui aproximadamente 105.852 pessoas diagnosticadas com TEA.'
+    },
+    {
+      id: 'assistencia-social-cidadania-5',
+      category: 'SJDH',
+      title: 'Solicitar intérprete de Libras virtual',
+      slug: '',
+      description: 'Serviço de inclusão para pessoas surdas ou com baixa audição, facilitando o acesso aos serviços públicos essenciais por meio de intérpretes de Libras.',
+      impact: 'Serviço de apoio à comunicação que possibilita a mediação, em tempo real, por profissional de Libras, entre o cidadão e os atendimentos presenciais do Governo de Pernambuco, promovendo acessibilidade comunicacional e inclusão nos serviços públicos.Quase 4 mil atendimentos já realizados, garantindo acessibilidade imediata; reduzindo barreiras de comunicação em serviços públicos.'
+    },
+   
+]
+},
+{
+  id: 'cultura-artes-historia-esportes',
+  category: 'cultura-artes-historia-esportes',
+  title: 'Cultura, Artes, História e Esportes',
+  slug: 'cultura-artes-historia-esportes',
+  items: [
+    {
+      id: 'cultura-artes-historia-esportes-1',
+      category: 'SEMAS',
+      title: 'Solicitar Visita Guiada - Parque de Dois Irmãos',
+      slug: 'cultura-artes-historia-esportes/solicitar-visita-guiada-parque-de-dois-irmaos',
+      description: 'Visita ao zoológico, com monitoria sobre a fauna, flora e conservação.',
+      impact: 'Serviço de visita guiada em uma das maiores áreas de Mata Atlântica urbana preservada do país, com foco em educação ambiental, conscientização ecológica e lazer orientado. O agendamento garante acesso organizado, previsível e adequado à capacidade do parque, especialmente para grupos escolares e projetos educativos.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-2',
+      category: 'Fundarpe',
+      title: 'Visitar Casa da Cultura Luiz Gonzaga',
+      slug: 'cultura-artes-historia-esportes/visitar-casa-da-cultura-luiz-gonzaga',
+      description: 'Permite visitar a Casa da Cultura Luiz Gonzaga, que oferece lojas de artesanato cultural, sede de grupos culturais e apresentações artísticas.',
+      impact: 'Equipamento cultural estratégico que reúne mais de 100 iniciativas de economia criativa e artesanato, promovendo a valorização da cultura popular pernambucana, o turismo cultural e a geração de renda no centro histórico do Recife.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-3',
+      category: 'Fundarpe',
+      title: 'Visitar Cinema São Luiz',
+      slug: 'cultura-artes-historia-esportes/visitar-cinema-sao-luiz',
+      description: 'Permite assistir a filmes no Cinema São Luiz, que conta com 992 poltronas, incluindo assentos acessíveis para cadeirantes e poltronas especiais.',
+      impact: 'Equipamento cultural histórico com capacidade para mais de mil pessoas, dedicado à difusão do cinema brasileiro, à formação de público e ao acesso democrático à cultura, por meio de programação pública contínua e eventos culturais.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-4',
+      category: 'Fundarpe',
+      title: 'Visitar Museu do Estado de Pernambuco',
+      slug: 'cultura-artes-historia-esportes/visitar-museu-do-estado-de-pernambuco',
+      description: 'Permite conhecer o Museu do Estado de Pernambuco, com acervo histórico e artístico que preserva a memória e a cultura do estado.',
+      impact: 'Museu de referência nacional, com acervo histórico e artístico de grande porte, que cumpre papel central na preservação da memória, na educação patrimonial e no fortalecimento do turismo cultural em Pernambuco.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-5',
+      category: 'Fundarpe',
+      title: 'Visitar Museu do Barro de Caruaru - Espaço Zé Caboclo',
+      slug: 'cultura-artes-historia-esportes/visitar-museu-do-barro-de-caruaru',
+      description: 'Permite conhecer o Museu do Barro, que preserva e promove a cerâmica popular da região com um acervo de 2.300 peças e exposições sobre a cultura de Caruaru.',
+      impact: 'Equipamento cultural dedicado à preservação e difusão da arte figurativa em barro, expressão reconhecida da cultura popular pernambucana, com impacto direto na identidade regional, na economia criativa e no turismo cultural do Agreste.'
+    },
+    {
+      id: 'cultura-artes-historia-esportes-6',
+      category: 'Gabinete da Governadora',
+      title: 'Visitar o Palácio do Campo das Princesas',
+      slug: 'cultura-artes-historia-esportes/visitar-palacio-do-campo-das-princesas',
+      description: 'Permite realizar visita guiada ao Palácio do Campo das Princesas, conduzida por estagiários de História, para grupos e instituições.',
+      impact: 'Visita institucional à sede histórica do Poder Executivo Estadual, promovendo educação cívica, transparência simbólica e aproximação do cidadão com a história política e administrativa de Pernambuco.'
+    }
+  ]
+}
+
 ];
 
 export const infanciaData: MenuItem[] = [
@@ -407,69 +578,151 @@ export const terceiraidadeData: MenuItem[] = [
     items: []
   },
   {
-    id: 'previdencia',
-    category: 'previdencia',
-    title: 'Previdência',
-    slug: 'previdencia',
-    items: [
-      {
-        id: 'previdencia-1',
-        category: 'SEDEPE',
-        title: 'Consultar aposentadoria',
-        slug: 'previdencia/consultar-aposentadoria',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      },
-      {
-        id: 'previdencia-2',
-        category: 'SEDEPE',
-        title: 'Solicitar pensão',
-        slug: 'previdencia/solicitar-pensao',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'saude-idosa',
-    category: 'saude-idosa',
-    title: 'Saúde',
-    slug: 'saude',
-    items: [
-      {
-        id: 'saude-idosa-1',
-        category: 'SEDEPE',
-        title: 'Agendar consulta geriátrica',
-        slug: 'saude-idosa/agendar-consulta-geriatrica',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      },
-      {
-        id: 'saude-idosa-2',
-        category: 'SEDEPE',
-        title: 'Medicamentos contínuos',
-        slug: 'saude-idosa/medicamentos-continuos',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'lazer-cultura',
-    category: 'lazer-cultura',
-    title: 'Lazer e Cultura',
-    slug: 'lazer-e-cultura',
-    items: [
-      {
-        id: 'lazer-1',
-        category: 'SEDEPE',
-        title: 'Atividades para idosos',
-        slug: 'lazer-cultura/atividades-para-idosos',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  }
+  id: 'infraestrutura-transito-transportes',
+  category: 'infraestrutura-transito-transportes',
+  title: 'Infraestrutura, Trânsito e Transportes',
+  slug: 'infraestrutura-transito-transportes',
+  items: [
+    {
+      id: 'infraestrutura-transito-transportes-1',
+      category: 'CTM',
+      title: 'Solicitar cartão VEM Idoso',
+      slug: 'infraestrutura-transito-transportes/solicitar-cartao-vem-idoso',
+      description: 'Permitir que pessoas com 65 anos ou mais tenham acesso gratuito ao transporte público com o VEM Idoso.',
+      impact: 'Acesso imediato à mobilidade na RMR para pessoas idosas (65+), reduzindo barreiras de deslocamento para saúde, assistência, lazer e rede de apoio.Somente na RMR, já foram emitidos 57.461 cartões VEM Idoso, assegurando gratuidade de forma simples e rastreável, com impacto direto na mobilidade e acesso a serviços essenciais.'
+    },
+    {
+      id: 'infraestrutura-transito-transportes-2',
+      category: 'SJDH',
+      title: 'Solicitar gratuidade no transporte intermunicipal',
+      slug: 'infraestrutura-transito-transportes/solicitar-gratuidade-no-transporte-intermunicipal',
+      description: 'Garantir transporte intermunicipal gratuito a pessoas com deficiência no Estado de Pernambuco. A gratuidade é válida para viagens entre cidades dentro do Estado. A carteira só é emitida após análise da documentação médica.',
+      impact: 'O serviço viabiliza o exercício do direito de gratuidade intermunicipal, operacionalizado com 2 assentos gratuitos por viagem, reduzindo barreiras de acesso a saúde e assistência para a pessoa idosa.'
+    },
+  
+  ]
+},
+
+{
+  id: 'saude-vigilancia-sanitaria',
+  category: 'saude-vigilancia-sanitaria',
+  title: 'Saúde e Vigilância Sanitária',
+  slug: 'saude-vigilancia-sanitaria',
+  items: [
+    {
+      id: 'saude-vigilancia-sanitaria-1',
+      category: 'SJDH',
+      title: 'Solicitar monitoramento de instituições para pessoas idosas',
+      slug: 'saude-vigilancia-sanitaria/solicitar-monitoramento-de-instituicoes-para-pessoas-idosas',
+      description: 'Fiscalizar instituições para pessoas idosas a partir de denúncias ou pedidos formais. O serviço verifica se as instituições estão funcionando de forma adequada e respeitando os direitos das pessoas idosas. Pode gerar visitas, orientações ou encaminhamentos a órgãos competentes.',
+      impact: 'Fiscalização reduz risco sanitário, negligência e violação de direitos em instituições.O serviço estrutura a proteção da pessoa idosa com monitoramento ativo de ILPIs, com transparência por registro público de visitas, e atua sobre uma rede que inclui unidades de acolhimento mapeadas pelo CadSUAS'
+    },
+    {
+      id: 'saude-vigilancia-sanitaria-2',
+      category: 'SES',
+      title: 'Obter atendimento ambulatorial em geriatria',
+      slug: 'saude-vigilancia-sanitaria/obter-atendimento-ambulatorial-em-geriatria',
+      description: 'Consulta para diagnóstico e acompanhamento de pessoas idosas, prevenindo e tratando doenças como demência, diabetes, hipertensão e osteoporose.',
+      impact: 'Consulta especializada para diagnóstico, acompanhamento e cuidado integral da pessoa idosa, prevenindo agravamentos e garantindo tratamento adequado para doenças crônicas como demência, diabetes, hipertensão e osteoporose.Doenças crônicas não transmissíveis são responsáveis por mais de 70% das causas de internação e óbito nessa faixa etária.'
+    },
+    {
+      id: 'saude-vigilancia-sanitaria-3',
+      category: 'SJTH',
+      title: 'Solicitar transporte especializado para pessoas com deficiência e mobilidade reduzida',
+      slug: 'saude-vigilancia-sanitaria/solicitar-transporte-especializado-para-pessoas-com-deficiencia',
+      description: 'Oferecer transporte gratuito em vans adaptadas para pessoas com deficiência que fazem tratamento de saúde contínuo. O serviço PE Conduz leva pessoas com deficiência física ou mobilidade reduzida, especialmente usuárias de cadeira de rodas, para tratamento de saúde e atividades de lazer.',
+      impact: 'Garante direito de ir e vir a pessoas idosas com deficiência ou mobilidade reduzida, permitindo acesso a saúde, reabilitação, serviços públicos e convivência social.Mais de 30% das pessoas idosas no Brasil apresentam algum grau de dificuldade de locomoção ou limitação funcional'
+    },
+  ]
+},
+{
+  id: 'assistencia-social-cidadania',
+  category: 'assistencia-social-cidadania',
+  title: 'Assistência Social e Cidadania',
+  slug: 'assistencia-social-cidadania',
+  items: [
+    {
+      id: 'assistencia-social-cidadania-1',
+      category: 'SJDH',
+      title: 'Solicitar formação ou palestra de prevenção contra a violência à pessoa idosa',
+      slug: 'assistencia-social-cidadania/solicitar-formacao-ou-palestra-de-prevencao-contra-violencia-a-pessoa-idosa',
+      description: 'Oferecer palestras e formações para prevenir a violência contra pessoas idosas. A ação educativa busca conscientizar sobre os direitos da pessoa idosa e formas de prevenir e enfrentar violências, seguindo as políticas públicas de direitos humanos do Estado de Pernambuco.',
+      impact: 'Atuação preventiva e educativa, voltada a reduzir violência física, psicológica, patrimonial e negligência contra a pessoa idosa, fortalecendo redes de proteção comunitária e institucional.Segundo dados públicos do IBGE e da Secretaria de Justiça/Direitos Humanos, Pernambuco possui mais de 1,6 milhão de pessoas com 60 anos ou mais, grupo que cresce de forma acelerada e é reconhecido como população de maior risco para violências silenciosas (domésticas e patrimoniais).'
+    },
+]
+},
+{
+  id: 'trabalho-emprego-previdencia',
+  category: 'trabalho-emprego-previdencia',
+  title: 'Trabalho, Emprego e Previdência',
+  slug: 'trabalho-emprego-previdencia',
+  items: [
+    {
+      id: 'trabalho-emprego-previdencia-1',
+      category: 'FUNAPE',
+      title: 'Solicitar Readmissão de Pensão por Morte',
+      slug: 'trabalho-emprego-previdencia/solicitar-readmissao-de-pensao-por-morte',
+      description: 'Solicitar reintegração de pensionista previdenciário em nova condição de dependência diferente da que possuía quando habilitado no benefício, especialmente filhos maiores de 21 anos por doença incapacitante, universitários até 24 anos ou filhos de militares cujo óbito ocorreu a partir de 1º de janeiro de 2022.',
+      impact: ''
+    },
+    {
+      id: 'trabalho-emprego-previdencia-2',
+      category: 'FUNAPE',
+      title: 'Solicitar Pagamento a Herdeiros',
+      slug: 'trabalho-emprego-previdencia/solicitar-pagamento-a-herdeiros',
+      description: 'Solicitar o pagamento de valores não recebidos em vida por ex-segurados ou pensionistas, incluindo o 13º salário proporcional.',
+      impact: ''
+    },
+    {
+      id: 'trabalho-emprego-previdencia-3',
+      category: 'FUNAPE',
+      title: 'Solicitar Pensão por Morte',
+      slug: 'trabalho-emprego-previdencia/solicitar-pensao-por-morte',
+      description: 'Solicitar pensão em decorrência do falecimento de pessoa segurada ativa ou aposentada do Regime Próprio de Previdência Social ou do Sistema de Proteção Social dos Militares.',
+      impact: ''
+    },
+    {
+      id: 'trabalho-emprego-previdencia-4',
+      category: 'FUNAPE',
+      title: 'Conceder Aposentadoria, Reserva Remunerada ou Reforma Militar',
+      slug: 'trabalho-emprego-previdencia/conceder-aposentadoria-reserva-remunerada-ou-reforma-militar',
+      description: 'Analisar e conceder benefícios de aposentadoria, transferência para reserva remunerada ou reforma militar.',
+      impact: 'Marco da vida funcional que transforma tempo de serviço em benefício de inatividade, garantindo segurança de renda ao servidor e previsibilidade para a família.\n\nA FUNAPE administra 80.439 inativos, tornando este serviço a principal porta de entrada para esse contingente no Estado.'
+    },
+    {
+      id: 'trabalho-emprego-previdencia-5',
+      category: 'FUNAPE',
+      title: 'Realizar Prova de Vida',
+      slug: 'trabalho-emprego-previdencia/realizar-prova-de-vida',
+      description: '',
+      impact: 'Garante a continuidade do pagamento do benefício por meio de comprovação anual obrigatória, evitando bloqueios por ausência de validação.\n\nEm 2026, a Prova de Vida é exigida para 106.181 pessoas.'
+    },
+    {
+      id: 'trabalho-emprego-previdencia-6',
+      category: 'FUNAPE',
+      title: 'Atualizar Dados Cadastrais',
+      slug: 'trabalho-emprego-previdencia/atualizar-dados-cadastrais',
+      description: '',
+      impact: 'Mantém dados pessoais, endereço e contatos atualizados, evitando pendências, atrasos e bloqueios no benefício.\n\nBeneficia diretamente 80.439 inativos e 24.225 pensionistas administrados pela FUNAPE.'
+    },
+    {
+      id: 'trabalho-emprego-previdencia-7',
+      category: 'FUNAPE',
+      title: 'Solicitar Isenção de Imposto de Renda e Contribuição Previdenciária',
+      slug: 'trabalho-emprego-previdencia/solicitar-isencao-de-imposto-de-renda-e-contribuicao-previdenciaria',
+      description: '',
+      impact: 'Pode gerar ganho financeiro direto ao reduzir descontos de IR e contribuição previdenciária quando o beneficiário se enquadra nos critérios legais.\n\nA isenção pode produzir efeitos financeiros retroativos conforme laudo, possibilitando recuperação de valores.'
+    },
+    {
+      id: 'trabalho-emprego-previdencia-8',
+      category: 'FUNAPE',
+      title: 'Solicitar Auxílio Invalidez de Bombeiro Militar',
+      slug: 'trabalho-emprego-previdencia/solicitar-auxilio-invalidez-de-bombeiro-militar',
+      description: 'Solicitar auxílio para bombeiros militares veteranos considerados inválidos pela Junta Superior de Saúde.',
+      impact: 'Garante proteção financeira permanente ao Bombeiro Militar que teve a capacidade laboral comprometida em razão do serviço, assegurando renda e dignidade em situação de maior vulnerabilidade.'
+    }
+  ]
+}
 ];
 
 export const categoryData = {

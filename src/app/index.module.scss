@@ -31,8 +31,15 @@
       overflow: hidden;
       padding: 0 1.125;
       @media(max-width:1293px){
-        max-width: 15.5rem;;
+        max-width: 15.5rem;
+        margin-bottom: 2rem;
       }
+      @media(max-width: 1150px){
+        max-width: 20rem;
+      }
+       @media(max-width: 1150px){
+        max-width: 18rem;
+       }
       .header{
         padding: 32px 32px;
         .icon{

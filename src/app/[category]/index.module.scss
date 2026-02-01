@@ -27,7 +27,6 @@
 
 .ilustracao{
     position: relative;
-    // width: 315px;
     width: 65%;
     max-width: 450px;
     figure{
@@ -40,6 +39,14 @@
         }
     }
 }
+
+@media (orientation: portrait) {
+  .ilustracao {
+    display: none;
+  }
+}
+
+
 
 .conteinerCard{
     overflow: auto;

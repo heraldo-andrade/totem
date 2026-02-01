@@ -1,4 +1,7 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
+
 
 // TODO: substituir URLs locais pelos assets definitivos em `src/assets/images`
 // Padrão de circuito será substituído pelo asset real quando disponível
@@ -34,6 +37,9 @@ export function HeaderInternal({
     large: "h-48 md:h-64 lg:h-72",
   };
 
+const router = useRouter();
+
+
   return (
   
 
@@ -42,7 +48,7 @@ export function HeaderInternal({
         <header className="headerInterna text-text-primary bg-darker pr-0 pl-16">
             <div>
               {subtitle && (
-                  <p className="text-xs font-medium text-white md:text-base lg:text-lg">
+                  <p className="text-xs font-medium text-[#ffb60c] text md:text-base lg:text-lg">
                     {subtitle}
                   </p>
                 )}
@@ -52,19 +58,21 @@ export function HeaderInternal({
               </div>
               <div className="conteinerButton pr-16">
               
-                  <a className="btn" href="">
-                    <figure>
+                  <button className="btn" onClick={() => router.push("/")}>
+                      <figure>
                         <img src="/icon-back.svg" alt="" />
-                    </figure>
-                    Voltar.
-                  </a>
+                      </figure>
+                      Voltar
+                    </button>
 
-                  <a className="btn" href="">
-                    <figure>
+                    <button className="btn" onClick={() => router.push("/")}>
+                      <figure>
                         <img src="/icon-home.svg" alt="" />
-                    </figure>
-                    Inicio
-                  </a>
+                      </figure>
+                      Inicio
+                    </button>
+
+
                   </div>
            
         </header>

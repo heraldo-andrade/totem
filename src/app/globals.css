@@ -118,8 +118,11 @@ body {
   padding: 20px 0;
   overflow: hidden;
   position: relative;
-  
   padding-left: 38px;
+  /* background: #011A70 url('/bg-conexao-header.svg') no-repeat;
+  background-position: left;
+  background-size: cover; */
+
   .conteinerButton{
     background: #011A70 url('/bg-menu.svg') no-repeat;
     background-size: cover;

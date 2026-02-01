@@ -39,12 +39,16 @@
     width: 65%;
     max-width: 450px;
     figure{
-        position: absolute;
-        bottom: 0;
+        position: relative;
+        height: 100%;
         width: 100%;
         z-index: 999;
         img{
             width: 100%;
+            position: absolute;
+            max-height: calc(100% + 30px);
+            bottom: 0;
+            height: max-content;
         }
     }
 }

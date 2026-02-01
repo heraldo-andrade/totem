@@ -63,13 +63,13 @@ export default function CategoryPage() {
       : menuAtivo?.items ?? [];
 
   return (
-    <main className="h-[100%] bg-[linear-gradient(to_bottom,_#F3F7FF_40%,_#e8f0ff_100%)]">
+    <main className="overflow-hidden h-[100%] bg-[linear-gradient(to_bottom,_#F3F7FF_40%,_#e8f0ff_100%)]">
       {/* Header interno */}
       <HeaderInternal subtitle={config.subtitle} title={config.title} />
 
       {/* Conteúdo principal */}
 
-        <section className={` conteinerTeste flex gap-5 h-[calc(100%-120px)]`}>
+        <section className={` conteinerTeste flex gap-5 h-[calc(100%-100px)]`}>
 
           <nav className={`${styles.navegation} text-black  p-5 flex gap-4 flex-col`}>
             {categoryData_.map(menu => (

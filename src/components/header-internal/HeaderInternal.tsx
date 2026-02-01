@@ -58,7 +58,7 @@ const router = useRouter();
               </div>
               <div className="conteinerButton pr-16">
               
-                  <button className="btn" onClick={() => router.push("/")}>
+                  <button className="btn" onClick={() => router.back()}>
                       <figure>
                         <img src="/icon-back.svg" alt="" />
                       </figure>

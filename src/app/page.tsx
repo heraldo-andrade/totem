@@ -14,7 +14,7 @@ export default function Home() {
           <p className={styles.subtittle}>Jornada do cidadão</p>
           <section className="flex flex-wrap full-width justify-between">
 
-            <ul className={styles.conteinerCardService}>
+            <ul className={`${styles.conteinerCardService}`}>
               <li>
                 <a href="/infancia">
                   <div className={styles.header}>
@@ -26,7 +26,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                      <img src="/cat-infancia.png" alt="" />
+                      <img src="/avatar-card-infancia.svg" alt="" />
                     </figure>
                   </div>
                 </a>
@@ -44,7 +44,7 @@ export default function Home() {
                     </div>
                     <div className={`${styles.conteinerAvatar}`}>
                       <figure>
-                        <img src="/juventude.png" alt="" />
+                        <img src="/avatar-card-juventude.svg" alt="" />
                       </figure>
                     </div>
                 </a>
@@ -61,7 +61,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                    <img src="/cat-adulta.png" alt="" />
+                    <img src="/avatar-card-adulta.svg" alt="" />
 
                     </figure>
                   </div>
@@ -79,7 +79,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                      <img src="/cat-terceiraidade.png" alt="" />
+                      <img src="/avatar-card-idosasvg.svg" alt="" />
                     </figure>
                   </div>
                 </a>

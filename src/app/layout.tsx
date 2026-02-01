@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.className}  antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} animationHome  antialiased`}>
         {children}
       </body>
     </html>

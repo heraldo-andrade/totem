@@ -1,5 +1,3 @@
-import { BigCard } from "@/components";
-import Image from "next/image";
 import styles from "./index.module.scss";
 import ParticlesBackground from "@/components/particlesBackground";
 

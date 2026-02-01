@@ -69,7 +69,7 @@ export default function CategoryPage() {
 
       {/* Conteúdo principal */}
 
-        <section className={` conteinerTeste flex gap-5 h-[calc(100%-100px)]`}>
+        <section className={` conteinerTeste flex gap-5 h-[calc(100%-85px)]`}>
 
           <nav className={`${styles.navegation} text-black  p-5 flex gap-4 flex-col`}>
             {categoryData_.map(menu => (

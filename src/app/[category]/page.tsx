@@ -68,11 +68,11 @@ export default function CategoryPage() {
       <HeaderInternal subtitle={config.subtitle} title={config.title} />
 
       {/* Conteúdo principal */}
-        {/* Barra superior com ações (Voltar / Início) - visual apenas por enquanto */}
-        <section className="flex gap-5 h-[calc(100%-120px)]">
+
+        <section className={` conteinerTeste flex gap-5 h-[calc(100%-120px)]`}>
+
           <nav className={`${styles.navegation} text-black  p-5 flex gap-4 flex-col`}>
             {categoryData_.map(menu => (
-         
                 <a
                   className={menu.category == categoryAtiva ? styles.active : "" }
                   key={menu.id}
@@ -88,7 +88,6 @@ export default function CategoryPage() {
 
                   {menu.title}
                 </a>
-             
             ))}
           </nav>
 
@@ -132,6 +131,7 @@ export default function CategoryPage() {
                 
           
           </section>
+
         </section>
 
     </main>

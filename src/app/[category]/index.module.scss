@@ -2,16 +2,25 @@
     width: 100%;
     max-width: 290px;
     overflow: auto;
+    @media(max-width: 700px){
+        display: flex;
+        width: 100%;
+        max-width: unset;
+        flex-direction: row;
+        padding: 3rem 3rem 3rem 2rem;
+    }
     a{
         border: .1rem solid #93ADE8;
         border-radius: 1rem;
         padding: .5rem;
-
-
         display: flex;
         align-items: center;
         font-size: 1rem;
         font-weight: 600;
+        @media(max-width:700px){
+            padding: 2rem;
+            flex:1;
+        }
         img{
             width: 32px;
             height: 32px;
@@ -75,11 +84,9 @@
             margin-top: 10px;
             color: #0B274E;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
-        svg.teste{
-            fill: red; stroke: black;
-        }
+    
     }
 }

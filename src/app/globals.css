@@ -141,8 +141,15 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-left: 100px;
-
 }
+
+  @media (orientation: portrait) {
+    .conteinerButton {
+      width: 360px;
+      padding-left: 56px;
+    }
+  }
+
 
 .btn{
   display: flex;
@@ -153,13 +160,18 @@ body {
   font-weight: 500;
   line-height: normal;
   align-items: center;
-  /* max-width: 146px; */
   figure{
     img{
       width: 100%;
     }
   }
 }
+
+
+
+
+
+
 
 .swiper {
   width: 100%;
@@ -170,8 +182,10 @@ body {
   .swiper-wrapper{
     /* height: auto; */
     gap: 2rem;
+    padding-bottom: 60px;
   }
 }
+
 
 .swiper-slide {
   background: none;
@@ -179,9 +193,6 @@ body {
   margin: 0!important;
   min-height: fit-content;
   height: auto !important;
-
-
-  
 }
 
   .swiper-pagination{
@@ -191,3 +202,11 @@ body {
 /* .swiper-slide{
   height: 100%!important;
 } */
+
+
+.conteinerTeste{
+  @media(max-width: 700px){
+    background-color: transparent;
+    flex-direction: column;
+  }
+}

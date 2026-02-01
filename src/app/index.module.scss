@@ -108,8 +108,8 @@
       position: relative;
       overflow: hidden;
       padding: 0 1.125;
-      border: 2px solid #541773;
-      border: 2px solid transparent;
+      border: 3px solid #541773;
+      border: 3px solid transparent;
       background: linear-gradient(#031668b3, #337fff3b) padding-box padding-box, linear-gradient(120deg, #4b86ff 0%, #8640f5 50%, #3213b7 100%) border-box;
 
 
@@ -167,10 +167,11 @@
         figure{
           // width: 180px;
           margin: 0 auto;
-         display: flex;
-        justify-content: center;
+          display: flex;
+          justify-content: center;
           margin: 0 auto;
-          padding-bottom: 1rem
+          padding-bottom: 1rem;
+          padding-left:.8rem;
         }
       }
     }

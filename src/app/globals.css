@@ -124,7 +124,7 @@ body {
   background-size: cover; */
 
   .conteinerButton{
-    background: #011A70 url('/bg-menu.svg') no-repeat;
+    background: transparent url('/bg-menu.svg') no-repeat;
     background-size: cover;
     padding-top: 20px;
     position: absolute;

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import ParticlesBackground from "../particlesBackground";
 
 
 // TODO: substituir URLs locais pelos assets definitivos em `src/assets/images`
@@ -46,7 +47,7 @@ const router = useRouter();
     <main className="w-full">
 
         <header className="headerInterna text-text-primary bg-darker pr-0 pl-16">
-            <div>
+            <div className="relative z-50">
               {subtitle && (
                   <p className="text-xs font-medium text-[#ffb60c] text md:text-base lg:text-lg">
                     {subtitle}
@@ -55,8 +56,8 @@ const router = useRouter();
                 <h1 className="text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl xl:text-5xl">
                   {title}
                 </h1>
-              </div>
-              <div className="conteinerButton pr-16">
+            </div>
+            <div className="conteinerButton pr-16 relative z-50">
               
                   <button className="btn" onClick={() => router.push("/")}>
                       <figure>
@@ -74,6 +75,8 @@ const router = useRouter();
 
 
                   </div>
+
+          <ParticlesBackground />
            
         </header>
 

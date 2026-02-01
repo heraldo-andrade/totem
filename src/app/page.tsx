@@ -24,7 +24,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                      <img src="/avatar-card-infancia.svg" alt="" />
+                      <img src="/avatar-card-infancia.png" alt="" />
                     </figure>
                   </div>
                 </a>
@@ -42,7 +42,7 @@ export default function Home() {
                     </div>
                     <div className={`${styles.conteinerAvatar}`}>
                       <figure>
-                        <img src="/avatar-card-juventude.svg" alt="" />
+                        <img src="/avatar-card-juventude.png" alt="" />
                       </figure>
                     </div>
                 </a>
@@ -59,7 +59,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                    <img src="/avatar-card-adulta.svg" alt="" />
+                    <img src="/avatar-card-adulta.png" alt="" />
 
                     </figure>
                   </div>
@@ -77,7 +77,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                      <img src="/avatar-card-idosasvg.svg" alt="" />
+                      <img src="/avatar-card-idosa.png" alt="" />
                     </figure>
                   </div>
                 </a>

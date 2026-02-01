@@ -107,7 +107,6 @@ body{
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  background-color: red;
 }
 
 .animationHome{
@@ -257,7 +256,7 @@ body{
 }
 
 
-/* 
+
 
 @keyframes animationHome{
     0% {
@@ -704,4 +703,4 @@ body{
     inherits: false;
     initial-value: 31.77166380372925%
 }
- */
+

@@ -1,7 +1,7 @@
 {
   "name": "Pernambuco Digital",
   "short_name": "PernambucoDigital",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",

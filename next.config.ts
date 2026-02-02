@@ -11,27 +11,17 @@ export default withPWA({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
+  additionalManifestEntries: [
+    { url: "/", revision: null },
+    { url: "/index.html", revision: null },
+  ],
+
   runtimeCaching: [
     {
-      urlPattern: /^https?.*\.(js|css|woff|woff2|ttf|otf|eot|svg|png|jpg|jpeg|gif|webp|ico)$/,
+      urlPattern: /\.html$/,
       handler: "CacheFirst",
       options: {
-        cacheName: "static-assets",
-        expiration: {
-          maxEntries: 200,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 dias
-        },
-      },
-    },
-    {
-      urlPattern: /\.html$/,
-      handler: "StaleWhileRevalidate",
-      options: {
         cacheName: "html-pages",
-        expiration: {
-          maxEntries: 100,
-          maxAgeSeconds: 24 * 60 * 60, // 24 horas
-        },
       },
     },
     {
@@ -39,22 +29,13 @@ export default withPWA({
       handler: "CacheFirst",
       options: {
         cacheName: "next-cache",
-        expiration: {
-          maxEntries: 200,
-          maxAgeSeconds: 24 * 60 * 60, // 24 horas
-        },
       },
     },
     {
-      urlPattern: /^https?:\/\/.*/,
-      handler: "NetworkFirst",
+      urlPattern: /^https?.*\.(js|css|woff2?|png|jpg|jpeg|svg|webp|ico)$/,
+      handler: "CacheFirst",
       options: {
-        cacheName: "others",
-        networkTimeoutSeconds: 10,
-        expiration: {
-          maxEntries: 50,
-          maxAgeSeconds: 24 * 60 * 60, // 24 horas
-        },
+        cacheName: "static-assets",
       },
     },
   ],

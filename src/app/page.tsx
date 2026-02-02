@@ -37,7 +37,7 @@ export default function Home() {
 
                         <p className={`${styles.headerTitle} text-text-primary`}>Juventude</p>
                         <p className={`${styles.description} text--text-secondary`}>
-                        Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
+                        {/* Lorem ipsum dolor sit amet,  consectetur adipiscing elit. */}
                         </p>
                     </div>
                     <div className={`${styles.conteinerAvatar}`}>

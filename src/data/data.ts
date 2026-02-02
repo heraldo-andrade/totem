@@ -1252,6 +1252,15 @@ export const adultaData: MenuItem[] = [
       description: '',
       impact: 'Permite a inclusão do cônjuge ou companheiro como dependente no SASSEPE, garantindo proteção à saúde do núcleo familiar adulto.',
       servicoDigital: true
+    },
+    {
+      id: 'saude-8',
+      category: 'Saúde e Vigilância Sanitária',
+      title: 'Obter Carteira para pessoa com fibromialgia',
+      slug: 'saude-e-vigilancia-sanitaria/obter-carteira-para-pessoa-com-fibromialgia',
+      description: '',
+      impact: '',
+      servicoDigital: true
     }
   ]
 },

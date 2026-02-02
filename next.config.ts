@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 import withPWA from "next-pwa";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: "export",
+  reactStrictMode: true,
 };
 
 export default withPWA({
@@ -10,4 +11,7 @@ export default withPWA({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
+
+  runtimeCaching: [],
+  buildExcludes: [/middleware-manifest\.json$/],
 })(nextConfig as any);

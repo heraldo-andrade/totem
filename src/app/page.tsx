@@ -54,7 +54,7 @@ export default function Home() {
 
                       <p className={`${styles.headerTitle} text-text-primary `}>Idade Adulta</p>
                       <p className={`${styles.description} text--text-secondary`}>
-                      Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
+                     
                       </p>
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
@@ -72,7 +72,7 @@ export default function Home() {
 
                       <p className={`${styles.headerTitle} text-text-primary `}>Pessoa Idosa</p>
                       <p className={`${styles.description} text--text-secondary`}>
-                      Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
+                      {/* Lorem ipsum dolor sit amet,  consectetur adipiscing elit. */}
                       </p>
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>

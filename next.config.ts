@@ -8,11 +8,12 @@ const nextConfig: NextConfig = {
 
 export default withPWA({
   dest: "public",
+  sw: "sw.js",
   register: true,
   skipWaiting: true,
+  clientsClaim: true,
   disable: process.env.NODE_ENV === "development",
   additionalManifestEntries: [
-    { url: "/", revision: null },
     { url: "/index.html", revision: null },
   ],
 

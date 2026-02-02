@@ -5,6 +5,7 @@ export interface ServiceItem {
   description: string;
   impact: string;
   slug: string;
+  servicoDigital: string;
 
 }
 
@@ -14,6 +15,8 @@ export interface MenuItem {
   title: string;
   slug: string;
   items: ServiceItem[];
+  servicoDigital: string;
+
   iconeWhite?:string;
   iconeAzul?: string;
 
@@ -703,16 +706,122 @@ export const adultaData: MenuItem[] = [
     slug: 'todos-os-servicos',
     iconeWhite: '/icone-menu-branco/Icon=cards_stack.svg',
     iconeAzul: '/icone-menu-azul/Icon=cards_stack.svg',
+    items: []
+  },
+  {
+    id: 'assistencia-social-cidadania',
+    category: 'assistencia-social-cidadania',
+    title: 'Assistência Social e Cidadania',
+    slug: 'assistencia-social-cidadania',
+    iconeWhite: '/icone-menu-branco/Icon=volunteer_activism.svg',
+    iconeAzul: '/icone-menu-azul/Icon=volunteer_activism.svg',
     items: [
-      
-    ]
+  {
+    id: 'trabalho-emprego-previdencia-1',
+    category: 'Trabalho, Emprego e Previdência',
+    title: 'Buscar Vaga de Emprego',
+    slug: 'trabalho-emprego-e-previdencia/buscar-vaga-de-emprego',
+    description: '',
+    impact: 'Facilita o encontro entre trabalhador e oportunidade, reduzindo tempo de procura e aumentando a chance de recolocação, especialmente para quem tem menos rede de contatos.\n\nMais emprego formal desde 2023: +192,6 mil vagas com carteira em Pernambuco. A taxa média anual de desocupação em PE caiu para 10%, menor índice da última década.',
+    servicoDigital: true
+  },
+  {
+    id: 'trabalho-emprego-previdencia-2',
+    category: 'Trabalho, Emprego e Previdência',
+    title: 'Solicitar Seguro Desemprego',
+    slug: 'trabalho-emprego-e-previdencia/solicitar-seguro-desemprego',
+    description: '',
+    impact: 'Pernambuco assegurou quase R$ 1 bilhão em proteção de renda em 9 meses, em 2025, evitando que milhares de famílias fiquem sem renda enquanto buscam recolocação.',
+    servicoDigital: true
+  },
+  {
+    id: 'empresa-industria-comercio-1',
+    category: 'Empresa, Indústria e Comércio',
+    title: 'Abrir Empresa',
+    slug: 'empresa-industria-e-comercio/abrir-empresa',
+    description: '',
+    impact: 'O registro automático acelera a abertura de empresas, permitindo que a formalização ocorra em poucas horas.\n\nSó em 2023, mais de 71,2 mil empresas foram abertas em Pernambuco. Em 2025, a taxa de abertura cresceu 36,9%.',
+    servicoDigital: true
+  },
+  {
+    id: 'empresa-industria-comercio-2',
+    category: 'Empresa, Indústria e Comércio',
+    title: 'Extinguir Empresas',
+    slug: 'empresa-industria-e-comercio/extinguir-empresas',
+    description: '',
+    impact: 'Evita custos contínuos e riscos jurídicos, como taxas recorrentes, multas e restrições em CPF ou CNPJ.\n\nEncerrar corretamente significa zerar passivos invisíveis e liberar o empreendedor para recomeçar.',
+    servicoDigital: true
+  },
+  {
+    id: 'empresa-industria-comercio-3',
+    category: 'Empresa, Indústria e Comércio',
+    title: 'Registrar Livros Digitais',
+    slug: 'empresa-industria-e-comercio/registrar-livros-digitais',
+    description: '',
+    impact: 'Garante segurança societária e contábil, reduz papelada, deslocamentos e risco de extravio.\n\nCerca de 543 mil micro e pequenas empresas estão ativas em Pernambuco, representando aproximadamente 90% das empresas do estado.',
+    servicoDigital: true
+  },
+  {
+    id: 'agricultura-pecuaria-1',
+    category: 'Agricultura e Pecuária',
+    title: 'Cadastrar Produtor Agropecuário com CPF',
+    slug: 'agricultura-e-pecuaria/cadastrar-produtor-agropecuario-cpf',
+    description: '',
+    impact: 'Permite acesso a políticas públicas, crédito rural, benefícios fiscais e regularidade tributária.\n\nPernambuco possui cerca de 232 mil estabelecimentos agropecuários, dos quais mais de 80% são da agricultura familiar.',
+    servicoDigital: true
+  },
+  {
+    id: 'assistencia-social-cidadania-1',
+    category: 'Assistência Social e Cidadania',
+    title: 'Obter Benefício do Programa Mães de Pernambuco',
+    slug: 'assistencia-social-e-cidadania/obter-beneficio-maes-de-pernambuco',
+    description: 'Transferência de renda mensal de R$ 300,00 para mulheres em situação de extrema vulnerabilidade social, com filhos de até 6 anos.',
+    impact: 'Renda que fortalece o cuidado na primeira infância e a segurança alimentar.\n\nDesde março de 2024, mais de 139 mil mulheres foram beneficiadas, com R$ 597,6 milhões destinados.',
+    servicoDigital: true
+  },
+  {
+    id: 'infraestrutura-transito-transportes-1',
+    category: 'Infraestrutura, Trânsito e Transportes',
+    title: 'Obter Carteira Nacional de Habilitação Definitiva',
+    slug: 'infraestrutura-transito-e-transportes/obter-cnh-definitiva',
+    description: '',
+    impact: 'Consolida o direito de dirigir, garantindo autonomia, mobilidade e acesso ao trabalho.\n\nA frota estadual ultrapassa 3 milhões de veículos, evidenciando a escala do serviço.',
+    servicoDigital: true
+  },
+  {
+    id: 'justica-seguranca-1',
+    category: 'Justiça e Segurança',
+    title: 'Registrar Boletim de Ocorrência Online',
+    slug: 'justica-e-seguranca/registrar-boletim-de-ocorrencia-online',
+    description: '',
+    impact: 'Reduz deslocamentos e acelera o acesso ao Estado em situações de vulnerabilidade.\n\nA meta é que entre 25% e 40% dos registros de crimes sem flagrante sejam feitos online.',
+    servicoDigital: true
+  },
+  {
+    id: 'saneamento-1',
+    category: 'Saneamento',
+    title: 'Emitir Extrato de Débito da Compesa',
+    slug: 'saneamento/emitir-extrato-de-debito-compesa',
+    description: '',
+    impact: 'Permite acesso rápido a débitos e histórico de consumo sem atendimento presencial.\n\nA Compesa atende cerca de 7,5 milhões de pessoas em Pernambuco.',
+    servicoDigital: true
+  },
+  {
+    id: 'cultura-artes-esportes-1',
+    category: 'Cultura, Artes, História e Esportes',
+    title: 'Visitar Museus Pernambucanos em Ambiente Digital',
+    slug: 'cultura-artes-historia-e-esportes/visitar-museus-digitais',
+    description: '',
+    impact: 'Amplia o acesso à cultura para pessoas do interior, zonas rurais ou com mobilidade reduzida.\n\nQualquer pessoa com internet pode visitar museus gratuitamente, sem barreiras geográficas.',
+    servicoDigital: true
   }
+]
+},
 
 
-
-
- 
 ];
+
+
 
 
 

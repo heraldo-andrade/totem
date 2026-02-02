@@ -683,33 +683,33 @@ export const terceiraidadeData: MenuItem[] = [
   iconeWhite: '/icone-menu-branco/Icon=business_center.svg',
   iconeAzul: '/icone-menu-azul/Icon=business_center.svg',
   items: [
-    {
-      id: 'trabalho-emprego-previdencia-1',
-      category: 'FUNAPE',
-      title: 'Solicitar Readmissão de Pensão por Morte',
-      slug: 'trabalho-emprego-previdencia/solicitar-readmissao-de-pensao-por-morte',
-      description: 'Solicitar reintegração de pensionista previdenciário em nova condição de dependência diferente da que possuía quando habilitado no benefício, especialmente filhos maiores de 21 anos por doença incapacitante, universitários até 24 anos ou filhos de militares cujo óbito ocorreu a partir de 1º de janeiro de 2022.',
-      impact: '',
-    servicoDigital: true
-    },
-    {
-      id: 'trabalho-emprego-previdencia-2',
-      category: 'FUNAPE',
-      title: 'Solicitar Pagamento a Herdeiros',
-      slug: 'trabalho-emprego-previdencia/solicitar-pagamento-a-herdeiros',
-      description: 'Solicitar o pagamento de valores não recebidos em vida por ex-segurados ou pensionistas, incluindo o 13º salário proporcional.',
-      impact: '',
-    servicoDigital: true
-    },
-    {
-      id: 'trabalho-emprego-previdencia-3',
-      category: 'FUNAPE',
-      title: 'Solicitar Pensão por Morte',
-      slug: 'trabalho-emprego-previdencia/solicitar-pensao-por-morte',
-      description: 'Solicitar pensão em decorrência do falecimento de pessoa segurada ativa ou aposentada do Regime Próprio de Previdência Social ou do Sistema de Proteção Social dos Militares.',
-      impact: '',
-    servicoDigital: true
-    },
+    // {
+    //   id: 'trabalho-emprego-previdencia-1',
+    //   category: 'FUNAPE',
+    //   title: 'Solicitar Readmissão de Pensão por Morte',
+    //   slug: 'trabalho-emprego-previdencia/solicitar-readmissao-de-pensao-por-morte',
+    //   description: 'Solicitar reintegração de pensionista previdenciário em nova condição de dependência diferente da que possuía quando habilitado no benefício, especialmente filhos maiores de 21 anos por doença incapacitante, universitários até 24 anos ou filhos de militares cujo óbito ocorreu a partir de 1º de janeiro de 2022.',
+    //   impact: '',
+    // servicoDigital: true
+    // },
+    // {
+    //   id: 'trabalho-emprego-previdencia-2',
+    //   category: 'FUNAPE',
+    //   title: 'Solicitar Pagamento a Herdeiros',
+    //   slug: 'trabalho-emprego-previdencia/solicitar-pagamento-a-herdeiros',
+    //   description: 'Solicitar o pagamento de valores não recebidos em vida por ex-segurados ou pensionistas, incluindo o 13º salário proporcional.',
+    //   impact: '',
+    // servicoDigital: true
+    // },
+    // {
+    //   id: 'trabalho-emprego-previdencia-3',
+    //   category: 'FUNAPE',
+    //   title: 'Solicitar Pensão por Morte',
+    //   slug: 'trabalho-emprego-previdencia/solicitar-pensao-por-morte',
+    //   description: 'Solicitar pensão em decorrência do falecimento de pessoa segurada ativa ou aposentada do Regime Próprio de Previdência Social ou do Sistema de Proteção Social dos Militares.',
+    //   impact: '',
+    // servicoDigital: true
+    // },
     {
       id: 'trabalho-emprego-previdencia-4',
       category: 'FUNAPE',

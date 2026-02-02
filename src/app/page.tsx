@@ -52,7 +52,7 @@ export default function Home() {
                   <div className={styles.header}>
                   <div className={`${styles.icon} `}><p>+</p></div>
 
-                      <p className={`${styles.headerTitle} text-text-primary `}>Adulta</p>
+                      <p className={`${styles.headerTitle} text-text-primary `}>Idade Adulta</p>
                       <p className={`${styles.description} text--text-secondary`}>
                       Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
                       </p>
@@ -70,7 +70,7 @@ export default function Home() {
                   <div className={styles.header}>
                   <div className={`${styles.icon} `}><p>+</p></div>
 
-                      <p className={`${styles.headerTitle} text-text-primary `}>Terceira idade</p>
+                      <p className={`${styles.headerTitle} text-text-primary `}>Pessoa idosa</p>
                       <p className={`${styles.description} text--text-secondary`}>
                       Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
                       </p>

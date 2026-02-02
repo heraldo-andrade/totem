@@ -107,7 +107,7 @@ html{
 } */
 body {
   /* height: 100vh; */
-  min-height: 100vh;
+  height: 100vh;
   color: var(--foreground);
   font-size: 16px;
   box-sizing: border-box;

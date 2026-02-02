@@ -166,6 +166,27 @@ body{
   /* background: #011A70 url('/bg-conexao-header.svg') no-repeat;
   background-position: left;
   background-size: cover; */
+   @media(max-width: 600px){
+    flex-direction: column-reverse;
+    padding:0;
+    display: flex;
+    padding-bottom: 30px;
+    height: 180px;
+  }
+
+  .title-header {
+    @media(max-width: 600){
+        padding-left: 3rem;
+        padding-top: 2rem;
+        p{
+            font-size: 1.2rem !important; 
+        }
+        h1{
+            font-size: 1.5rem;
+        }
+    }
+  }
+
 
   .conteinerButton{
     background: transparent url('/bg-menu.svg') no-repeat;
@@ -175,22 +196,40 @@ body{
     bottom: -2px;
     right: 0;
     height: 80%;
+    @media(max-width:600px){
+        position: relative;
+        background-image: none;
+        background-color: #fff;
+        /* padding: 1rem;*/
+                padding: 1rem 0 0.8rem 3rem;
+        width: 100%;
+        bottom:0;
+        justify-content: flex-start;
+        .btn{
+            margin-right: 1rem;
+        }
+
+    }
   }
 }
 
-.conteinerButton{
+ .conteinerButton{
   display: flex;
   width: 45%;
   max-width: 430px;
   justify-content: space-between;
   align-items: center;
   padding-left: 100px;
-}
+} 
 
   @media (orientation: portrait) {
     .conteinerButton {
       width: 360px;
       padding-left: 56px;
+      @media(max-widht:600){
+        padding-left: 0;
+        width: 100%;
+      }
     }
   }
 

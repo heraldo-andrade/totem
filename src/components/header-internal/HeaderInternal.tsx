@@ -47,7 +47,7 @@ const router = useRouter();
     <main className="w-full">
 
         <header className="headerInterna text-text-primary bg-darker pr-0 pl-16 animationHome">
-            <div className="relative z-50">
+            <div className="title-header relative z-50">
               {subtitle && (
                   <p className="text-xs font-medium text-[#ffb60c] text md:text-base lg:text-lg">
                     {subtitle}

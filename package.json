@@ -14,6 +14,7 @@
     "@tsparticles/slim": "^3.9.1",
     "@uigovpe/styles": "^1.1.19",
     "next": "16.1.6",
+    "next-pwa": "^5.6.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "sass": "^1.97.3",

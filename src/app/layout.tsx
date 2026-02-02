@@ -25,6 +25,8 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Pernambuco Digital",
   description: "Jornada do cidadão",
+  manifest: '/manifest.json',
+  themeColor: '#0f172a',
 };
 
 export default function RootLayout({

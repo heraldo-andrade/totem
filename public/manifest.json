@@ -1,21 +1,30 @@
 {
   "name": "Pernambuco Digital",
   "short_name": "PernambucoDigital",
-  "start_url": "/index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/app-image-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/app-image.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/app-image-192.png",
+      "sizes": "192x192"
     }
   ]
 }

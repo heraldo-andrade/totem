@@ -25,12 +25,12 @@ const categoryConfig = {
     image: '/infancia-big.svg'
   },
   adulta: {
-    title: 'Idade adulta',
+    title: 'Idade Adulta',
     subtitle: 'Jornada do Cidadão',
     image: '/adulta-big.svg'
   },
   'terceira-idade': {
-    title: 'Pessoa idosa',
+    title: 'Pessoa Idosa',
     subtitle: 'Jornada do Cidadão',
     image: '/idosa-big.svg'
   }

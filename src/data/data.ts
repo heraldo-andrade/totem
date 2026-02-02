@@ -526,89 +526,6 @@ export const infanciaData: MenuItem[] = [
  
 ];
 
-export const adultaData: MenuItem[] = [
-  {
-    id: 'todos',
-    category: 'todos',
-    title: 'Todos os serviços',
-    slug: 'todos-os-servicos',
-    iconeWhite: '/icone-menu-branco/Icon=cards_stack.svg',
-    iconeAzul: '/icone-menu-azul/Icon=cards_stack.svg',
-    items: []
-  },
-   {
-    id: 'habitacao',
-    category: 'habitacao',
-    title: 'Habitação',
-    slug: 'habitacao',
-     iconeWhite: '/icone-menu-branco/Icon=cottage.svg',
-    iconeAzul: '/icone-menu-azul/Icon=cottage.svg',
-    items: [
-      {
-        id: 'habitacao-1',
-        category: 'SEDEPE',
-        title: 'Solicitar moradia',
-        slug: 'habitacao/solicitar-moradia',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-    {
-    id: 'saude-adulta',
-    category: 'saude-adulta',
-    title: 'Saúde',
-    slug: 'saude',
-    iconeWhite: '/icone-menu-branco/Icon=cardiology.svg',
-    iconeAzul: '/icone-menu-azul/Icon=cardiology.svg',
-    items: [
-      {
-        id: 'saude-adulta-1',
-        category: 'SEDEPE',
-        title: 'Agendar consulta',
-        slug: 'saude-adulta/agendar-consulta',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      },
-      {
-        id: 'saude-adulta-2',
-        category: 'SEDEPE',
-        title: 'Solicitar exames',
-        slug: 'saude-adulta/solicitar-exames',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-  {
-    id: 'trabalho-renda',
-    category: 'trabalho-renda',
-    title: 'Trabalho e Renda',
-    slug: 'trabalho-e-renda',
-     iconeWhite: '/icone-menu-branco/Icon=business_center.svg',
-    iconeAzul: '/icone-menu-azul/Icon=business_center.svg',
-    items: [
-      {
-        id: 'trabalho-1',
-        category: 'SEDEPE',
-        title: 'Consultar vagas de emprego',
-        slug: 'trabalho-renda/consultar-vagas-de-emprego',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      },
-      {
-        id: 'trabalho-2',
-        category: 'SEDEPE',
-        title: 'Solicitar seguro desemprego',
-        slug: 'trabalho-renda/solicitar-seguro-desemprego',
-        description:'Oferecer as pricipais vacinas do Programa Nacional de Imunização - PNI, conforme o Calendário do Ministério da Saúde.',
-        impact:'A vacinação é a principal barreira contra surtos e internações evitáveis na infância. Em ações de vacinação em escolas em PE, foram aplicadas mais de 33 mil doses.'
-      }
-    ]
-  },
-
- 
-];
 
 export const terceiraidadeData: MenuItem[] = [
   {
@@ -776,6 +693,29 @@ export const terceiraidadeData: MenuItem[] = [
   ]
 }
 ];
+
+
+export const adultaData: MenuItem[] = [
+  {
+    id: 'todos',
+    category: 'todos',
+    title: 'Todos os serviços',
+    slug: 'todos-os-servicos',
+    iconeWhite: '/icone-menu-branco/Icon=cards_stack.svg',
+    iconeAzul: '/icone-menu-azul/Icon=cards_stack.svg',
+    items: [
+      
+    ]
+  }
+
+
+
+
+ 
+];
+
+
+
 
 export const categoryData = {
   juventude: juventudeData,

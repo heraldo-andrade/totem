@@ -6,17 +6,29 @@ import {
   MenuItem
 } from "@/data/data";
 
-function extractSlugs(data: MenuItem[]) {
+interface SlugWithCategory {
+  slug: string;
+  mainCategory: string;
+}
+
+function extractSlugsWithCategory(data: MenuItem[], mainCategory: string): SlugWithCategory[] {
   return data.flatMap(menu =>
-    menu.items.map(item => item.slug)
+    menu.items.map(item => ({
+      slug: item.slug,
+      mainCategory
+    }))
   );
 }
 
-export function getAllServiceSlugs(): string[] {
+export function getAllServiceSlugsWithCategory(): SlugWithCategory[] {
   return [
-    ...extractSlugs(juventudeData),
-    ...extractSlugs(infanciaData),
-    ...extractSlugs(adultaData),
-    ...extractSlugs(terceiraidadeData),
+    ...extractSlugsWithCategory(juventudeData, 'juventude'),
+    ...extractSlugsWithCategory(infanciaData, 'infancia'),
+    ...extractSlugsWithCategory(adultaData, 'adulta'),
+    ...extractSlugsWithCategory(terceiraidadeData, 'terceira-idade'),
   ];
+}
+
+export function getAllServiceSlugs(): string[] {
+  return getAllServiceSlugsWithCategory().map(item => item.slug);
 }

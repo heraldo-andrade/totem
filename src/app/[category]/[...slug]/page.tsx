@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAllServiceSlugs } from "@/data/helpers";
+import { getAllServiceSlugsWithCategory } from "@/data/helpers";
 import { getServiceBySlug } from "@/data/data";
 import { ClientPage } from "@/components";
 
@@ -8,14 +8,12 @@ export const dynamicParams = false;
 export const revalidate = false;
 
 export async function generateStaticParams() {
-  const allSlugs = getAllServiceSlugs();
-  return allSlugs.map(slugPath => {
-    const parts = slugPath.split("/");
-    const category = parts[0];
-    const slug = parts.slice(1);
+  const allSlugs = getAllServiceSlugsWithCategory();
+  return allSlugs.map(({ slug, mainCategory }) => {
+    const parts = slug.split("/");
     return {
-      category,
-      slug,
+      category: mainCategory,
+      slug: parts, // Manter todos os segmentos do slug original
     };
   });
 }

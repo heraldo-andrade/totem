@@ -1,0 +1,179 @@
+.titlepage{
+    font-size: 3rem;
+    font-weight: 700;
+    padding:2rem 0   0rem 0;
+    .destaque{
+      color: #FFB60C;
+    }
+    
+  }
+
+  .subtittle{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    font-weight: 700;
+    color: #fff;
+
+  }
+
+  
+
+  // .conteinerCardService{
+  //   width: 100%;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   flex-wrap: wrap;
+  //   li{
+  //     width: 100%;
+  //     max-width: 17.5rem;;
+  //     background-color: #fff;
+  //     border-radius: 32px;
+  //     height: 440px;
+  //     position: relative;
+  //     overflow: hidden;
+  //     padding: 0 1.125;
+  //     @media(max-width:1293px){
+  //       max-width: 15.5rem;
+  //       margin-bottom: 2rem;
+  //     }
+  //     @media(max-width: 1150px){
+  //       max-width: 20rem;
+  //     }
+  //     @media(max-width: 1150px){
+  //       max-width: 18rem;
+  //     }
+  //     .header{
+  //       padding: 32px 18px 32px 18px;
+  //       display: flex;
+  //       align-items: center;
+  //       .icon{
+  //         border-radius: 100%;
+  //         border: 2px solid #0034B7;
+  //         color: #0034B7;
+  //         font-size: 2rem;
+  //         display: flex;
+  //         justify-content: center;
+  //         width: 50px;
+  //       }
+  //       .headerTitle{
+  //         font-size: 1.3rem;
+  //         margin-left: 1rem;
+  //       }
+  //       p{
+  //         font-size: 2rem;
+  //         font-style: normal;
+  //         font-weight: 700;
+  //       }
+  //       .description{
+  //         font-size: 0.875rem;
+  //         font-style: normal;
+  //         font-weight: 400;
+  //         line-height: 120%; /* 1.05rem */
+  //         letter-spacing: -0.00938rem;
+  //         color: #494C57;
+  //         display: none;
+  //       }
+  //     }
+  //     .conteinerAvatar{
+  //       // background: #337FFF url('/bg-onda.png') no-repeat;
+  //       position: absolute;
+  //       bottom: 0;
+  //       width: 100%;
+  //       left: 0;
+  //       background-position: center;
+  //       // height: 240px;
+  //       figure{
+  //         // width: 180px;
+  //         margin: 0 auto;
+  //        display: flex;
+  //       justify-content: center;
+  //         margin: 0 auto;
+  //         padding-bottom: 1rem
+  //       }
+  //     }
+  //   }
+  // }
+
+  .conteinerCardService{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li{
+      width: 100%;
+      max-width: 17.5rem;;
+      background-color: transparent;
+      border-radius: 32px;
+      height: 440px;
+      position: relative;
+      overflow: hidden;
+      padding: 0 1.125;
+      border: 3px solid #541773;
+      border: 3px solid transparent;
+      background: linear-gradient(#031668b3, #337fff3b) padding-box padding-box, linear-gradient(120deg, #4b86ff 0%, #8640f5 50%, #3213b7 100%) border-box;
+
+
+      @media(max-width:1293px){
+        max-width: 15.5rem;
+        margin-bottom: 2rem;
+      }
+      @media(max-width: 1150px){
+        max-width: 20rem;
+      }
+      @media(max-width: 1150px){
+        max-width: 18rem;
+      }
+      .header{
+        padding: 32px 18px 32px 18px;
+        display: flex;
+        align-items: center;
+        .icon{
+          border-radius: 100%;
+          border: 2px solid #fff;
+          color: #fff;
+          font-size: 2rem;
+          display: flex;
+          justify-content: center;
+          width: 50px;
+        }
+        .headerTitle{
+          font-size: 1.3rem;
+          margin-left: 1rem;
+          color: #fff;
+        }
+        p{
+          font-size: 2rem;
+          font-style: normal;
+          font-weight: 700;
+        }
+        .description{
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 1.05rem */
+          letter-spacing: -0.00938rem;
+          color: #494C57;
+          display: none;
+        }
+      }
+      .conteinerAvatar{
+        // background: #337FFF url('/bg-onda.png') no-repeat;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        background-position: center;
+        // height: 240px;
+        figure{
+          // width: 180px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+          padding-bottom: 1rem;
+          padding-left:.8rem;
+        }
+      }
+    }
+  }
+

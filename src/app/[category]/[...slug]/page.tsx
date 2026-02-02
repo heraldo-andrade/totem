@@ -59,9 +59,6 @@ export default function ServiceDetailPage() {
 
       <section className="flex gap-5 pr-14 pl-14 pt-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-
-
-
           {/* Coluna esquerda: tag, título, descrição, Impacto */}
           <div className="flex flex-col">
             <span className="mb-4 inline-block w-fit rounded-full bg-[#FFB60C] px-3 py-1.5 text-sm font-semibold text-[#0B274E]">

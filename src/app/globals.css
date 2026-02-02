@@ -99,14 +99,15 @@ html{
     não é uma boa solução
 */
 
-body{
-    height: 100vh;
-    /* @media(max-width: 600px){
+/* body{
+     height: 100vh; 
+     @media(max-width: 600px){
         height: unset;
-    } */
-}
-.body {
-  height: 100%;
+    }
+} */
+body {
+  /* height: 100vh; */
+  min-height: 100vh;
   color: var(--foreground);
   font-size: 16px;
   box-sizing: border-box;

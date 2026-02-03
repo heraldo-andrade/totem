@@ -1,10 +1,39 @@
 import type { NextConfig } from "next";
 import withPWA from "next-pwa";
+import fs from 'fs';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   output: "export",
   reactStrictMode: true,
 };
+
+// Função para obter todas as páginas HTML do build
+function getStaticPages(): string[] {
+  const outDir = path.join(process.cwd(), 'out');
+  const pages: string[] = [];
+
+  function scanDirectory(dir: string, basePath: string = '') {
+    if (!fs.existsSync(dir)) return;
+    
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    
+    entries.forEach((entry) => {
+      const fullPath = path.join(dir, entry.name);
+      const urlPath = path.join(basePath, entry.name);
+      
+      if (entry.isDirectory() && !entry.name.startsWith('_next')) {
+        scanDirectory(fullPath, urlPath);
+      } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
+        const pagePath = urlPath.replace(/\\/g, '/').replace(/\.html$/, '');
+        pages.push(pagePath === '/index' ? '/' : `/${pagePath}`);
+      }
+    });
+  }
+
+  scanDirectory(outDir);
+  return pages;
+}
 
 export default withPWA({
   dest: "public",
@@ -19,26 +48,43 @@ export default withPWA({
   reloadOnOnline: false,
   
   runtimeCaching: [
-    // CACHE AGRESSIVO para páginas - CacheFirst com fallback
+    // StaleWhileRevalidate para navegação - serve do cache primeiro e atualiza em background
     {
-      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
-        request.destination === 'document',
-      handler: "CacheFirst",
+      urlPattern: ({ request }: { request: Request }) => 
+        request.mode === 'navigate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: "html-pages",
+        cacheName: "pages-navigation",
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 365 * 24 * 60 * 60, // 1 ano
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
         cacheableResponse: {
           statuses: [0, 200],
         },
       },
     },
-    // Cache home page e páginas principais agressivamente
+    // NetworkFirst para documentos (com timeout curto para funcionar offline)
+    {
+      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
+        request.destination === 'document',
+      handler: "NetworkFirst",
+      options: {
+        cacheName: "html-documents",
+        networkTimeoutSeconds: 2,
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
+        },
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
+      },
+    },
+    // StaleWhileRevalidate para home
     {
       urlPattern: /^https?:\/\/[^/]*\/?$/,
-      handler: "CacheFirst",
+      handler: "StaleWhileRevalidate",
       options: {
         cacheName: "home-page",
         expiration: {
@@ -47,10 +93,10 @@ export default withPWA({
         },
       },
     },
-    // Cache páginas HTML com NetworkFirst para offline
+    // StaleWhileRevalidate para arquivos HTML
     {
       urlPattern: /\.html$/,
-      handler: "CacheFirst",
+      handler: "StaleWhileRevalidate",
       options: {
         cacheName: "static-html",
         expiration: {
@@ -92,22 +138,6 @@ export default withPWA({
         expiration: {
           maxEntries: 30,
           maxAgeSeconds: 365 * 24 * 60 * 60,
-        },
-      },
-    },
-    // CacheFirst para navegação de páginas
-    {
-      urlPattern: ({ request }: { request: Request }) => 
-        request.mode === 'navigate',
-      handler: "CacheFirst",
-      options: {
-        cacheName: "pages-cache",
-        expiration: {
-          maxEntries: 200,
-          maxAgeSeconds: 365 * 24 * 60 * 60,
-        },
-        cacheableResponse: {
-          statuses: [0, 200],
         },
       },
     },

@@ -1,10 +1,39 @@
 import type { NextConfig } from "next";
 import withPWA from "next-pwa";
+import fs from 'fs';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   output: "export",
   reactStrictMode: true,
 };
+
+// Função para obter todas as páginas HTML do build
+function getStaticPages(): string[] {
+  const outDir = path.join(process.cwd(), 'out');
+  const pages: string[] = [];
+
+  function scanDirectory(dir: string, basePath: string = '') {
+    if (!fs.existsSync(dir)) return;
+    
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    
+    entries.forEach((entry) => {
+      const fullPath = path.join(dir, entry.name);
+      const urlPath = path.join(basePath, entry.name);
+      
+      if (entry.isDirectory() && !entry.name.startsWith('_next')) {
+        scanDirectory(fullPath, urlPath);
+      } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
+        const pagePath = urlPath.replace(/\\/g, '/').replace(/\.html$/, '');
+        pages.push(pagePath === '/index' ? '/' : `/${pagePath}`);
+      }
+    });
+  }
+
+  scanDirectory(outDir);
+  return pages;
+}
 
 export default withPWA({
   dest: "public",
@@ -29,33 +58,60 @@ export default withPWA({
   ],
   
   runtimeCaching: [
-    // PRIORIDADE MÁXIMA: Cache de navegação (páginas HTML)
+    // StaleWhileRevalidate para navegação - serve do cache primeiro e atualiza em background
     {
       urlPattern: ({ request }: { request: Request }) => 
-        request.mode === 'navigate' || request.destination === 'document',
-      handler: "NetworkFirst",
+        request.mode === 'navigate',
+      handler: "StaleWhileRevalidate",
       options: {
         cacheName: "pages-navigation",
-        networkTimeoutSeconds: 3,
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 24 * 60 * 60, // 1 dia
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
         cacheableResponse: {
           statuses: [0, 200],
         },
       },
     },
-    // Cache de arquivos HTML
+    // NetworkFirst para documentos (com timeout curto para funcionar offline)
     {
-      urlPattern: /\.html$/,
+      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
+        request.destination === 'document',
       handler: "NetworkFirst",
       options: {
-        cacheName: "html-files",
-        networkTimeoutSeconds: 3,
+        cacheName: "html-documents",
+        networkTimeoutSeconds: 2,
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 24 * 60 * 60,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
+        },
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
+      },
+    },
+    // StaleWhileRevalidate para home
+    {
+      urlPattern: /^https?:\/\/[^/]*\/?$/,
+      handler: "StaleWhileRevalidate",
+      options: {
+        cacheName: "home-page",
+        expiration: {
+          maxEntries: 10,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
+        },
+      },
+    },
+    // StaleWhileRevalidate para arquivos HTML
+    {
+      urlPattern: /\.html$/,
+      handler: "StaleWhileRevalidate",
+      options: {
+        cacheName: "html-files",
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },
     },

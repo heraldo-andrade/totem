@@ -774,7 +774,7 @@ export const adultaData: MenuItem[] = [
       category: 'Agricultura e Pecuária',
       title: 'Cadastrar Produtor Agropecuário com CPF - Pessoa Física',
       slug: 'agricultura-e-pecuaria/cadastrar-produtor-agropecuario-cpf',
-      description: '',
+      description: 'Permite que produtores agropecuários, pescadores ou criadores de animais solicitem inscrição estadual no regime de pagamento “produtor agropecuário ou mineral – pessoa natural”.',
       impact: 'Permite que o agricultor familiar e o pequeno produtor rural existam formalmente para o Estado, habilitando acesso a políticas públicas, crédito rural, programas de compra institucional, benefícios fiscais e regularidade tributária.\n\nPernambuco possui cerca de 232 mil estabelecimentos agropecuários, dos quais mais de 80% são da agricultura familiar.',
       servicoDigital: true
     },
@@ -783,7 +783,7 @@ export const adultaData: MenuItem[] = [
       category: 'Agricultura e Pecuária',
       title: 'Solicitar Assistência Técnica e Extensão Rural',
       slug: 'agricultura-e-pecuaria/solicitar-assistencia-tecnica-extensao-rural',
-      description: '',
+      description: 'Serviço gratuito de assistência técnica e extensão rural para apoiar o desenvolvimento sustentável dos agricultores familiares de Pernambuco.',
       impact: 'Leva conhecimento técnico, orientação produtiva e inovação diretamente ao produtor rural, aumentando produtividade, renda e sustentabilidade da atividade agrícola.\n\nA agricultura familiar responde por cerca de 70% dos alimentos que chegam à mesa dos pernambucanos, tornando a extensão rural um serviço estratégico para segurança alimentar.',
       servicoDigital: false
     },
@@ -792,7 +792,7 @@ export const adultaData: MenuItem[] = [
       category: 'Agricultura e Pecuária',
       title: 'Solicitar Análise Patológica de Sementes',
       slug: 'agricultura-e-pecuaria/solicitar-analise-patologica-sementes',
-      description: '',
+      description: 'Análise sanitária de sementes para identificar fungos causadores de doenças em feijão, caupi, milho, sorgo, cebola e tomate.',
       impact: 'Avalia a qualidade sanitária das sementes, prevenindo doenças, falhas de germinação e perdas severas de safra antes mesmo do plantio.\n\nA agricultura é altamente sensível à qualidade da semente: falhas de germinação podem gerar perdas superiores a 20% da produção em algumas culturas.',
       servicoDigital: false
     }
@@ -820,7 +820,7 @@ export const adultaData: MenuItem[] = [
       category: 'Assistência Social e Cidadania',
       title: 'Obter Carteira de Identidade CIN - 1ª Via',
       slug: 'assistencia-social-cidadania/obter-carteira-identidade-cin-primeira-via',
-      description: '',
+      description: 'Emitir gratuitamente a 1ª via da Carteira de Identidade Nacional para pessoas que nunca solicitaram a Carteira de Identidade Nacional.',
       impact: 'É a porta de entrada da cidadania. A Carteira de Identidade Nacional permite acesso à saúde, educação, trabalho, programas sociais, crédito, serviços bancários e digitais, além de viabilizar o cadastro em praticamente todas as políticas públicas.\n\nSão emitidas em média 130 mil CIN por mês.',
       servicoDigital: true
     },
@@ -829,7 +829,7 @@ export const adultaData: MenuItem[] = [
       category: 'Assistência Social e Cidadania',
       title: 'Obter Carteira de Identidade CIN - 2ª Via',
       slug: 'assistencia-social-cidadania/obter-carteira-identidade-cin-segunda-via',
-      description: '',
+      description: 'Solicitar a 2ª via da Carteira de Identidade Nacional se você perdeu, teve o documento roubado ou ele foi danificado. Esse serviço é para quem já tem a Carteira de Identidade Nacional.',
       impact: 'Garante a continuidade da cidadania em casos de perda, roubo, furto ou desgaste do documento, evitando que o cidadão fique impedido de acessar serviços essenciais.\n\nSão emitidas em média 130 mil CIN por mês.',
       servicoDigital: true
     },
@@ -865,7 +865,7 @@ export const adultaData: MenuItem[] = [
       category: 'Assistência Social e Cidadania',
       title: 'Registrar Reclamação no PROCON Presencialmente ',
       slug: 'assistencia-social-cidadania/Registrar-reclamacao-no-procon-presencialmente ',
-      description: '',
+      description: 'Registrar reclamação sobre produtos e serviços para buscar solução na relação de consumo.',
       impact: '',
       servicoDigital: true
     },
@@ -914,7 +914,7 @@ export const adultaData: MenuItem[] = [
       category: 'Empresa, Indústria e Comércio',
       title: 'Abrir Empresa',
       slug: 'empresa-industria-e-comercio/abrir-empresa',
-      description: '',
+      description: 'Formalização de empresas com registro na Junta Comercial de Pernambuco (JUCEPE), conforme o tipo jurídico.',
       impact: 'O registro automático continua sendo uma das principais ferramentas da Junta Comercial de Pernambuco para acelerar a abertura de empresas, permitindo que a formalização ocorra em poucas horas.\n\nSó em 2023, mais de 71,2 mil empresas foram abertas em Pernambuco. Em 2025, a taxa de abertura chegou a 36,9%.',
       servicoDigital: true
     },
@@ -923,7 +923,7 @@ export const adultaData: MenuItem[] = [
       category: 'Empresa, Indústria e Comércio',
       title: 'Extinguir Empresas',
       slug: 'empresa-industria-e-comercio/extinguir-empresas',
-      description: '',
+      description: 'Serviço da JUCEPE (Junta Comercial do Estado de Pernambuco) que permite o encerramento formal de empresas, com baixa do registro empresarial.',
       impact: 'Dar baixa formal evita custos contínuos e riscos jurídicos, como taxas recorrentes, obrigações acessórias, multas por atraso e responsabilidades tributárias.\n\nEncerrar corretamente significa zerar passivos invisíveis e liberar o empreendedor para recomeçar.',
       servicoDigital: true
     },
@@ -932,7 +932,7 @@ export const adultaData: MenuItem[] = [
       category: 'Empresa, Indústria e Comércio',
       title: 'Registrar Livros Digitais',
       slug: 'empresa-industria-e-comercio/registrar-livros-digitais',
-      description: '',
+      description: 'Serviço da JUCEPE (Junta Comercial do Estado de Pernambuco) para autenticação digital dos Livros Empresariais, conforme a natureza jurídica.',
       impact: 'Garante segurança societária e contábil, reduz papelada, deslocamento e risco de extravio.\n\nPernambuco possui cerca de 543 mil micro e pequenas empresas ativas, que representam aproximadamente 90% das empresas do estado.',
       servicoDigital: true
     },
@@ -941,7 +941,7 @@ export const adultaData: MenuItem[] = [
       category: 'Empresa, Indústria e Comércio',
       title: 'Consultar Empresas Públicas',
       slug: 'empresa-industria-e-comercio/consultar-empresas-publicas',
-      description: '',
+      description: 'Consulta pública e gratuita de empresas públicas e sociedades de economia mista.',
       impact: 'Ajuda cidadãos, empresas e governo a verificar existência e regularidade, reduzindo fraudes, golpes e contratações inseguras.\n\nMais confiança para 9,5 milhões de pernambucanos nas relações comerciais.',
       servicoDigital: true
     },
@@ -950,7 +950,7 @@ export const adultaData: MenuItem[] = [
       category: 'Empresa, Indústria e Comércio',
       title: 'Obter ou Renovar Linha de Crédito para Empreendedores Informais',
       slug: 'empresa-industria-e-comercio/obter-renovar-linha-de-credito',
-      description: '',
+      description: 'A linha AGE Microcrédito se destaca pela agilidade e segurança na contratação. Para quem é empreendedor informal, o recurso financiado pode chegar a R$ 3 mil. No microcrédito, os contratos podem ser feitos individualmente, com avalista, ou em grupos de aval solidário, em que os participantes se avalizam mutuamente.',
       impact: 'Viabiliza capital de giro e pequenos investimentos para manter o negócio funcionando, aumentar renda e permitir futura formalização.\n\nO programa Bora Empreender Mulher pode alcançar R$ 105 milhões, com até 35 mil operações de crédito.',
       servicoDigital: true
     }
@@ -999,7 +999,7 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Solicitar Emissão de Escritura do Programa Morar Bem - Regularização Fundiária',
       slug: 'infraestrutura-transito-e-transportes/solicitar-escritura-programa-morar-bem',
-      description: '',
+      description: 'Emitir escritura definitiva para imóveis regularizados pelo Programa Morar Bem PE.',
       impact: 'Transforma a moradia informal em propriedade legal, garantindo segurança jurídica, valorização do imóvel e acesso a crédito, herança e políticas públicas.\n\nJá foram entregues quase 13 mil títulos de propriedade e estão em análise mais de 30 mil.',
       servicoDigital: true
     },
@@ -1009,7 +1009,7 @@ export const adultaData: MenuItem[] = [
       title: 'Solicitar Emissão de Escritura para Regularização Imobiliária',
       slug: 'infraestrutura-transito-e-transportes/solicitar-escritura-regularizacao-imobiliaria',
       description: 'Procedimento voltado para mutuários que já quitaram seu financiamento habitacional, garantindo a transferência definitiva da propriedade e o registro em cartório.',
-      impact: '',
+      impact: 'Emitir escritura para pessoas que adquiriram imóveis da antiga COHAB, SSAM ou IPSEP/IRH.',
       servicoDigital: true
     },
     {
@@ -1017,7 +1017,7 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Obter Carteira Nacional de Habilitação Definitiva',
       slug: 'infraestrutura-transito-e-transportes/obter-cnh-definitiva',
-      description: '',
+      description: 'Trocar a Permissão Para Dirigir (PPD – Permissão Para Dirigir) pela Carteira Nacional de Habilitação (CNH – Carteira Nacional de Habilitação) Definitiva após 12 meses.',
       impact: 'Consolida o direito de dirigir após o período de permissão, garantindo autonomia, mobilidade e acesso ao trabalho.\n\nA frota estadual ultrapassa 3 milhões de veículos, evidenciando a escala do serviço e sua centralidade na vida adulta.',
       servicoDigital: true
     },
@@ -1026,16 +1026,16 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Renovar Carteira de Habilitação',
       slug: 'infraestrutura-transito-e-transportes/renovar-carteira-habilitacao',
-      description: '',
+      description: 'Permite que o condutor com a Carteira Nacional de Habilitaçãosolicite sua renovação.',
       impact: 'Mantém o cidadão regular para dirigir, assegurando atualização médica e legal, além de evitar multas, apreensão do veículo e perda do direito de conduzir.\n\nA digitalização reduz filas históricas e tempo de espera para milhares de pessoas todos os anos.',
       servicoDigital: true
     },
     {
       id: 'infraestrutura-transito-5',
       category: 'Infraestrutura, Trânsito e Transportes',
-      title: 'Obter Permissão Internacional para Dirigir',
+      title: 'Obter Permissão Internacional para Dirigir - PID',
       slug: 'infraestrutura-transito-e-transportes/obter-permissao-internacional-dirigir',
-      description: '',
+      description: 'Emitir a Permissão Internacional para Dirigir (PID – Permissão Internacional para Dirigir), que permite ao condutor habilitado no Brasil dirigir em países signatários da Convenção de Viena ou que respeitem a reciprocidade.',
       impact: 'Permite que o cidadão pernambucano dirija legalmente em outros países, sem necessidade de novos exames ou burocracia internacional.\n\nO serviço amplia a mobilidade para além das fronteiras.',
       servicoDigital: true
     },
@@ -1044,7 +1044,7 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Consultar Pontuação da CNH',
       slug: 'infraestrutura-transito-e-transportes/consultar-pontuacao-cnh',
-      description: '',
+      description: 'Permite consultar online a pontuação da CNH (Carteira Nacional de Habilitação) decorrente de possíveis infrações.',
       impact: 'Permite ao condutor acompanhar sua situação e evitar suspensão ou cassação da CNH, com acesso transparente às infrações.\n\nConsultar a pontuação evita perder o direito de dirigir por falta de informação.',
       servicoDigital: true
     },
@@ -1053,7 +1053,7 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Consultar Veículo por Placa',
       slug: 'infraestrutura-transito-e-transportes/consultar-veiculo-por-placa',
-      description: '',
+      description: 'Por meio da Consulta de Veículo (por placa), é possível visualizar a situação do veículo (débitos, multas e possíveis restrições veiculares), além de gerar boletos para pagamento do Licenciamento Anual e débitos em geral.',
       impact: 'Garante transparência e segurança na compra, venda e uso de veículos, permitindo verificar situação legal, restrições e dados básicos.\n\nConsultar o veículo protege o cidadão contra fraudes e prejuízos.',
       servicoDigital: true
     },
@@ -1062,7 +1062,7 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Solicitar Bloqueio do VEM Livre Acesso',
       slug: 'infraestrutura-transito-e-transportes/solicitar-bloqueio-vem-livre-acesso',
-      description: '',
+      description: 'Permitir o bloqueio do cartão VEM Livre Acesso em caso de perda, roubo ou extravio. ',
       impact: 'Protege o direito à mobilidade gratuita de pessoas com deficiência, idosos e públicos elegíveis, evitando uso indevido do cartão em casos de perda, roubo ou extravio.\n\nBeneficia cerca de 40 mil pessoas com deficiência na Região Metropolitana do Recife.',
       servicoDigital: true
     },
@@ -1071,7 +1071,7 @@ export const adultaData: MenuItem[] = [
       category: 'Infraestrutura, Trânsito e Transportes',
       title: 'Solicitar Restituição de IPVA',
       slug: 'infraestrutura-transito-e-transportes/solicitar-restituicao-ipva',
-      description: '',
+      description: 'Permite solicitar a devolução de valores pagos indevidamente de IPVA, como em casos de pagamento em duplicidade, roubo, furto ou sinistro do veículo.',
       impact: 'Garante ao cidadão o direito de reaver valores pagos indevidamente, como em casos de roubo, furto, sinistro, venda ou cobrança duplicada.\n\nA restituição assegura justiça fiscal em um universo de mais de 3 milhões de veículos registrados no Estado.',
       servicoDigital: true
     },
@@ -1080,8 +1080,8 @@ export const adultaData: MenuItem[] = [
       category: 'Policia',
       title: 'Solicitar Laudo Pericial em veículo automotor para regularização junto ao DETRAN',
       slug: 'infraestrutura-transito-e-transportes/solicitar-laudo-pericialem-veiculo-automotor-para-regularizacao-junto-ao-detran',
-      description: '',
-      impact: '',
+      description: 'É a perícia que verifica se os elementos identificadores do veículo atendem aos padrões do fabricante. O laudo é necessário para regularizar veículos com alterações nos elementos identificadores, como chassi e motor.',
+      impact: 'É a perícia que verifica se os elementos identificadores do veículo atendem aos padrões do fabricante. O laudo é necessário para regularizar veículos com alterações nos elementos identificadores, como chassi e motor.',
       servicoDigital: true
     },
 
@@ -1167,7 +1167,7 @@ export const adultaData: MenuItem[] = [
       category: 'POLÍCIA CIVIL',
       title: 'Obter certidão de antecedentes criminais ',
       slug: 'justica-seguranca/obter-certidao-de-antecedentes-criminais ',
-      description:'',
+      description:'A Certidão de Antecedentes é um documento emitido pelo Instituto de Identificação Tavares Buril, que informa a existência ou não de antecedentes criminais dos requerentes. Apenas serão emitidas via internet certidões cujo resultado seja "NADA CONSTA".',
       impact:'',
       servicoDigital: true
     },
@@ -1176,7 +1176,7 @@ export const adultaData: MenuItem[] = [
       category: 'POLÍCIA CIVIL',
       title: 'Validar certidão de antecedentes criminais',
       slug: 'justica-seguranca/validar-certidao-de-antecedentes-criminais',
-      description:'',
+      description:'A Certidão de Antecedentes é um documento emitido pelo Instituto de Identificação Tavares Buril, que informa a existência ou não de antecedentes criminais dos requerentes. Este serviço serve para validar a Certidão.',
       impact:'',
       servicoDigital: true
     }
@@ -1194,9 +1194,9 @@ export const adultaData: MenuItem[] = [
     {
       id: 'saude-1',
       category: 'Saúde e Vigilância Sanitária',
-      title: 'Solicitar Medicamento de Alto Custo',
+      title: 'Solicitar Medicamento de Alto Custo - Farmacia Digital ',
       slug: 'saude-e-vigilancia-sanitaria/solicitar-medicamento-alto-custo',
-      description: '',
+      description: 'Fornecer medicamentos gratuitos para tratamento de doenças de média e alta complexidade.',
       impact: 'Garante acesso contínuo a medicamentos essenciais para doenças graves e crônicas, que muitas vezes custam milhares de reais por mês e seriam inacessíveis sem a política pública.\n\nA Farmácia Digital do Estado já atende mais de 100 mil pacientes ativos em tratamento contínuo.\n\nO custo mensal de alguns medicamentos de alto custo pode ultrapassar R$ 5 mil por paciente, valor integralmente coberto pelo SUS estadual.',
       servicoDigital: true
     },
@@ -1223,7 +1223,7 @@ export const adultaData: MenuItem[] = [
       category: 'Saúde e Vigilância Sanitária',
       title: 'Consultar Medicamentos Disponíveis na Rede Estadual de Saúde',
       slug: 'saude-e-vigilancia-sanitaria/consultar-medicamentos-rede-estadual',
-      description: '',
+      description: 'A Relação Estadual de Medicamentos do Estado de Pernambuco (REESME-PE), enumera e descreve os medicamentos, eletrólitos e insumos padronizados no âmbito da Secretaria Estadual de Saúde de Pernambuco.',
       impact: 'Oferece transparência e informação em tempo real, permitindo que o cidadão saiba onde e como acessar o medicamento de que precisa.\n\nA consulta digital melhora o acesso e reduz pressão sobre as unidades físicas.',
       servicoDigital: true
     },
@@ -1259,7 +1259,7 @@ export const adultaData: MenuItem[] = [
       category: 'Saúde e Vigilância Sanitária',
       title: 'Obter Carteira para pessoa com fibromialgia',
       slug: 'saude-e-vigilancia-sanitaria/obter-carteira-para-pessoa-com-fibromialgia',
-      description: '',
+      description: 'A Carteira de Identificação da Pessoa com Fibromialgia (CIPF) em Pernambuco, instituída pela Lei 17.492/2021, garante atendimento prioritário em órgãos públicos e privados.',
       impact: '',
       servicoDigital: true
     }
@@ -1357,7 +1357,7 @@ items: [
         category: 'Trabalho, Emprego e Previdência',
         title: 'Buscar Vaga de Emprego',
         slug: 'trabalho-emprego-e-previdencia/buscar-vaga-de-emprego',
-        description: '',
+        description: 'Intermediação de mão de obra para conectar trabalhadores com vagas no mercado.',
         impact: 'Facilita o encontro entre trabalhador e oportunidade, reduzindo tempo de procura e aumentando a chance de recolocação, especialmente para quem tem menos rede de contatos.\n\nMais emprego formal desde 2023: +192,6 mil vagas com carteira em Pernambuco. A taxa média anual de desocupação em PE caiu para 10%, menor índice da última década.',
         servicoDigital: true
       },
@@ -1366,7 +1366,7 @@ items: [
         category: 'Trabalho, Emprego e Previdência',
         title: 'Solicitar Seguro Desemprego',
         slug: 'trabalho-emprego-e-previdencia/solicitar-seguro-desemprego',
-        description: '',
+        description: 'Benefício que oferece assistência financeira temporária ao trabalhador formal demitido sem justa causa.',
         impact: 'Pernambuco assegurou quase R$ 1 bilhão em proteção de renda em 9 meses de 2025, evitando que milhares de famílias fiquem sem renda enquanto buscam recolocação.',
         servicoDigital: true
       }

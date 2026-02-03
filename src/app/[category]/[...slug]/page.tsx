@@ -107,7 +107,9 @@ export default function ServiceDetailPage() {
                   className="h-32 w-32 rounded-lg border  bg-white flex items-center justify-center"
                   aria-hidden
                 >
-                  <span className="text-xs text-[#28272C]">QR Code</span>
+                  <span className="text-xs text-[#28272C]">
+                    <img src="/qrcodeAndroid.jpeg" alt="" />
+                  </span>
                 </div>
                 <span className="flex items-center gap-1.5 text-sm font-medium text-[#494C57]">
                   <img src="/icon-android.svg" />
@@ -119,7 +121,8 @@ export default function ServiceDetailPage() {
                   className="h-32 w-32 rounded-lg border  bg-white flex items-center justify-center"
                   aria-hidden
                 >
-                  <span className="text-xs text-[#28272C]">QR Code</span>
+                    <img src="/qrcodeIOS.jpeg" alt="" />
+                  <span className="text-xs text-[#28272C]"></span>
                 </div>
                 <span className="flex items-center gap-1.5 text-sm font-medium text-[#494C57]">
                   <img src="/icon-ios.svg" />

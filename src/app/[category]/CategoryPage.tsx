@@ -32,7 +32,7 @@ const categoryConfig = {
   'terceira-idade': {
     title: 'Pessoa Idosa',
     subtitle: 'Jornada do Cidadão',
-    image: '/idosa-big.svg'
+    image: '/Idosa-big.svg'
   }
 };
 

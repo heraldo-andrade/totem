@@ -16,8 +16,27 @@ export default function PWARegister() {
         .then((registration) => {
           console.log('Service Worker registrado com sucesso', registration);
           
+          // Fazer precache manual das páginas principais
+          if ('caches' in window) {
+            const urlsToCache = [
+              '/',
+              '/juventude',
+              '/infancia',
+              '/adulta',
+              '/terceira-idade',
+              '/offline',
+            ];
+            
+            caches.open('pages-precache-v1').then((cache) => {
+              console.log('Fazendo precache das páginas principais...');
+              cache.addAll(urlsToCache).catch((error) => {
+                console.warn('Erro ao fazer precache:', error);
+              });
+            });
+          }
+          
           // Verificar atualizações periodicamente
-          setInterval(() => {
+          const updateInterval = setInterval(() => {
             registration.update();
           }, 60000); // Verificar a cada minuto
           
@@ -28,6 +47,7 @@ export default function PWARegister() {
             newWorker?.addEventListener('statechange', () => {
               if (newWorker.state === 'activated') {
                 console.log('Nova versão do Service Worker ativada');
+                clearInterval(updateInterval);
                 window.location.reload();
               }
             });

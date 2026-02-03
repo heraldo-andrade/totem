@@ -14,57 +14,57 @@ export default withPWA({
   clientsClaim: true,
   disable: process.env.NODE_ENV === "development",
   
-  // IMPORTANTE: precachear páginas da pasta out/
+  // IMPORTANTE: precachear páginas HTML geradas no build
   cacheOnFrontEndNav: true,
-  reloadOnOnline: false,
+  reloadOnOnline: true,
+  
+  // Adicionar precaching de todas as páginas HTML
+  additionalManifestEntries: [
+    { url: '/', revision: null },
+    { url: '/offline', revision: null },
+    { url: '/juventude', revision: null },
+    { url: '/infancia', revision: null },
+    { url: '/adulta', revision: null },
+    { url: '/terceira-idade', revision: null },
+  ],
   
   runtimeCaching: [
-    // CACHE AGRESSIVO para páginas - CacheFirst com fallback
+    // PRIORIDADE MÁXIMA: Cache de navegação (páginas HTML)
     {
-      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
-        request.destination === 'document',
-      handler: "CacheFirst",
+      urlPattern: ({ request }: { request: Request }) => 
+        request.mode === 'navigate' || request.destination === 'document',
+      handler: "NetworkFirst",
       options: {
-        cacheName: "html-pages",
+        cacheName: "pages-navigation",
+        networkTimeoutSeconds: 3,
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 365 * 24 * 60 * 60, // 1 ano
+          maxAgeSeconds: 24 * 60 * 60, // 1 dia
         },
         cacheableResponse: {
           statuses: [0, 200],
         },
       },
     },
-    // Cache home page e páginas principais agressivamente
-    {
-      urlPattern: /^https?:\/\/[^/]*\/?$/,
-      handler: "CacheFirst",
-      options: {
-        cacheName: "home-page",
-        expiration: {
-          maxEntries: 10,
-          maxAgeSeconds: 365 * 24 * 60 * 60,
-        },
-      },
-    },
-    // Cache páginas HTML com NetworkFirst para offline
+    // Cache de arquivos HTML
     {
       urlPattern: /\.html$/,
-      handler: "CacheFirst",
+      handler: "NetworkFirst",
       options: {
-        cacheName: "static-html",
+        cacheName: "html-files",
+        networkTimeoutSeconds: 3,
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 365 * 24 * 60 * 60,
+          maxAgeSeconds: 24 * 60 * 60,
         },
       },
     },
-    // Cache Next.js data
+    // Cache Next.js (_next)
     {
-      urlPattern: /\/_next\/(static|data)\/.*/,
+      urlPattern: /\/_next\/.*/,
       handler: "CacheFirst",
       options: {
-        cacheName: "next-cache",
+        cacheName: "next-static",
         expiration: {
           maxEntries: 300,
           maxAgeSeconds: 30 * 24 * 60 * 60,
@@ -95,26 +95,9 @@ export default withPWA({
         },
       },
     },
-    // CacheFirst para navegação de páginas
-    {
-      urlPattern: ({ request }: { request: Request }) => 
-        request.mode === 'navigate',
-      handler: "CacheFirst",
-      options: {
-        cacheName: "pages-cache",
-        expiration: {
-          maxEntries: 200,
-          maxAgeSeconds: 365 * 24 * 60 * 60,
-        },
-        cacheableResponse: {
-          statuses: [0, 200],
-        },
-      },
-    },
   ],
   fallbacks: {
     document: "/offline",
-    image: "/app-image.png",
   } as any,
   buildExcludes: [/middleware-manifest\.json$/],
 })(nextConfig as any);

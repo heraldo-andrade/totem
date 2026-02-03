@@ -26,12 +26,20 @@ export default function OfflinePage() {
     };
   }, []);
 
-  // Se voltar online, redireciona para home
+  // Se voltar online, redireciona para home após 1 segundo
   useEffect(() => {
     if (isOnline) {
-      router.push('/');
+      const timer = setTimeout(() => {
+        router.push('/');
+      }, 1000);
+      
+      return () => clearTimeout(timer);
     }
   }, [isOnline, router]);
+
+  const handleGoHome = () => {
+    router.push('/');
+  };
 
   return (
     <main
@@ -74,22 +82,40 @@ export default function OfflinePage() {
         </p>
       )}
       {!isOnline && (
-        <button
-          onClick={() => window.location.reload()}
-          style={{
-            padding: "12px 24px",
-            backgroundColor: "#0f172a",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "16px",
-            fontWeight: "600",
-            cursor: "pointer",
-            marginTop: "16px",
-          }}
-        >
-          Tentar novamente
-        </button>
+        <>
+          <button
+            onClick={handleGoHome}
+            style={{
+              padding: "12px 24px",
+              backgroundColor: "#0f172a",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              fontSize: "16px",
+              fontWeight: "600",
+              cursor: "pointer",
+              marginTop: "16px",
+              marginBottom: "12px",
+            }}
+          >
+            Voltar para a página inicial
+          </button>
+          <button
+            onClick={() => window.location.reload()}
+            style={{
+              padding: "12px 24px",
+              backgroundColor: "transparent",
+              color: "#0f172a",
+              border: "2px solid #0f172a",
+              borderRadius: "8px",
+              fontSize: "16px",
+              fontWeight: "600",
+              cursor: "pointer",
+            }}
+          >
+            Tentar novamente
+          </button>
+        </>
       )}
     </main>
   );

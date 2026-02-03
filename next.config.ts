@@ -8,31 +8,30 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
-// Função para obter todas as páginas HTML do build
-function getStaticPages(): string[] {
-  const outDir = path.join(process.cwd(), 'out');
-  const pages: string[] = [];
-
-  function scanDirectory(dir: string, basePath: string = '') {
-    if (!fs.existsSync(dir)) return;
-    
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    entries.forEach((entry) => {
-      const fullPath = path.join(dir, entry.name);
-      const urlPath = path.join(basePath, entry.name);
-      
-      if (entry.isDirectory() && !entry.name.startsWith('_next')) {
-        scanDirectory(fullPath, urlPath);
-      } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
-        const pagePath = urlPath.replace(/\\/g, '/').replace(/\.html$/, '');
-        pages.push(pagePath === '/index' ? '/' : `/${pagePath}`);
-      }
-    });
+// Ler a lista de páginas do arquivo JSON gerado pelo script
+function getAdditionalManifestEntries() {
+  const cacheUrlsPath = path.join(process.cwd(), 'public', 'cache-urls.json');
+  
+  if (fs.existsSync(cacheUrlsPath)) {
+    try {
+      const urls = JSON.parse(fs.readFileSync(cacheUrlsPath, 'utf-8'));
+      console.log(`[PWA Config] 📦 Adicionando ${urls.length} páginas ao precache`);
+      return urls.map((url: string) => ({ url, revision: Date.now().toString() }));
+    } catch (error) {
+      console.warn('[PWA Config] ⚠️ Erro ao ler cache-urls.json:', error);
+    }
   }
-
-  scanDirectory(outDir);
-  return pages;
+  
+  // Fallback para páginas básicas
+  console.log('[PWA Config] ⚠️ cache-urls.json não encontrado, usando páginas padrão');
+  return [
+    { url: '/', revision: Date.now().toString() },
+    { url: '/offline', revision: Date.now().toString() },
+    { url: '/juventude', revision: Date.now().toString() },
+    { url: '/infancia', revision: Date.now().toString() },
+    { url: '/adulta', revision: Date.now().toString() },
+    { url: '/terceira-idade', revision: Date.now().toString() },
+  ];
 }
 
 export default withPWA({

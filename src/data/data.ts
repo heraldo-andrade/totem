@@ -24,39 +24,12 @@ export function getServiceBySlug(slug: string | string[], category?: string): Se
   // Se slug for um array, junta com '/'
   const fullSlug = Array.isArray(slug) ? slug.join('/') : slug;
   
-  // Determinar quais dados usar com base na categoria
-  let allData: MenuItem[];
-  
-  if (category) {
-    switch (category) {
-      case 'juventude':
-        allData = juventudeData;
-        break;
-      case 'infancia':
-        allData = infanciaData;
-        break;
-      case 'adulta':
-        allData = adultaData;
-        break;
-      case 'terceira-idade':
-        allData = terceiraidadeData;
-        break;
-      default:
-        allData = [
-          ...juventudeData,
-          ...infanciaData,
-          ...adultaData,
-          ...terceiraidadeData
-        ];
-    }
-  } else {
-    allData = [
-      ...juventudeData,
-      ...infanciaData,
-      ...adultaData,
-      ...terceiraidadeData
-    ];
-  }
+  const allData = category ? categoryData[category as keyof typeof categoryData] : [
+    ...juventudeData,
+    ...infanciaData,
+    ...adultaData,
+    ...terceiraidadeData
+  ];
   
   if (!allData) return null;
   
@@ -891,7 +864,7 @@ export const adultaData: MenuItem[] = [
       id: 'assistencia-social-cidadania-7',
       category: 'Assistência Social e Cidadania',
       title: 'Registrar Reclamação no PROCON Presencialmente ',
-      slug: 'assistencia-social-cidadania/Registrar-reclamacao-no-procon-presencialmente ',
+      slug: 'assistencia-social-cidadania/registrar-reclamacao-no-procon-presencialmente',
       description: 'Registrar reclamação sobre produtos e serviços para buscar solução na relação de consumo.',
       impact: '',
       servicoDigital: true
@@ -1192,8 +1165,8 @@ export const adultaData: MenuItem[] = [
     {
       id: 'justica-seguranca-7',
       category: 'POLÍCIA CIVIL',
-      title: 'Obter certidão de antecedentes criminais ',
-      slug: 'justica-seguranca/obter-certidao-de-antecedentes-criminais ',
+      title: 'Obter certidão de antecedentes criminais',
+      slug: 'justica-seguranca/obter-certidao-de-antecedentes-criminais',
       description:'A Certidão de Antecedentes é um documento emitido pelo Instituto de Identificação Tavares Buril, que informa a existência ou não de antecedentes criminais dos requerentes. Apenas serão emitidas via internet certidões cujo resultado seja "NADA CONSTA".',
       impact:'',
       servicoDigital: true

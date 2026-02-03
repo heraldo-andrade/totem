@@ -261,7 +261,7 @@ servicoDigital: true
       category: 'CTM',
       title: 'Obter VEM estudante',
       slug: 'infraestrutura-transito-transportes/obter-vem-estudante',
-      description: '',
+      description: 'O VEM Estudante garante o benefício da meia passagem aos estudantes de instituições públicas e privadas cadastradas no Grande Recife Consórcio de Transporte. A primeira via do VEM Estudante, assim como a de todos os demais cartões VEM, é gratuita.',
       impact: 'Mobilidade para estudar; reduz deslocamento e burocracia para emissão, solicitação e compra de crédito.\n\nGarante a economia de 50% no valor da tarifa para milhares de alunos da rede estadual.',
     servicoDigital: true
     },
@@ -270,7 +270,7 @@ servicoDigital: true
       category: 'CTM',
       title: 'Recarregar créditos do VEM estudante',
       slug: 'infraestrutura-transito-transportes/recarregar-creditos-do-vem-estudante',
-      description: '',
+      description: 'Permitir recarregar créditos no Cartão VEM Estudante pela internet.',
       impact: 'Recarga e compra de créditos via serviço digital do Cartão VEM, reduz fricção do dia a dia, sem fila.\n\nElimina o tempo de espera em filas físicas, que pode chegar a 40 minutos em horários de pico nos terminais, além do tempo de deslocamento até estes, através da compensação de créditos via canais digitais.',
     servicoDigital: true
     },
@@ -288,7 +288,7 @@ servicoDigital: true
       category: 'CTM',
       title: 'Consultar itinerários, paradas e localidades de Ônibus',
       slug: 'infraestrutura-transito-transportes/consultar-itinerarios-paradas-e-localidades-de-onibus',
-      description: '',
+      description: 'Permite a consulta de itinerários, paradas e localidades das linhas de ônibus por empresa operadora no Grande Recife.',
       impact: 'Previsibilidade do deslocamento e economia de tempo; reduz faltas por atraso e insegurança no trajeto.\n\nOtimiza a operação do sistema de transporte ao reduzir a ociosidade nas paradas e aumentar a eficiência do uso das mais de 400 linhas gerenciadas pelo CTM através da informação em tempo real.',
       servicoDigital: true
 
@@ -308,7 +308,7 @@ servicoDigital: true
       category: 'POLÍCIA CIVIL',
       title: 'Registrar boletim de ocorrência online',
       slug: 'justica-seguranca/registrar-boletim-de-ocorrencia-online',
-      description: '',
+      description: 'Permite o registro de boletim de ocorrência pela internet.',
       impact: 'Acesso rápido ao Estado em situação de vulnerabilidade; reduz deslocamento e acelera formalização do registro.\n\nA meta é que os registros via delegacia eletrônica alcancem entre 25% e 40% dos boletins para crimes sem flagrante imediato.',
       servicoDigital: true
     },
@@ -317,7 +317,7 @@ servicoDigital: true
       category: 'SECMULHER',
       title: 'Relatar Caso de Violência - Protege Mulher',
       slug: 'justica-seguranca/197-relatar-caso-de-violencia-protege-mulher',
-      description: '',
+      description: 'Relatar anonimamente caso de violência contra a mulher, ajudando no mapeamento de áreas de risco e em ações de proteção para todas as mulheres. Este registro não corresponde a um Boletim de Ocorrência (BO).',
       impact: 'Canal direto de relato e acionamento; reduz subnotificação e melhora resposta do Estado.\n\nPernambuco registrou 34.679 vítimas de violência doméstica segundo dados divulgados pela Secretaria de Defesa Social.',
     servicoDigital: true
     },
@@ -716,7 +716,7 @@ export const terceiraidadeData: MenuItem[] = [
       category: 'FUNAPE',
       title: 'Realizar Prova de Vida',
       slug: 'trabalho-emprego-previdencia/realizar-prova-de-vida',
-      description: '',
+      description: 'Comprovar anualmente a prova de vida para manter benefícios previdenciários. A prova de vida é obrigatória e deve ser feita no mês do aniversário.',
       impact: 'Serve para comprovar que o beneficiário está vivo, evitar fraudes e garantir que o Governo pague o benefício a quem efetivamente deve recebe em 2026, a Prova de Vida é exigida para 106.181 pessoas',
     servicoDigital: true
     },
@@ -725,7 +725,7 @@ export const terceiraidadeData: MenuItem[] = [
       category: 'FUNAPE',
       title: 'Atualizar Dados Cadastrais',
       slug: 'trabalho-emprego-previdencia/atualizar-dados-cadastrais',
-      description: '',
+      description: 'Atualizar os dados pessoais e bancários de pessoas aposentadas e pensionistas no sistema da Funape.',
       impact: 'Mantém cadastro correto (dados pessoais, endereço, contato, vínculo), evitando inconsistências que geram pendências, atrasos e bloqueios no benefício.Beneficia diretamente a 80.439 aposentados e 24.225 pensionistas administrados pela FUNAPE.',
     servicoDigital: true
     },
@@ -734,7 +734,7 @@ export const terceiraidadeData: MenuItem[] = [
       category: 'FUNAPE',
       title: 'Solicitar Isenção de Imposto de Renda e Contribuição Previdenciária',
       slug: 'trabalho-emprego-previdencia/solicitar-isencao-de-imposto-de-renda-e-contribuicao-previdenciaria',
-      description: '',
+      description: 'Solicitar isenção de Imposto de Renda e contribuição previdenciária com base em laudo médico para portadores de doenças graves.',
       impact: 'Pode gerar ganho financeiro direto ao reduzir descontos de IR e contribuição previdenciária quando o beneficiário se enquadra nos critérios legais.\n\nA isenção pode produzir efeitos financeiros retroativos conforme laudo, possibilitando recuperação de valores.',
     servicoDigital: true
     },
@@ -1146,7 +1146,7 @@ export const adultaData: MenuItem[] = [
       title: 'Registrar boletim de ocorrência para violência contra a mulher',
       slug: 'justica-seguranca/boletim-ocorrencia-violencia-mulher',
       description:
-        'Permite o registro formal de ocorrências de violência contra a mulher, garantindo início rápido das medidas legais e de proteção.',
+        'Permite que mulheres registrem violência doméstica ou sexual, física, psicológica, patrimonial ou moral.',
       impact:
         'O registro imediato fortalece a proteção da vítima e a atuação integrada dos órgãos de segurança.',
       servicoDigital: true

@@ -4,7 +4,8 @@ import ParticlesBackground from "@/components/particlesBackground";
 export default function Home() {
   return (
 
-      <main className="overflow-auto w-full h-screen pr-16 pl-16 relative">
+      // <main className="overflow-auto w-full h-screen pr-16 pl-16 relative">
+       <main className={`${styles.conteinerHome} `}>
         <div className="relative z-50">
           <h1 className={`${styles.titlepage} text-text-bright`}>
             <span className={styles.destaque}>PERNAMBUCO</span> DIGITAL<br />

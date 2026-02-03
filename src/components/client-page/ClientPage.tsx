@@ -1,6 +1,9 @@
 "use client";
 
 import { HeaderInternal } from "@/components";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useMemo } from "react";
 
 export interface Service {
   title: string;
@@ -14,19 +17,56 @@ interface ClientPageProps {
   category: string;
 }
 
+const categoryConfig: Record<string, { title: string; subtitle: string }> = {
+  juventude: { title: "Juventude", subtitle: "Jornada do Cidadão" },
+  infancia: { title: "Infância", subtitle: "Jornada do Cidadão" },
+  adulta: { title: "Fase Adulta", subtitle: "Jornada do Cidadão" },
+  "terceira-idade": { title: "Terceira Idade", subtitle: "Jornada do Cidadão" },
+};
+
 export function ClientPage({
   service,
   category,
 }: ClientPageProps) {
+
+  const params = useParams();
+  const slug = params?.slug as string | string[];
+
+  const config = useMemo(
+    () =>
+      categoryConfig[category] ?? {
+        title: category,
+        subtitle: "Jornada do Cidadão",
+        
+        
+      },
+    [category]
+  );
+
+  if (!service) {
+    return (
+      <main className="min-h-screen bg-[#F8FAFC] px-4 py-8">
+        <p className="text-[#28272C]">Serviço não encontrado.</p>
+        <Link
+          href={category ? `/${category}` : "/"}
+          className="mt-4 inline-block font-semibold text-[#0034B7] underline"
+        >
+          Voltar
+        </Link>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-[linear-gradient(to_bottom,_#F3F7FF_40%,_#e8f0ff_100%)]">
+    <main className="h-full overflow-auto bg-[linear-gradient(to_bottom,_#F3F7FF_40%,_#e8f0ff_100%)]">
       <HeaderInternal
-        title={service.title}
-        subtitle="Jornada do Cidadão"
-        backHref={`/${category}`}
+        subtitle={config.subtitle}
+        title={config.title}
+        backHref={category ? `/${category}` : "/"}
         homeHref="/"
       />
-      <section className="bg-white overflow-auto h-[calc(100vh-86px)] flex gap-5 pr-14 pl-14 pt-16">
+
+      <section className="flex gap-5 pr-14 pl-14 pt-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Coluna esquerda: tag, título, descrição, Impacto */}
           <div className="flex flex-col">
@@ -76,7 +116,9 @@ export function ClientPage({
                   className="h-32 w-32 rounded-lg border  bg-white flex items-center justify-center"
                   aria-hidden
                 >
-                  <span className="text-xs text-[#28272C]">QR Code</span>
+                  <span className="text-xs text-[#28272C]">
+                    <img src="/qrcodeAndroid.jpeg" alt="" />
+                  </span>
                 </div>
                 <span className="flex items-center gap-1.5 text-sm font-medium text-[#494C57]">
                   <img src="/icon-android.svg" />
@@ -88,7 +130,8 @@ export function ClientPage({
                   className="h-32 w-32 rounded-lg border  bg-white flex items-center justify-center"
                   aria-hidden
                 >
-                  <span className="text-xs text-[#28272C]">QR Code</span>
+                    <img src="/qrcodeIOS.jpeg" alt="" />
+                  <span className="text-xs text-[#28272C]"></span>
                 </div>
                 <span className="flex items-center gap-1.5 text-sm font-medium text-[#494C57]">
                   <img src="/icon-ios.svg" />

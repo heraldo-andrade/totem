@@ -3,7 +3,11 @@
 import { useEffect, useState } from 'react';
 
 export default function CacheWarmer() {
-  const [cacheStatus, setCacheStatus] = useState<string>('Aguardando...');
+  const [cacheStatus, setCacheStatus] = useState<{
+    total: number;
+    cached: number;
+    loading: boolean;
+  }>({ total: 0, cached: 0, loading: false });
 
   useEffect(() => {
     // Apenas no cliente
@@ -11,110 +15,119 @@ export default function CacheWarmer() {
       return;
     }
 
-    const doCacheWarm = async () => {
-      // Aguardar o SW estar pronto
-      if (!('serviceWorker' in navigator)) {
-        console.warn('⚠️ Service Worker não suportado neste navegador');
-        setCacheStatus('SW não suportado');
-        return;
-      }
+    const doPrecache = async () => {
+      console.log('[CacheWarmer] 🚀 Iniciando precache de TODAS as páginas...');
+      setCacheStatus(prev => ({ ...prev, loading: true }));
 
       try {
-        const registration = await navigator.serviceWorker.ready;
-        console.log('🚀 Service Worker pronto! Iniciando pré-cache completo...');
-        setCacheStatus('SW pronto, iniciando cache...');
-        
-        // Carregar lista de URLs do arquivo JSON gerado no build
-        let pagesToCache: string[];
-        
-        try {
-          const response = await fetch('/cache-urls.json');
-          if (response.ok) {
-            pagesToCache = await response.json();
-            console.log(`📦 Encontradas ${pagesToCache.length} páginas para cachear`);
-          } else {
-            throw new Error('Arquivo não encontrado');
-          }
-        } catch {
-          console.log('⚠️ Usando lista padrão de páginas');
-          pagesToCache = [
-            '/',
-            '/infancia',
-            '/juventude',
-            '/adulta',
-            '/terceira-idade',
-            '/offline',
-          ];
+        // Carregar lista de URLs gerada no build
+        const response = await fetch('/cache-urls.json');
+        if (!response.ok) {
+          throw new Error('Não foi possível carregar cache-urls.json');
         }
+        
+        const allUrls: string[] = await response.json();
+        console.log(`[CacheWarmer] 📄 Total de páginas para cachear: ${allUrls.length}`);
+        setCacheStatus(prev => ({ ...prev, total: allUrls.length }));
 
-        // Abrir cache e adicionar páginas em lotes
-        const cache = await caches.open('pages-precache-v2');
+        // Abrir o cache
+        const cache = await caches.open('all-pages-v1');
+        
+        // Cachear em lotes para não sobrecarregar
         const batchSize = 5;
-        let successCount = 0;
-        let errorCount = 0;
+        let cachedCount = 0;
 
-        for (let i = 0; i < pagesToCache.length; i += batchSize) {
-          const batch = pagesToCache.slice(i, i + batchSize);
-          const batchNumber = Math.floor(i / batchSize) + 1;
-          const totalBatches = Math.ceil(pagesToCache.length / batchSize);
-          
-          setCacheStatus(`Cacheando lote ${batchNumber}/${totalBatches}...`);
+        for (let i = 0; i < allUrls.length; i += batchSize) {
+          const batch = allUrls.slice(i, i + batchSize);
           
           const results = await Promise.allSettled(
-            batch.map(async (page) => {
+            batch.map(async (url) => {
               try {
-                const response = await fetch(page, { 
+                // Verificar se já está em cache
+                const existingCache = await cache.match(url);
+                if (existingCache) {
+                  return true; // Já está em cache
+                }
+
+                // Fazer fetch e cachear
+                const res = await fetch(url, { 
                   method: 'GET',
                   credentials: 'same-origin',
-                  cache: 'reload' // Forçar buscar do servidor
+                  cache: 'no-cache' // Forçar buscar da rede
                 });
                 
-                if (response.ok) {
-                  await cache.put(page, response.clone());
-                  console.log(`✅ ${page}`);
+                if (res.ok) {
+                  await cache.put(url, res.clone());
                   return true;
-                } else {
-                  console.log(`⚠️ ${page} (${response.status})`);
-                  return false;
                 }
-              } catch (error) {
-                console.log(`❌ ${page}`, error);
+                return false;
+              } catch {
                 return false;
               }
             })
           );
 
-          results.forEach((result) => {
-            if (result.status === 'fulfilled' && result.value) {
-              successCount++;
-            } else {
-              errorCount++;
-            }
-          });
-
-          // Pequena pausa entre lotes para não sobrecarregar
-          await new Promise(resolve => setTimeout(resolve, 100));
+          cachedCount += results.filter(r => r.status === 'fulfilled' && r.value).length;
+          setCacheStatus(prev => ({ ...prev, cached: cachedCount }));
+          
+          // Log de progresso
+          const progress = Math.round((i + batch.length) / allUrls.length * 100);
+          console.log(`[CacheWarmer] 📊 Progresso: ${progress}% (${cachedCount}/${allUrls.length})`);
         }
 
-        const finalStatus = `✅ Cache completo: ${successCount}/${pagesToCache.length} páginas`;
-        console.log(finalStatus);
-        setCacheStatus(finalStatus);
-
-        // Verificar total no cache
-        const keys = await cache.keys();
-        console.log(`📊 Total de itens no cache: ${keys.length}`);
+        console.log(`[CacheWarmer] ✅ Precache completo: ${cachedCount}/${allUrls.length} páginas`);
+        setCacheStatus({ total: allUrls.length, cached: cachedCount, loading: false });
+        
+        // Salvar flag indicando que precache foi feito
+        localStorage.setItem('pwa-precache-done', Date.now().toString());
         
       } catch (error) {
-        console.error('❌ Erro ao preparar Service Worker:', error);
-        setCacheStatus('Erro no cache');
+        console.error('[CacheWarmer] ❌ Erro no precache:', error);
+        setCacheStatus(prev => ({ ...prev, loading: false }));
       }
     };
 
-    // Executar após um delay para dar tempo do app carregar
-    const timer = setTimeout(doCacheWarm, 2000);
-    return () => clearTimeout(timer);
+    // Verificar se precache já foi feito recentemente (últimas 24h)
+    const lastPrecache = localStorage.getItem('pwa-precache-done');
+    const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
+    
+    if (!lastPrecache || parseInt(lastPrecache) < oneDayAgo) {
+      // Aguardar um pouco antes de iniciar (deixar a página carregar)
+      const timer = setTimeout(() => {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.ready.then(() => {
+            doPrecache();
+          });
+        }
+      }, 3000); // Aguardar 3 segundos
+
+      return () => clearTimeout(timer);
+    } else {
+      console.log('[CacheWarmer] ⏭️ Precache já foi feito recentemente');
+    }
   }, []);
 
-  // Retornar null (não renderiza nada visível)
+  // Mostrar indicador de progresso se estiver cacheando
+  if (cacheStatus.loading && cacheStatus.total > 0) {
+    return (
+      <div 
+        style={{
+          position: 'fixed',
+          bottom: 20,
+          right: 20,
+          background: '#0f172a',
+          color: 'white',
+          padding: '12px 16px',
+          borderRadius: 8,
+          fontSize: 12,
+          zIndex: 9999,
+          boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+        }}
+      >
+        📥 Preparando offline: {cacheStatus.cached}/{cacheStatus.total}
+      </div>
+    );
+  }
+
   return null;
 }

@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/init-cache-urls.js || true",
     "build": "next build --webpack && node scripts/generate-cache-urls.js",
-    "postbuild": "node scripts/copy-cache-to-out.js || true",
     "dev": "next dev --webpack",
     "start": "next start",
     "lint": "eslint"

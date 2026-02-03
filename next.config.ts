@@ -8,30 +8,31 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
-// Ler a lista de páginas do arquivo JSON gerado pelo script
-function getAdditionalManifestEntries() {
-  const cacheUrlsPath = path.join(process.cwd(), 'public', 'cache-urls.json');
-  
-  if (fs.existsSync(cacheUrlsPath)) {
-    try {
-      const urls = JSON.parse(fs.readFileSync(cacheUrlsPath, 'utf-8'));
-      console.log(`[PWA Config] 📦 Adicionando ${urls.length} páginas ao precache`);
-      return urls.map((url: string) => ({ url, revision: Date.now().toString() }));
-    } catch (error) {
-      console.warn('[PWA Config] ⚠️ Erro ao ler cache-urls.json:', error);
-    }
+// Função para obter todas as páginas HTML do build
+function getStaticPages(): string[] {
+  const outDir = path.join(process.cwd(), 'out');
+  const pages: string[] = [];
+
+  function scanDirectory(dir: string, basePath: string = '') {
+    if (!fs.existsSync(dir)) return;
+    
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    
+    entries.forEach((entry) => {
+      const fullPath = path.join(dir, entry.name);
+      const urlPath = path.join(basePath, entry.name);
+      
+      if (entry.isDirectory() && !entry.name.startsWith('_next')) {
+        scanDirectory(fullPath, urlPath);
+      } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
+        const pagePath = urlPath.replace(/\\/g, '/').replace(/\.html$/, '');
+        pages.push(pagePath === '/index' ? '/' : `/${pagePath}`);
+      }
+    });
   }
-  
-  // Fallback para páginas básicas
-  console.log('[PWA Config] ⚠️ cache-urls.json não encontrado, usando páginas padrão');
-  return [
-    { url: '/', revision: Date.now().toString() },
-    { url: '/offline', revision: Date.now().toString() },
-    { url: '/juventude', revision: Date.now().toString() },
-    { url: '/infancia', revision: Date.now().toString() },
-    { url: '/adulta', revision: Date.now().toString() },
-    { url: '/terceira-idade', revision: Date.now().toString() },
-  ];
+
+  scanDirectory(outDir);
+  return pages;
 }
 
 export default withPWA({
@@ -46,44 +47,50 @@ export default withPWA({
   cacheOnFrontEndNav: true,
   reloadOnOnline: true,
   
-  // Adicionar precaching de todas as páginas HTML
+  // Adicionar precaching de páginas críticas
   additionalManifestEntries: [
     { url: '/', revision: null },
     { url: '/offline', revision: null },
-    { url: '/juventude', revision: null },
-    { url: '/infancia', revision: null },
-    { url: '/adulta', revision: null },
-    { url: '/terceira-idade', revision: null },
-    { url: '/cache-urls.json', revision: null }, // CRÍTICO: precisa estar no cache do SW
+    { url: '/cache-urls.json', revision: null },
   ],
   
   runtimeCaching: [
-    // StaleWhileRevalidate para navegação - serve do cache primeiro e atualiza em background
+    // PRIORIDADE 1: Navegação - CacheFirst para funcionar offline imediatamente
     {
       urlPattern: ({ request }: { request: Request }) => 
         request.mode === 'navigate',
-      handler: "StaleWhileRevalidate",
+      handler: "CacheFirst",
       options: {
-        cacheName: "pages-navigation",
+        cacheName: "all-pages-v1",
+        matchOptions: {
+          ignoreSearch: true,
+        },
         expiration: {
-          maxEntries: 200,
+          maxEntries: 500,
           maxAgeSeconds: 365 * 24 * 60 * 60,
         },
         cacheableResponse: {
           statuses: [0, 200],
         },
+        plugins: [{
+          handlerDidError: async () => {
+            return caches.match('/offline');
+          }
+        }],
       },
     },
-    // NetworkFirst para documentos (com timeout curto para funcionar offline)
+    // PRIORIDADE 2: Documentos HTML - CacheFirst
     {
-      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
+      urlPattern: ({ request }: { request: Request }) => 
         request.destination === 'document',
-      handler: "NetworkFirst",
+      handler: "CacheFirst",
       options: {
-        cacheName: "html-documents",
-        networkTimeoutSeconds: 2,
+        cacheName: "all-pages-v1",
+        matchOptions: {
+          ignoreSearch: true,
+        },
         expiration: {
-          maxEntries: 200,
+          maxEntries: 500,
           maxAgeSeconds: 365 * 24 * 60 * 60,
         },
         cacheableResponse: {
@@ -91,26 +98,14 @@ export default withPWA({
         },
       },
     },
-    // StaleWhileRevalidate para home
-    {
-      urlPattern: /^https?:\/\/[^/]*\/?$/,
-      handler: "StaleWhileRevalidate",
-      options: {
-        cacheName: "home-page",
-        expiration: {
-          maxEntries: 10,
-          maxAgeSeconds: 365 * 24 * 60 * 60,
-        },
-      },
-    },
-    // StaleWhileRevalidate para arquivos HTML
+    // Cache páginas HTML por padrão de URL
     {
       urlPattern: /\.html$/,
-      handler: "StaleWhileRevalidate",
+      handler: "CacheFirst",
       options: {
-        cacheName: "html-files",
+        cacheName: "all-pages-v1",
         expiration: {
-          maxEntries: 200,
+          maxEntries: 500,
           maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },

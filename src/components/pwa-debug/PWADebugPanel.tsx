@@ -32,7 +32,7 @@ export default function PWADebugPanel() {
       // Verificar cache
       if ('caches' in window) {
         try {
-          const cache = await caches.open('pages-precache-v1');
+          const cache = await caches.open('all-pages-v1');
           const keys = await cache.keys();
           info.cacheCount = keys.length;
           
@@ -45,8 +45,8 @@ export default function PWADebugPanel() {
               info.cacheProgress = `${Math.round((info.cacheCount / info.totalUrls) * 100)}%`;
             }
           } catch (e) {
-            info.totalUrls = 6; // Fallback
-            info.cacheProgress = `${Math.round((info.cacheCount / 6) * 100)}%`;
+            info.totalUrls = 70; // Fallback aproximado
+            info.cacheProgress = `${Math.round((info.cacheCount / 70) * 100)}%`;
           }
         } catch (e) {
           info.cacheCount = 0;

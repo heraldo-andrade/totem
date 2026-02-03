@@ -38,7 +38,7 @@ export default function Home() {
 
                         <p className={`${styles.headerTitle} text-text-primary`}>Juventude</p>
                         <p className={`${styles.description} text--text-secondary`}>
-                        {/* Lorem ipsum dolor sit amet,  consectetur adipiscing elit. */}
+                        {/* Lorem ipsum dolor sit amet,  consectetur adipit. */}
                         </p>
                     </div>
                     <div className={`${styles.conteinerAvatar}`}>
@@ -60,8 +60,7 @@ export default function Home() {
                   </div>
                   <div className={`${styles.conteinerAvatar}`}>
                     <figure>
-                    <img src="/avatar-card-adulta.png" alt="" />
-
+                      <img src="/avatar-card-adulta.png" alt="" />
                     </figure>
                   </div>
                 </a>

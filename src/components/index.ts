@@ -3,6 +3,7 @@
 
 export * from "./big-card";
 export * from "./header-internal";
+export * from "./pwa-register";
 export * from "./service-card";
 export * from "./service-carousel";
 export * from "./client-page/ClientPage";

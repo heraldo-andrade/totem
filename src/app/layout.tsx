@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { PWARegister } from "@/components";
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -26,8 +27,13 @@ export const metadata: Metadata = {
   title: "Pernambuco Digital",
   description: "Jornada do cidadão",
   manifest: '/manifest.json',
-  themeColor: '#0f172a',
 };
+
+export function generateViewport() {
+  return {
+    themeColor: '#0f172a',
+  };
+}
 
 export default function RootLayout({
   children,
@@ -38,6 +44,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} animationHome  antialiased`}>
+        <PWARegister />
         {children}
       </body>
     </html>

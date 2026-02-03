@@ -15,27 +15,30 @@ export default withPWA({
   disable: process.env.NODE_ENV === "development",
   
   runtimeCaching: [
-    // Cache home page agressivamente
+    // Cache home page e páginas principais agressivamente
     {
       urlPattern: /^https?:\/\/[^/]*\/?$/,
-      handler: "StaleWhileRevalidate",
+      handler: "NetworkFirst",
       options: {
         cacheName: "home-page",
+        networkTimeoutSeconds: 3,
         expiration: {
-          maxEntries: 1,
+          maxEntries: 10,
           maxAgeSeconds: 7 * 24 * 60 * 60,
         },
       },
     },
-    // Cache páginas HTML com StaleWhileRevalidate
+    // Cache páginas HTML com NetworkFirst para offline
     {
-      urlPattern: /\.html$/,
-      handler: "StaleWhileRevalidate",
+      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
+        request.destination === 'document',
+      handler: "NetworkFirst",
       options: {
         cacheName: "html-pages",
+        networkTimeoutSeconds: 3,
         expiration: {
-          maxEntries: 100,
-          maxAgeSeconds: 24 * 60 * 60,
+          maxEntries: 200,
+          maxAgeSeconds: 7 * 24 * 60 * 60,
         },
       },
     },
@@ -46,7 +49,7 @@ export default withPWA({
       options: {
         cacheName: "next-cache",
         expiration: {
-          maxEntries: 200,
+          maxEntries: 300,
           maxAgeSeconds: 30 * 24 * 60 * 60,
         },
       },
@@ -58,8 +61,20 @@ export default withPWA({
       options: {
         cacheName: "static-assets",
         expiration: {
-          maxEntries: 300,
+          maxEntries: 500,
           maxAgeSeconds: 30 * 24 * 60 * 60,
+        },
+      },
+    },
+    // Cache de fontes
+    {
+      urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/,
+      handler: "CacheFirst",
+      options: {
+        cacheName: "google-fonts",
+        expiration: {
+          maxEntries: 30,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },
     },
@@ -69,16 +84,16 @@ export default withPWA({
       handler: "NetworkFirst",
       options: {
         cacheName: "general-cache",
-        networkTimeoutSeconds: 10,
+        networkTimeoutSeconds: 5,
         expiration: {
-          maxEntries: 100,
-          maxAgeSeconds: 24 * 60 * 60,
+          maxEntries: 200,
+          maxAgeSeconds: 7 * 24 * 60 * 60,
         },
       },
     },
   ],
   fallbacks: {
-    document: "/_offline",
+    document: "/offline",
     image: "/app-image.png",
   } as any,
   buildExcludes: [/middleware-manifest\.json$/],

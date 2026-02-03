@@ -9,35 +9,60 @@ export default function OfflinePage() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log('[OFFLINE PAGE] 📄 Página offline carregada');
+    console.log('[OFFLINE PAGE] 🌐 Navigator.onLine:', navigator.onLine);
+    console.log('[OFFLINE PAGE] 📍 URL atual:', window.location.href);
+    console.log('[OFFLINE PAGE] 📍 Referrer:', document.referrer);
+    
     // Verificar status da conexão
     const checkOnlineStatus = () => {
-      setIsOnline(navigator.onLine);
+      const online = navigator.onLine;
+      console.log('[OFFLINE PAGE] 🔍 Check online status:', online);
+      setIsOnline(online);
     };
 
     checkOnlineStatus();
 
     // Listeners para mudanças de conexão
-    window.addEventListener('online', checkOnlineStatus);
-    window.addEventListener('offline', checkOnlineStatus);
+    const handleOnline = () => {
+      console.log('[OFFLINE PAGE] ✅ Evento ONLINE disparado');
+      checkOnlineStatus();
+    };
+    
+    const handleOffline = () => {
+      console.log('[OFFLINE PAGE] ❌ Evento OFFLINE disparado');
+      checkOnlineStatus();
+    };
+    
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
 
     return () => {
-      window.removeEventListener('online', checkOnlineStatus);
-      window.removeEventListener('offline', checkOnlineStatus);
+      console.log('[OFFLINE PAGE] 🧹 Limpando listeners');
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
     };
   }, []);
 
   // Se voltar online, redireciona para home após 1 segundo
   useEffect(() => {
     if (isOnline) {
+      console.log('[OFFLINE PAGE] ⏰ Online detectado, redirecionando em 1 segundo...');
       const timer = setTimeout(() => {
+        console.log('[OFFLINE PAGE] 🏠 Redirecionando para home...');
         router.push('/');
       }, 1000);
       
-      return () => clearTimeout(timer);
+      return () => {
+        console.log('[OFFLINE PAGE] ⏰ Timer cancelado');
+        clearTimeout(timer);
+      };
     }
   }, [isOnline, router]);
 
   const handleGoHome = () => {
+    console.log('[OFFLINE PAGE] 🏠 Botão home clicado');
+    console.log('[OFFLINE PAGE] 🌐 Estado online:', navigator.onLine);
     router.push('/');
   };
 

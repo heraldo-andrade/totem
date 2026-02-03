@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import { PWARegister, CacheWarmer, PWAHead } from "@/components";
+import { PWADebugPanel } from "@/components/pwa-debug";
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -57,6 +58,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} animationHome  antialiased`}>
         <PWARegister />
         <CacheWarmer />
+        <PWADebugPanel />
         {children}
       </body>
     </html>

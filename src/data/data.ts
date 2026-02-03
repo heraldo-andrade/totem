@@ -100,7 +100,7 @@ export const juventudeData: MenuItem[] = [
     {
       id: 'assistencia-social-cidadania-5',
       category: 'SJDH',
-      title: 'Solicitar intérprete de Libras virtual',
+      title: 'Solicitar intérprete de Libras virtual - Tá na mão',
       slug: 'assistencia-social-cidadania/solicitar-interprete-libras-virtual',
       description: 'Serviço de inclusão para pessoas surdas ou com baixa audição, facilitando o acesso aos serviços públicos essenciais por meio de intérpretes de Libras.',
       impact: 'Serviço de apoio à comunicação que possibilita a mediação, em tempo real, por profissional de Libras, entre o cidadão e os atendimentos presenciais do Governo de Pernambuco, promovendo acessibilidade comunicacional e inclusão nos serviços públicos.Quase 4 mil atendimentos já realizados, garantindo acessibilidade imediata; reduzindo barreiras de comunicação em serviços públicos.',
@@ -315,7 +315,7 @@ servicoDigital: true
     {
       id: 'justica-seguranca-2',
       category: 'SECMULHER',
-      title: '197 - Relatar Caso de Violência - Protege Mulher',
+      title: 'Relatar Caso de Violência - Protege Mulher',
       slug: 'justica-seguranca/197-relatar-caso-de-violencia-protege-mulher',
       description: '',
       impact: 'Canal direto de relato e acionamento; reduz subnotificação e melhora resposta do Estado.\n\nPernambuco registrou 34.679 vítimas de violência doméstica segundo dados divulgados pela Secretaria de Defesa Social.',
@@ -428,22 +428,22 @@ export const infanciaData: MenuItem[] = [
     category: 'assistencia-social-cidadania',
     title: 'Assistência Social e Cidadania',
     slug: 'assistencia-social-cidadania',
-      iconeWhite: '/icone-menu-branco/Icon=volunteer_activism.svg',
+    iconeWhite: '/icone-menu-branco/Icon=volunteer_activism.svg',
     iconeAzul: '/icone-menu-azul/Icon=volunteer_activism.svg',
     items: [
       {
         id: 'assistencia-social-cidadania-1',
         category: 'SJDH',
-        title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista (SJDH) - Digital',
+        title: 'Solicitar 1ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista',
         slug: 'assistencia-social-cidadania/solicitar-1-via-carteira-identificacao',
         description:'Emitir a Carteira de Identificação da Pessoa com Transtorno do Espectro Autista (Ciptea) para garantir prioridade no atendimento e acesso a serviços públicos.',
         impact:'Facilita identificação e acesso a direitos e atendimento prioritário, com menos desgaste para famílias.Pernambuco possui aproximadamente 105.852 pessoas diagnosticadas com TEA.',
-      servicoDigital: true
+        servicoDigital: true
       },
       {
         id: 'assistencia-social-cidadania-2',
         category: 'SJDH',
-        title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista (SJDH)',
+        title: 'Solicitar 2ª via da Carteira de Identificação da Pessoa com o Transtorno do Espectro Autista',
         slug: 'assistencia-social-cidadania/solicitar-2-via-carteira-identificacao',
         description:'Emitir 2ª via da carteira que garante prioridade a pessoas com Transtorno do Espectro Autista (TEA). A carteira é chamada de CIPTEA (Carteira de Identificação da Pessoa com Transtorno do Espectro Autista). O documento garante prioridade no atendimento e facilita o acesso a serviços.',
         impact:'A perda de um documento de identificação de um autista gera uma ansiedade enorme nos responsáveis, pois a "barreira de proteção" contra o preconceito em filas e transportes desaparece.Mais de 5 mil carteiras entregues todos os anos.',
@@ -452,7 +452,7 @@ export const infanciaData: MenuItem[] = [
       {
         id: 'assistencia-social-cidadania-3',
         category: 'SAS',
-        title: 'Obter Benefício do Programa Mães de Pernambuco (SAS)',
+        title: 'Obter Benefício do Programa Mães de Pernambuco',
         slug: 'assistencia-social-cidadania/obter-beneficio-programa-maes-Pernambuco',
         description:'Transferência de renda mensal de R$ 300,00 para mulheres em situação de extrema vulnerabilidade social, com filhos de até 6 anos, oferecido pelo Governo de Pernambuco.',
         impact:'Renda que fortalece o cuidado na primeira infância e segurança alimentar das famílias mais vulneráveis.Desde o lançamento (mar/2024) o programa já beneficiou mais de 139 mil mulheres e destinou R$ 597,6 milhões em benefícios',
@@ -662,15 +662,7 @@ export const terceiraidadeData: MenuItem[] = [
       impact: 'Consulta especializada para diagnóstico, acompanhamento e cuidado integral da pessoa idosa, prevenindo agravamentos e garantindo tratamento adequado para doenças crônicas como demência, diabetes, hipertensão e osteoporose.Doenças crônicas não transmissíveis são responsáveis por mais de 70% das causas de internação e óbito nessa faixa etária.',
     servicoDigital: true
     },
-    {
-      id: 'saude-vigilancia-sanitaria-3',
-      category: 'SJTH',
-      title: 'Solicitar transporte especializado para pessoas com deficiência e mobilidade reduzida',
-      slug: 'saude-vigilancia-sanitaria/solicitar-transporte-especializado-para-pessoas-com-deficiencia',
-      description: 'Oferecer transporte gratuito em vans adaptadas para pessoas com deficiência que fazem tratamento de saúde contínuo. O serviço PE Conduz leva pessoas com deficiência física ou mobilidade reduzida, especialmente usuárias de cadeira de rodas, para tratamento de saúde e atividades de lazer.',
-      impact: 'Garante direito de ir e vir a pessoas idosas com deficiência ou mobilidade reduzida, permitindo acesso a saúde, reabilitação, serviços públicos e convivência social.Mais de 30% das pessoas idosas no Brasil apresentam algum grau de dificuldade de locomoção ou limitação funcional',
-    servicoDigital: true
-    },
+   
   ]
 
 },
@@ -876,7 +868,16 @@ export const adultaData: MenuItem[] = [
       description: '',
       impact: '',
       servicoDigital: true
-    }
+    },
+     {
+      id: 'assistencia-social-cidadania-8',
+      category: 'SJTH',
+      title: 'Solicitar transporte especializado para pessoas com deficiência e mobilidade reduzida',
+      slug: 'assistencia-social-cidadania/solicitar-transporte-especializado-para-pessoas-com-deficiencia',
+      description: 'Oferecer transporte gratuito em vans adaptadas para pessoas com deficiência que fazem tratamento de saúde contínuo. O serviço PE Conduz leva pessoas com deficiência física ou mobilidade reduzida, especialmente usuárias de cadeira de rodas, para tratamento de saúde e atividades de lazer.',
+      impact: 'Garante direito de ir e vir a pessoas idosas com deficiência ou mobilidade reduzida, permitindo acesso a saúde, reabilitação, serviços públicos e convivência social.Mais de 30% das pessoas idosas no Brasil apresentam algum grau de dificuldade de locomoção ou limitação funcional',
+    servicoDigital: true
+    },
   ]
 },
 {

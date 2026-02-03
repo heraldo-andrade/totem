@@ -1,6 +1,38 @@
+'use client';
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function OfflinePage() {
+  const [isOnline, setIsOnline] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Verificar status da conexão
+    const checkOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    checkOnlineStatus();
+
+    // Listeners para mudanças de conexão
+    window.addEventListener('online', checkOnlineStatus);
+    window.addEventListener('offline', checkOnlineStatus);
+
+    return () => {
+      window.removeEventListener('online', checkOnlineStatus);
+      window.removeEventListener('offline', checkOnlineStatus);
+    };
+  }, []);
+
+  // Se voltar online, redireciona para home
+  useEffect(() => {
+    if (isOnline) {
+      router.push('/');
+    }
+  }, [isOnline, router]);
+
   return (
     <main
       style={{
@@ -22,18 +54,43 @@ export default function OfflinePage() {
           height={80}
         />
       </div>
-      <h1 style={{ fontSize: 24, fontWeight: "bold", marginBottom: 8 }}>
+      <h1 style={{ fontSize: 24, fontWeight: "bold", marginBottom: 8, color: "#0f172a" }}>
         Você está offline
       </h1>
       <p
         style={{
           fontSize: 16,
           color: "#666",
-          maxWidth: 300,
+          maxWidth: 400,
+          marginBottom: 16,
         }}
       >
-        Conecte-se à internet na primeira vez para baixar a aplicação.
+        Esta página não está disponível no cache offline. 
+        Para acessar o conteúdo completo, conecte-se à internet.
       </p>
+      {isOnline && (
+        <p style={{ fontSize: 14, color: "#10b981", fontWeight: "bold" }}>
+          ✓ Conectado! Redirecionando...
+        </p>
+      )}
+      {!isOnline && (
+        <button
+          onClick={() => window.location.reload()}
+          style={{
+            padding: "12px 24px",
+            backgroundColor: "#0f172a",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "16px",
+            fontWeight: "600",
+            cursor: "pointer",
+            marginTop: "16px",
+          }}
+        >
+          Tentar novamente
+        </button>
+      )}
     </main>
   );
 }

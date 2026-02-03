@@ -23,12 +23,39 @@ export function getServiceBySlug(slug: string | string[], category?: string): Se
   // Se slug for um array, junta com '/'
   const fullSlug = Array.isArray(slug) ? slug.join('/') : slug;
   
-  const allData = category ? categoryData[category as keyof typeof categoryData] : [
-    ...juventudeData,
-    ...infanciaData,
-    ...adultaData,
-    ...terceiraidadeData
-  ];
+  // Determinar quais dados usar com base na categoria
+  let allData: MenuItem[];
+  
+  if (category) {
+    switch (category) {
+      case 'juventude':
+        allData = juventudeData;
+        break;
+      case 'infancia':
+        allData = infanciaData;
+        break;
+      case 'adulta':
+        allData = adultaData;
+        break;
+      case 'terceira-idade':
+        allData = terceiraidadeData;
+        break;
+      default:
+        allData = [
+          ...juventudeData,
+          ...infanciaData,
+          ...adultaData,
+          ...terceiraidadeData
+        ];
+    }
+  } else {
+    allData = [
+      ...juventudeData,
+      ...infanciaData,
+      ...adultaData,
+      ...terceiraidadeData
+    ];
+  }
   
   if (!allData) return null;
   

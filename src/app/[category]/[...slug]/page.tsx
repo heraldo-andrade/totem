@@ -9,13 +9,24 @@ export const revalidate = false;
 
 export async function generateStaticParams() {
   const allSlugs = getAllServiceSlugsWithCategory();
-  return allSlugs.map(({ slug, mainCategory }) => {
+  
+  const params = allSlugs.map(({ slug, mainCategory }) => {
+    // O slug já vem no formato "categoria/subcategoria/nome"
+    // Precisamos dividir e pegar todas as partes exceto a primeira (que é a categoria do menu)
     const parts = slug.split("/");
+    
     return {
       category: mainCategory,
-      slug: parts, // Manter todos os segmentos do slug original
+      slug: parts, // Retorna todas as partes do slug como array
     };
   });
+
+  // Log para debug (apenas em dev)
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`[generateStaticParams] Gerando ${params.length} rotas estáticas`);
+  }
+  
+  return params;
 }
 
 export default async function Page({

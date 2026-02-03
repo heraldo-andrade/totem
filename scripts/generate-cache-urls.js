@@ -58,9 +58,20 @@ const uniqueUrls = [...new Set(urls)].sort();
 console.log('[BUILD] ✅ Total de URLs encontradas:', uniqueUrls.length);
 console.log('[BUILD] 📊 Exemplos:', uniqueUrls.slice(0, 10));
 
-// Salvar no arquivo JSON
-const outputPath = path.join(process.cwd(), 'public', 'cache-urls.json');
-fs.writeFileSync(outputPath, JSON.stringify(uniqueUrls, null, 2));
+// Salvar no arquivo JSON em duas localizações
+const publicPath = path.join(process.cwd(), 'public', 'cache-urls.json');
+const outPath = path.join(process.cwd(), 'out', 'cache-urls.json');
 
-console.log('[BUILD] 💾 Lista salva em:', outputPath);
+// Salvar em public/ para desenvolvimento
+fs.writeFileSync(publicPath, JSON.stringify(uniqueUrls, null, 2));
+console.log('[BUILD] 💾 Lista salva em public/:', publicPath);
+
+// Salvar em out/ para produção
+if (fs.existsSync(path.join(process.cwd(), 'out'))) {
+  fs.writeFileSync(outPath, JSON.stringify(uniqueUrls, null, 2));
+  console.log('[BUILD] 💾 Lista salva em out/:', outPath);
+} else {
+  console.log('[BUILD] ⚠️ Pasta out/ não existe, apenas public/ foi atualizado');
+}
+
 console.log('[BUILD] 🎉 Concluído!');

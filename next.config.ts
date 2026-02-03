@@ -55,6 +55,7 @@ export default withPWA({
     { url: '/infancia', revision: null },
     { url: '/adulta', revision: null },
     { url: '/terceira-idade', revision: null },
+    { url: '/cache-urls.json', revision: null }, // CRÍTICO: precisa estar no cache do SW
   ],
   
   runtimeCaching: [

@@ -28,24 +28,59 @@ export default function PWARegister() {
           if ('caches' in window) {
             console.log('[PWA] 💾 Cache API disponível');
             
+            // PRIMEIRO: Cachear o arquivo cache-urls.json imediatamente
+            caches.open('pages-precache-v1').then((cache) => {
+              console.log('[PWA] 🔥 Cacheando cache-urls.json primeiro...');
+              cache.add('/cache-urls.json').then(() => {
+                console.log('[PWA] ✅ cache-urls.json cacheado com sucesso');
+              }).catch((error) => {
+                console.warn('[PWA] ⚠️ Erro ao cachear cache-urls.json:', error);
+              });
+            });
+            
             // Carregar lista de URLs do arquivo gerado no build
             console.log('[PWA] 📥 Carregando lista de URLs para cache...');
             
-            fetch('/cache-urls.json')
-              .then(response => {
-                if (!response.ok) {
-                  console.warn('[PWA] ⚠️ Arquivo cache-urls.json não encontrado, usando lista padrão');
-                  return [
-                    '/',
-                    '/juventude',
-                    '/infancia',
-                    '/adulta',
-                    '/terceira-idade',
-                    '/offline',
-                  ];
+            // Tentar carregar do cache primeiro, depois da rede
+            const loadCacheUrls = async (): Promise<string[]> => {
+              try {
+                // Tentar da rede primeiro
+                const response = await fetch('/cache-urls.json');
+                if (response.ok) {
+                  const urls = await response.json();
+                  console.log('[PWA] ✅ cache-urls.json carregado da rede');
+                  return urls;
                 }
-                return response.json();
-              })
+              } catch (networkError) {
+                console.warn('[PWA] ⚠️ Erro ao carregar da rede:', networkError);
+              }
+              
+              // Se falhar, tentar do cache
+              try {
+                const cache = await caches.open('pages-precache-v1');
+                const cachedResponse = await cache.match('/cache-urls.json');
+                if (cachedResponse) {
+                  const urls = await cachedResponse.json();
+                  console.log('[PWA] ✅ cache-urls.json carregado do cache');
+                  return urls;
+                }
+              } catch (cacheError) {
+                console.warn('[PWA] ⚠️ Erro ao carregar do cache:', cacheError);
+              }
+              
+              // Fallback para lista padrão
+              console.warn('[PWA] ⚠️ Usando lista padrão');
+              return [
+                '/',
+                '/juventude',
+                '/infancia',
+                '/adulta',
+                '/terceira-idade',
+                '/offline',
+              ];
+            };
+            
+            loadCacheUrls()
               .then((urlsToCache: string[]) => {
                 console.log('[PWA] 📦 URLs para cache:', urlsToCache.length);
                 console.log('[PWA] 📋 Lista completa:', urlsToCache);

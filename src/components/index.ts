@@ -2,6 +2,7 @@
 // Adicione aqui os componentes conforme forem sendo criados.
 
 export * from "./big-card";
+export * from "./cache-warmer";
 export * from "./header-internal";
 export * from "./pwa-register";
 export * from "./pwa-head";

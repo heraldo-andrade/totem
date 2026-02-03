@@ -9,36 +9,53 @@ const nextConfig: NextConfig = {
 export default withPWA({
   dest: "public",
   sw: "sw.js",
-  register: false,
+  register: true,
   skipWaiting: true,
   clientsClaim: true,
-  disable: false,
+  disable: process.env.NODE_ENV === "development",
+  
+  // IMPORTANTE: precachear páginas da pasta out/
+  cacheOnFrontEndNav: true,
+  reloadOnOnline: false,
   
   runtimeCaching: [
+    // CACHE AGRESSIVO para páginas - CacheFirst com fallback
+    {
+      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
+        request.destination === 'document',
+      handler: "CacheFirst",
+      options: {
+        cacheName: "html-pages",
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 365 * 24 * 60 * 60, // 1 ano
+        },
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
+      },
+    },
     // Cache home page e páginas principais agressivamente
     {
       urlPattern: /^https?:\/\/[^/]*\/?$/,
-      handler: "NetworkFirst",
+      handler: "CacheFirst",
       options: {
         cacheName: "home-page",
-        networkTimeoutSeconds: 3,
         expiration: {
           maxEntries: 10,
-          maxAgeSeconds: 7 * 24 * 60 * 60,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },
     },
     // Cache páginas HTML com NetworkFirst para offline
     {
-      urlPattern: ({ request, url }: { request: Request; url: URL }) => 
-        request.destination === 'document',
-      handler: "NetworkFirst",
+      urlPattern: /\.html$/,
+      handler: "CacheFirst",
       options: {
-        cacheName: "html-pages",
-        networkTimeoutSeconds: 3,
+        cacheName: "static-html",
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 7 * 24 * 60 * 60,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },
     },
@@ -78,16 +95,19 @@ export default withPWA({
         },
       },
     },
-    // NetworkFirst para outras requisições
+    // CacheFirst para navegação de páginas
     {
-      urlPattern: /^https?:\/\/.*/,
-      handler: "NetworkFirst",
+      urlPattern: ({ request }: { request: Request }) => 
+        request.mode === 'navigate',
+      handler: "CacheFirst",
       options: {
-        cacheName: "general-cache",
-        networkTimeoutSeconds: 5,
+        cacheName: "pages-cache",
         expiration: {
           maxEntries: 200,
-          maxAgeSeconds: 7 * 24 * 60 * 60,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
+        },
+        cacheableResponse: {
+          statuses: [0, 200],
         },
       },
     },

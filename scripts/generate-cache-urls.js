@@ -16,28 +16,34 @@ function scanDirectory(dir, basePath = '') {
   
   entries.forEach((entry) => {
     const fullPath = path.join(dir, entry.name);
-    const urlPath = path.join(basePath, entry.name);
+    const urlPath = path.join(basePath, entry.name).replace(/\\/g, '/');
     
     if (entry.isDirectory() && !entry.name.startsWith('_next') && !entry.name.startsWith('.')) {
+      // Escanear subpastas recursivamente
       scanDirectory(fullPath, urlPath);
-    } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
+    } else if (entry.name.endsWith('.html')) {
       // Converter para URL
-      let url = urlPath.replace(/\\/g, '/');
+      let url;
       
-      // Se for index.html, usar só o diretório
       if (entry.name === 'index.html') {
+        // Se for index.html, usar o diretório como URL
         url = basePath.replace(/\\/g, '/');
+      } else if (entry.name === '404.html' || entry.name.startsWith('_')) {
+        // Ignorar páginas especiais
+        return;
       } else {
-        url = url.replace(/\.html$/, '');
+        // Para outros .html, remover a extensão
+        url = urlPath.replace(/\.html$/, '');
       }
       
       // Normalizar URL
-      if (url === '' || url === '/') {
+      if (url === '' || url === 'index') {
         url = '/';
       } else if (!url.startsWith('/')) {
         url = '/' + url;
       }
       
+      // Adicionar à lista
       urls.push(url);
       console.log('[BUILD] 📄 Encontrado:', url);
     }
@@ -50,6 +56,7 @@ scanDirectory(outDir);
 const uniqueUrls = [...new Set(urls)].sort();
 
 console.log('[BUILD] ✅ Total de URLs encontradas:', uniqueUrls.length);
+console.log('[BUILD] 📊 Exemplos:', uniqueUrls.slice(0, 10));
 
 // Salvar no arquivo JSON
 const outputPath = path.join(process.cwd(), 'public', 'cache-urls.json');

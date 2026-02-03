@@ -4,5 +4,14 @@
   "/infancia",
   "/adulta",
   "/terceira-idade",
-  "/offline"
+  "/offline",
+  "/juventude/assistencia-social-cidadania/obter-primeira-via-da-Carteira-identidade-nacional",
+  "/juventude/assistencia-social-cidadania/obter-segunda-via-da-carteira-identidade-nacional",
+  "/juventude/cultura-artes-historia-esportes/solicitar-visita-guiada-parque-de-dois-irmaos",
+  "/juventude/cultura-artes-historia-esportes/visitar-casa-da-cultura-luiz-gonzaga",
+  "/juventude/educacao-pesquisa/prestar-contas-pix-tenis",
+  "/adulta/assistencia-social-cidadania/obter-primeira-via-da-Carteira-identidade-nacional",
+  "/adulta/assistencia-social-cidadania/obter-segunda-via-da-carteira-identidade-nacional",
+  "/adulta/cultura-artes-historia-esportes/solicitar-visita-guiada-parque-de-dois-irmaos",
+  "/adulta/educacao-pesquisa/prestar-contas-pix-tenis"
 ]

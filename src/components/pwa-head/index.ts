@@ -1,0 +1,1 @@
+export { PWAHead } from './PWAHead';

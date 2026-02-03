@@ -9,10 +9,10 @@ const nextConfig: NextConfig = {
 export default withPWA({
   dest: "public",
   sw: "sw.js",
-  register: true,
+  register: false,
   skipWaiting: true,
   clientsClaim: true,
-  disable: process.env.NODE_ENV === "development",
+  disable: false,
   
   runtimeCaching: [
     // Cache home page e páginas principais agressivamente

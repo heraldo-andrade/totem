@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
-import { PWARegister } from "@/components";
+import { PWARegister, PWAHead } from "@/components";
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   title: "Pernambuco Digital",
   description: "Jornada do cidadão",
   manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Pernambuco Digital',
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export function generateViewport() {
@@ -42,6 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <PWAHead />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} animationHome  antialiased`}>
         <PWARegister />
